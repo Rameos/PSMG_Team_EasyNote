@@ -11,6 +11,8 @@ ModelImporter:
     100010: Plane_003
     100012: Schl_sselbrett
     100014: Schrank_001
+    100016: Schirmstaender
+    100018: Tuer
     400000: //RootNode
     400002: Hundekorb
     400004: Plane
@@ -19,6 +21,8 @@ ModelImporter:
     400010: Plane_003
     400012: Schl_sselbrett
     400014: Schrank_001
+    400016: Schirmstaender
+    400018: Tuer
     2300000: Hundekorb
     2300002: Plane
     2300004: Plane_001
@@ -26,6 +30,8 @@ ModelImporter:
     2300008: Plane_003
     2300010: Schl_sselbrett
     2300012: Schrank_001
+    2300014: Schirmstaender
+    2300016: Tuer
     3300000: Hundekorb
     3300002: Plane
     3300004: Plane_001
@@ -33,6 +39,8 @@ ModelImporter:
     3300008: Plane_003
     3300010: Schl_sselbrett
     3300012: Schrank_001
+    3300014: Schirmstaender
+    3300016: Tuer
     4300000: Hundekorb
     4300002: Plane_003
     4300004: Schrank_001
@@ -40,6 +48,8 @@ ModelImporter:
     4300008: Plane_002
     4300010: Plane_001
     4300012: Plane
+    4300014: Schirmstaender
+    4300016: Tuer
     7400000: Default Take
     9500000: //RootNode
   materials:
