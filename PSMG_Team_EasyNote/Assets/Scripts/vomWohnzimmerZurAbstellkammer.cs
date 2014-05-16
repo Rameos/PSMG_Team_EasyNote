@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class vomSchlafzimmerZumWohnzimmer : MonoBehaviour {
+public class vomWohnzimmerZurAbstellkammer : MonoBehaviour {
 
     //// Use this for initialization
     //void Start () {
@@ -15,6 +15,6 @@ public class vomSchlafzimmerZumWohnzimmer : MonoBehaviour {
 
     void OnMouseDown()
     {
-        Application.LoadLevel(5);
+        Application.LoadLevel(6);
     }
 }
