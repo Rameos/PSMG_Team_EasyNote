@@ -5,7 +5,7 @@ public class objectfound : MonoBehaviour {
 
     void Start()
     {
-        Debug.Log("Finde 5 Gegenstände!");
+        Debug.Log("Finde alle Gegenstände!");
     }
 
     void OnMouseDown()
