@@ -12,7 +12,7 @@ public class movePicture : MonoBehaviour {
             Debug.Log("OnMouseDown");
             pic = GameObject.FindGameObjectWithTag("Bild");
             Debug.Log("Play");
-            pic.animation.Play("move");
+            pic.animation.Play("movePicture");
             picMoved = true;
         }
        

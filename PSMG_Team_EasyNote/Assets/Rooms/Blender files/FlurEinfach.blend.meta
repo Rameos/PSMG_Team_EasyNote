@@ -13,6 +13,24 @@ ModelImporter:
     100014: Schrank_001
     100016: Schirmstaender
     100018: Tuer
+    100020: Circle
+    100022: Circle_000
+    100024: Circle_001
+    100026: Cube
+    100028: Cube_001
+    100030: Cube_002
+    100032: Cube_003
+    100034: Cube_004
+    100036: Cube_008
+    100038: Cube_011
+    100040: Hebel3
+    100042: Schrank
+    100044: Sphere_000
+    100046: Sphere_001
+    100048: Sphere_002
+    100050: T_rLinks
+    100052: T_rRechts
+    100054: Torus
     400000: //RootNode
     400002: Hundekorb
     400004: Plane
@@ -23,6 +41,24 @@ ModelImporter:
     400014: Schrank_001
     400016: Schirmstaender
     400018: Tuer
+    400020: Circle
+    400022: Circle_000
+    400024: Circle_001
+    400026: Cube
+    400028: Cube_001
+    400030: Cube_002
+    400032: Cube_003
+    400034: Cube_004
+    400036: Cube_008
+    400038: Cube_011
+    400040: Hebel3
+    400042: Schrank
+    400044: Sphere_000
+    400046: Sphere_001
+    400048: Sphere_002
+    400050: T_rLinks
+    400052: T_rRechts
+    400054: Torus
     2300000: Hundekorb
     2300002: Plane
     2300004: Plane_001
@@ -32,6 +68,24 @@ ModelImporter:
     2300012: Schrank_001
     2300014: Schirmstaender
     2300016: Tuer
+    2300018: Circle
+    2300020: Circle_000
+    2300022: Circle_001
+    2300024: Cube
+    2300026: Cube_001
+    2300028: Cube_002
+    2300030: Cube_003
+    2300032: Cube_004
+    2300034: Cube_008
+    2300036: Cube_011
+    2300038: Hebel3
+    2300040: Schrank
+    2300042: Sphere_000
+    2300044: Sphere_001
+    2300046: Sphere_002
+    2300048: T_rLinks
+    2300050: T_rRechts
+    2300052: Torus
     3300000: Hundekorb
     3300002: Plane
     3300004: Plane_001
@@ -41,6 +95,24 @@ ModelImporter:
     3300012: Schrank_001
     3300014: Schirmstaender
     3300016: Tuer
+    3300018: Circle
+    3300020: Circle_000
+    3300022: Circle_001
+    3300024: Cube
+    3300026: Cube_001
+    3300028: Cube_002
+    3300030: Cube_003
+    3300032: Cube_004
+    3300034: Cube_008
+    3300036: Cube_011
+    3300038: Hebel3
+    3300040: Schrank
+    3300042: Sphere_000
+    3300044: Sphere_001
+    3300046: Sphere_002
+    3300048: T_rLinks
+    3300050: T_rRechts
+    3300052: Torus
     4300000: Hundekorb
     4300002: Plane_003
     4300004: Schrank_001
@@ -50,6 +122,23 @@ ModelImporter:
     4300012: Plane
     4300014: Schirmstaender
     4300016: Tuer
+    4300018: Circle_000
+    4300020: Circle_001
+    4300022: Circle
+    4300024: Cube_001
+    4300026: Cube_002
+    4300028: Cube_003
+    4300030: Cube_004
+    4300032: Cube_008
+    4300034: Cube_011
+    4300038: Hebel3
+    4300040: Schrank
+    4300042: Sphere_000
+    4300044: Sphere_001
+    4300046: Sphere_002
+    4300048: Torus
+    4300050: T_rLinks
+    4300052: T_rRechts
     7400000: Default Take
     9500000: //RootNode
   materials:
