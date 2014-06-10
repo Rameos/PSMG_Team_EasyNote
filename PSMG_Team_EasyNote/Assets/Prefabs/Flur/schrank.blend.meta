@@ -22,6 +22,12 @@ ModelImporter:
     100032: T_rLinks
     100034: T_rRechts
     100036: Torus
+    100038: hebelAussen
+    100040: hebelLinks
+    100042: hebelMitte
+    100044: ringAussen
+    100046: ringInnen
+    100048: ringMitte
     400000: Circle
     400002: Circle_000
     400004: Circle_001
@@ -41,6 +47,12 @@ ModelImporter:
     400032: T_rLinks
     400034: T_rRechts
     400036: Torus
+    400038: hebelAussen
+    400040: hebelLinks
+    400042: hebelMitte
+    400044: ringAussen
+    400046: ringInnen
+    400048: ringMitte
     2300000: Circle
     2300002: Circle_000
     2300004: Circle_001
@@ -59,6 +71,12 @@ ModelImporter:
     2300030: T_rLinks
     2300032: T_rRechts
     2300034: Torus
+    2300036: hebelAussen
+    2300038: hebelLinks
+    2300040: hebelMitte
+    2300042: ringAussen
+    2300044: ringInnen
+    2300046: ringMitte
     3300000: Circle
     3300002: Circle_000
     3300004: Circle_001
@@ -77,6 +95,12 @@ ModelImporter:
     3300030: T_rLinks
     3300032: T_rRechts
     3300034: Torus
+    3300036: hebelAussen
+    3300038: hebelLinks
+    3300040: hebelMitte
+    3300042: ringAussen
+    3300044: ringInnen
+    3300046: ringMitte
     4300000: Circle
     4300002: Circle_000
     4300004: Circle_001
@@ -86,6 +110,7 @@ ModelImporter:
     4300012: Sphere_000
     4300014: T_rRechts
     4300016: T_rLinks
+    4300018: ringInnen
     4300020: Cube_004
     4300022: Cube_003
     4300024: Cube_002
@@ -94,6 +119,11 @@ ModelImporter:
     4300030: Hebel3
     4300032: Cube_008
     4300034: Sphere_001
+    4300036: ringMitte
+    4300038: ringAussen
+    4300040: hebelLinks
+    4300042: hebelMitte
+    4300046: hebelAussen
     7400000: Default Take
     9500000: //RootNode
   materials:

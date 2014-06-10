@@ -15,6 +15,7 @@ public class schrankOeffnen : MonoBehaviour
             Debug.Log("Play");
             schrank.animation.Play("openDoors");
             schrankOffen = true;
+            Destroy(schrank.collider);
         }
 
     }
