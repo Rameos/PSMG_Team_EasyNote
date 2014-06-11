@@ -26,6 +26,11 @@ public class MoveCamera : MonoBehaviour
             Debug.Log("Using Camera Three");
             camSwap(3);
         }
+        if (Input.GetKey("4"))
+        {
+            Debug.Log("Using Camera Four");
+            camSwap(4);
+        }
 
       
     }
