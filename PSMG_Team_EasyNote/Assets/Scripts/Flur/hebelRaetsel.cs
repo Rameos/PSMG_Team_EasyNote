@@ -126,7 +126,7 @@ if( Input.GetMouseButtonDown(0) )
         {
             if (lever == gameObjLinks)
             {
-                //außen viertel guz, mitte viertel guz
+                //mitte viertel guz, innen viertel uz
             }
 
             if (lever == HMitte)
