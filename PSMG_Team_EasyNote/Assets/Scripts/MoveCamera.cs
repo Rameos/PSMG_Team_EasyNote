@@ -5,7 +5,7 @@ public class MoveCamera : MonoBehaviour
 {
     void start()
     {
-        camSwap(1);
+        //camSwap(1);
     }
 
     void Update()
@@ -30,6 +30,17 @@ public class MoveCamera : MonoBehaviour
         {
             Debug.Log("Using Camera Four");
             camSwap(4);
+        }
+
+        if (Input.GetKey("4"))
+        {
+            Debug.Log("Using Camera Three");
+            camSwap(4);
+        }
+
+        else
+        {
+
         }
 
       
