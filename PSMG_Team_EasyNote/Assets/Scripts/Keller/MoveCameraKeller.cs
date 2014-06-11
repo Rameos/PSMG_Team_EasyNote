@@ -13,12 +13,10 @@ public class MoveCameraKeller : MonoBehaviour {
     {
         if (Input.GetKey("1"))
         {
-            Debug.Log("Using Camera One");
             camSwap(1);
         }
         if (Input.GetKey("2"))
         {
-            Debug.Log("Using Camera Two");
             camSwap(2);
         }
 
