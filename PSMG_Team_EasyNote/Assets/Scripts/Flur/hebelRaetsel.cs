@@ -126,17 +126,21 @@ if( Input.GetMouseButtonDown(0) )
         {
             if (lever == gameObjLinks)
             {
+                RMitte.transform.Rotate(0, 0, -90);
+                RInnen.transform.Rotate(0, 0, 90);
                 //mitte viertel guz, innen viertel uz
             }
 
             if (lever == HMitte)
             {
                 //mitte halb guz
+                RMitte.transform.Rotate(0, 0, -180);
             }
 
             if (lever == HRechts)
             {
                 //innen halb guz
+                RInnen.transform.Rotate(0, 0, -180);
             }
 
         }
@@ -146,16 +150,22 @@ if( Input.GetMouseButtonDown(0) )
             if (lever == gameObjLinks)
             {
                 //außen dreviertel uz, mitte halb uz
+                RAussen.transform.Rotate(0, 0, -270);
+                RMitte.transform.Rotate(0, 0, 180);
             }
 
             if (lever == HMitte)
             {
                 //mitte viertel guz, innen halb guz
+                RMitte.transform.Rotate(0, 0, -90);
+                RAussen.transform.Rotate(0, 0, -180);
             }
 
             if (lever == HRechts)
             {
                 //innen viertel uz, mitte halb guz
+                RInnen.transform.Rotate(0, 0, 90);
+                RMitte.transform.Rotate(0, 0, -180);
             }
 
         }
