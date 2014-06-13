@@ -3,14 +3,29 @@ using System.Collections;
 
 public class abdruck_OnClicked : MonoBehaviour {
 
+    //public int[] abdruckStatus = new int[12];
+    //public bool katzeStatus = false;
+    //private int currentAbdruck;
+
     //// Use this for initialization
-    //void Start () {
-	
+    //void Start()
+    //{
+
     //}
-	
+
     //// Update is called once per frame
-    //void Update () {
-	
+    //void Update()
+    //{
+    //    //OnMouseDown();
+    //}
+
+    //public void abdruck(int currentAbdruck)
+    //{
+    //    GameObject[] abdruck = GameObject.FindGameObjectsWithTag("abdruck");
+    //    if (currentAbdruck == 0)
+    //    {
+    //        OnMouseDown();
+    //    }
     //}
 
     void OnMouseDown(){
@@ -20,6 +35,7 @@ public class abdruck_OnClicked : MonoBehaviour {
         Color greenColour = new Color(0, 102, 0);
         
         renderer.material.color = greenColour;
+        //abdruckStatus[currentAbdruck] = 1; 
     }
 
 }
