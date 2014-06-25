@@ -5,6 +5,17 @@ public class objectfound : MonoBehaviour {
 
     void Start()
     {
+        var showText = true;
+        var textArea = new Rect(0,0,Screen.width, Screen.height);
+ 
+        function OnGUI()
+        {
+ 
+            if(showText)
+            {
+            GUI.Label(textArea,"Finde alle Gegenstände!\nlalalala\nanother line\nI could do this all day!");
+            }
+        }
         Debug.Log("Finde alle Gegenstände!");
     }
 
