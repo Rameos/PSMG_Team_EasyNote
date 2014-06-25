@@ -11,7 +11,7 @@ public class rotateRohr : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // Slowly rotate the object around its X axis at 1 degree/second.
-        gameObject.transform.Rotate(1*Time.deltaTime,0,0);
+        gameObject.transform.Rotate(2*Time.deltaTime,0,0);
         // ... at the same time as spinning relative to the global 
         // Y axis at the same speed.
         //gameObject.transform.Rotate(Vector3.up * Time.deltaTime, Space.World);

@@ -10,6 +10,7 @@ public class rohrClicked : MonoBehaviour {
     private Vector3 screenPoint;
     private Vector3 offset;
     private float speed = 30;
+    private float moveSpeed = 5;
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -20,8 +21,10 @@ public class rohrClicked : MonoBehaviour {
             Debug.Log("Pressed middle click.");
 
         float translation = Input.GetAxis("Mouse ScrollWheel");
-        Debug.Log(translation);
 
+ 
+
+    
 
     }
         
@@ -43,19 +46,25 @@ public class rohrClicked : MonoBehaviour {
         {
             Camera Camera1 = GameObject.Find("Camera1").GetComponent<Camera>() as Camera;
             screenPoint = Camera1.WorldToScreenPoint(gameObject.transform.position);
-            //while (gameObject.transform.position.x < 6.5 && gameObject.transform.position.y < 6.5 && gameObject.transform.position.z < 6.5)
-            //{ 
+            Debug.Log("!!!!!!!!: " + Input.mousePosition.x);
+
             Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
           
 
             Vector3 curPosition = Camera1.ScreenToWorldPoint(curScreenPoint) + offset;
             transform.position = curPosition;
-       // }
-            //gameObject.transform.Rotate(Vector3.up * speed * Input.GetAxis("Mouse ScrollWheel"));
+            //transform.position.x += moveSpeed * Input.GetAxis("Horizontal") * Time.deltaTime; 
+            
+ 
+            
 
-            if (Input.GetAxis("Mouse ScrollWheel") != 0)
+            if (Input.GetAxis("Mouse ScrollWheel") >= 0)
             {
                 gameObject.transform.Rotate(1, 0, 0);
+            }
+            if (Input.GetAxis("Mouse ScrollWheel") <= 0)
+            {
+                gameObject.transform.Rotate(-1, 0, 0);
             }
            
            
