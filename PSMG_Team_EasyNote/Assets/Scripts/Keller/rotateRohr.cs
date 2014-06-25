@@ -25,6 +25,7 @@ public class rotateRohr : MonoBehaviour {
     {
        
        sRohr.animation.Play("smallRohrAnim");
+       Debug.Log("ROhr clicked");
         
     }
 
