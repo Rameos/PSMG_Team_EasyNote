@@ -2,21 +2,44 @@
 using System.Collections;
 using iViewX;
 
-public abstract class gazeAbdruck : MonoBehaviourWithGazeComponent
+public class gazeAbdruck : MonoBehaviourWithGazeComponent
 {
 
-    //// Use this for initialization
-    //void Start () {
+    // Use this for initialization
+    void Start () {
+        gazeUI.Add(new GazeButton(new Rect(),
+    "Rotate Cube"));
+    }
 
-    //}
+    // Update is called once per frame
+    void Update () {
+        if (isDrawing)
+        {
+            foreach (GazeButton button in gazeUI)
+            {
+                button.Update();
+            }
+        }
+    }
 
-    //// Update is called once per frame
-    //void Update () {
+    private ArrayList gazeUI = new ArrayList();
 
-    //}
+
+
+        void OnGUI()
+        {
+            if (isDrawing)
+            {
+                foreach (GazeButton button in gazeUI)
+                {
+                    button.OnGUI();
+                }
+            }
+        }
 
     public override void OnGazeStay(RaycastHit hit)
     {
+
         Color greenColour = new Color(0, 102, 0);
 
         renderer.material.color = greenColour;
@@ -30,6 +53,18 @@ public abstract class gazeAbdruck : MonoBehaviourWithGazeComponent
         //    renderer.material.color = greenColour;
         //}
         
-    } 
+    }
 
+
+    public bool isDrawing { get; set; }
+
+    public override void OnGazeEnter(RaycastHit hit)
+    {
+
+    }
+
+    public override void OnGazeExit()
+    {
+    
+    }
 }
