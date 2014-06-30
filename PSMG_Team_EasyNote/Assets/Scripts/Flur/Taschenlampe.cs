@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Taschenlampe : MonoBehaviour
+using UnityEngine;
+using System.Collections;
+using iViewX;
+
+public class Taschenlampe : MonoBehaviourWithGazeComponent
 {
 
     private bool flashlightOn = false;
@@ -11,6 +15,8 @@ public class Taschenlampe : MonoBehaviour
     void Start()
     {
 
+      gazeUI.Add(new GazeButton(new Rect(),
+    "Cube"));
     }
 
 
@@ -66,6 +72,18 @@ public class Taschenlampe : MonoBehaviour
         }
 
 
+    }
+
+    public bool isDrawing { get; set; }
+
+  public override void OnGazeEnter(RaycastHit hit)
+    {
+
+    }
+
+    public override void OnGazeExit()
+    {
+    
     }
 
 }
