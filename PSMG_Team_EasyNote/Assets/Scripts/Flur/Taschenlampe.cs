@@ -20,10 +20,26 @@ public class Taschenlampe : MonoBehaviourWithGazeComponent
     }
 
 
-
+    private ArrayList gazeUI = new ArrayList();
 
     void Update()
     {
+        if (isDrawing)
+        {
+            foreach (GazeButton button in gazeUI)
+            {
+                button.Update();
+            }
+        }
+
+
+
+        Vector2 gazePos = (gazeModel.posGazeLeft + gazeModel.posGazeRight) * 0.5f;
+        gazePos.y = Screen.height - gazePos.y;
+        //raygaze = Camera.main.ScreenPointToRay(gazePos);
+
+
+        Debug.Log("Koordinaten" + gazePos);
 
        // Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
        // vector3 pos  = ray.GetPoint(5);
@@ -39,10 +55,11 @@ public class Taschenlampe : MonoBehaviourWithGazeComponent
             if (flashlightOn == true)
             {
                 light.intensity = 1;//If the boolean is true, then it sets the intensity to what ever you want.
-                Vector3 posMouse = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3);
-                posMouse = Camera.main.ScreenToWorldPoint(posMouse);
+                //Vector3 posMouse = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3);
+                Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
+                posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
 
-                transform.position = posMouse;
+                transform.position = posUserGaze;
                 transform.position = new Vector3( transform.position.x, transform.position.y, startPos.z);
        
             }
@@ -70,6 +87,23 @@ public class Taschenlampe : MonoBehaviourWithGazeComponent
                 flashlightOn = false;//If the f key is down and the boolean is true, it sets the boolean to false.
             }
         }
+
+
+    }
+
+    void OnGUI()
+    {
+        if (isDrawing)
+        {
+            foreach (GazeButton button in gazeUI)
+            {
+                button.OnGUI();
+            }
+        }
+    }
+
+    public override void OnGazeStay(RaycastHit hit)
+    {
 
 
     }
