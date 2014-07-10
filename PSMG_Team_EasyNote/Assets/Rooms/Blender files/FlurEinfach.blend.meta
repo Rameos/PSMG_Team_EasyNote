@@ -31,6 +31,21 @@ ModelImporter:
     100050: T_rLinks
     100052: T_rRechts
     100054: Torus
+    100056: Cube_005
+    100058: Cube_006
+    100060: Cube_007
+    100062: Hebel3_001
+    100064: Raum
+    100066: ringAussen
+    100068: ringInnen
+    100070: ringMitte
+    100072: Sphere
+    100074: Sphere_003
+    100076: Sphere_004
+    100078: Sphere_005
+    100080: T_rRechts_001
+    100082: T_rRechts_002
+    100084: Torus_001
     400000: //RootNode
     400002: Hundekorb
     400004: Plane
@@ -59,6 +74,21 @@ ModelImporter:
     400050: T_rLinks
     400052: T_rRechts
     400054: Torus
+    400056: Cube_005
+    400058: Cube_006
+    400060: Cube_007
+    400062: Hebel3_001
+    400064: Raum
+    400066: ringAussen
+    400068: ringInnen
+    400070: ringMitte
+    400072: Sphere
+    400074: Sphere_003
+    400076: Sphere_004
+    400078: Sphere_005
+    400080: T_rRechts_001
+    400082: T_rRechts_002
+    400084: Torus_001
     2300000: Hundekorb
     2300002: Plane
     2300004: Plane_001
@@ -86,6 +116,21 @@ ModelImporter:
     2300048: T_rLinks
     2300050: T_rRechts
     2300052: Torus
+    2300054: Cube_005
+    2300056: Cube_006
+    2300058: Cube_007
+    2300060: Hebel3_001
+    2300062: Raum
+    2300064: ringAussen
+    2300066: ringInnen
+    2300068: ringMitte
+    2300070: Sphere
+    2300072: Sphere_003
+    2300074: Sphere_004
+    2300076: Sphere_005
+    2300078: T_rRechts_001
+    2300080: T_rRechts_002
+    2300082: Torus_001
     3300000: Hundekorb
     3300002: Plane
     3300004: Plane_001
@@ -113,6 +158,21 @@ ModelImporter:
     3300048: T_rLinks
     3300050: T_rRechts
     3300052: Torus
+    3300054: Cube_005
+    3300056: Cube_006
+    3300058: Cube_007
+    3300060: Hebel3_001
+    3300062: Raum
+    3300064: ringAussen
+    3300066: ringInnen
+    3300068: ringMitte
+    3300070: Sphere
+    3300072: Sphere_003
+    3300074: Sphere_004
+    3300076: Sphere_005
+    3300078: T_rRechts_001
+    3300080: T_rRechts_002
+    3300082: Torus_001
     4300000: Hundekorb
     4300002: Plane_003
     4300004: Schrank_001
@@ -131,6 +191,7 @@ ModelImporter:
     4300030: Cube_004
     4300032: Cube_008
     4300034: Cube_011
+    4300036: Sphere
     4300038: Hebel3
     4300040: Schrank
     4300042: Sphere_000
@@ -139,6 +200,19 @@ ModelImporter:
     4300048: Torus
     4300050: T_rLinks
     4300052: T_rRechts
+    4300054: Raum
+    4300058: Cube_006
+    4300060: Cube_007
+    4300064: Hebel3_001
+    4300066: ringAussen
+    4300068: ringInnen
+    4300070: ringMitte
+    4300072: Sphere_003
+    4300074: Sphere_004
+    4300076: Sphere_005
+    4300078: Torus_001
+    4300080: T_rRechts_002
+    4300082: T_rRechts_001
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -149,6 +223,7 @@ ModelImporter:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     optimizeGameObjects: 0
+    motionNodeName: 
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5

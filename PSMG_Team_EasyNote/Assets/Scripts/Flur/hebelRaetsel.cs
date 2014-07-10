@@ -127,7 +127,7 @@ if( Input.GetMouseButtonDown(0) )
             if (lever == gameObjLinks)
             {
                 RMitte.transform.Rotate(0, 0, -90);
-                RInnen.transform.Rotate(0, 0, 90);
+              //  RInnen.transform.Rotate(0, 0, 90);
                 //mitte viertel guz, innen viertel uz
             }
 
