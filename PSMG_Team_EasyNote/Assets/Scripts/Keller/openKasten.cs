@@ -9,30 +9,34 @@ public class openKasten : MonoBehaviour
 
     bool open = false;
     bool usedBefore = false;
+    bool zoom = false;
     int count = 0;
 
     // Use this for initialization
     void OnMouseDown()
     {
-        if (count == 1)
+        if (zoom == true)
         {
           
 
                 door = GameObject.FindGameObjectWithTag("kastenDoor");
                 door.animation.Play("kasten");
                 open = true;
-                Debug.Log("blalalalalala");
+                Debug.Log(zoom);
                 count++;
-                light = GameObject.FindGameObjectWithTag("licht");
+                //light = GameObject.FindGameObjectWithTag("licht");
                 
                
-            }
+         }
         
-        else if(count == 0)
+        if(zoom == false)
         {
             camera = GameObject.FindGameObjectWithTag("MainCamera");
             camera.animation.Play("kamera");
             count++;
+            zoom = true;
+            Debug.Log(zoom);
+            
         }
         /*if (open == true)
         {
@@ -40,6 +44,20 @@ public class openKasten : MonoBehaviour
             door.animation.Play("KastenAnimClose");
             open = false;
         }*/
+    }
+
+    void OnGUI()
+    {
+        if (GUI.Button(new Rect(Screen.width - 50, Screen.height - 50, 50, 50), "Back"))
+        {
+            camera = GameObject.FindGameObjectWithTag("MainCamera");
+            camera.animation["kamera"].speed = -1;
+            camera.animation.Play("kamera");
+            zoom = false;
+            Debug.Log(zoom);
+        }
+        
+      
     }
 
     /*void OnMouseOver()

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class rohrClickedGroß : MonoBehaviour {
+public class rohrClickedKlein : MonoBehaviour
+{
 
 
     private Vector3 startPos;
@@ -40,40 +41,39 @@ public class rohrClickedGroß : MonoBehaviour {
     void OnMouseDrag()
     {
         //if (transform.position.z < 2.7 && transform.position.z > -2.8 && transform.position.y < 2.8 && transform.position.y > 0.0) { 
-        if (Input.mousePosition.x > 225 && Input.mousePosition.x < 670 && Input.mousePosition.y > 60 && Input.mousePosition.y < 325)
+        if (Input.mousePosition.x > 180 && Input.mousePosition.x < 725 && Input.mousePosition.y > 60 && Input.mousePosition.y < 325)
         {
-        Vector3 posMouse = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3);
-        posMouse = Camera.main.ScreenToWorldPoint(posMouse);
-        transform.position = posMouse;
-        transform.position = new Vector3(startPos.x, transform.position.y, transform.position.z);
+            Vector3 posMouse = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3);
+            posMouse = Camera.main.ScreenToWorldPoint(posMouse);
+            transform.position = posMouse;
+            transform.position = new Vector3(startPos.x, transform.position.y, transform.position.z);
 
 
-        if (Input.GetAxis("Mouse ScrollWheel") >= 0)
-        {
-            gameObject.transform.Rotate(30, 0, 0);
+            if (Input.GetAxis("Mouse ScrollWheel") >= 0)
+            {
+                gameObject.transform.Rotate(30, 0, 0);
+            }
+            if (Input.GetAxis("Mouse ScrollWheel") <= 0)
+            {
+                gameObject.transform.Rotate(-30, 0, 0);
+            }
+
+
+            Rotation = transform.rotation.eulerAngles.x;
+
         }
-        if (Input.GetAxis("Mouse ScrollWheel") <= 0)
-        {
-            gameObject.transform.Rotate(-30, 0, 0);
-        }
-
-        
-        Rotation = transform.rotation.eulerAngles.x;
-        
-    }
         else
         {
-            
+
         }
-       
+
     }
 
     void OnTriggerEnter(Collider other)
     {
-      
         if ((Rotation >= 0 && Rotation <= 1))
         {
-            if (other.tag == "rohrKlein" && gameObject.tag == "rohrKlein")
+            if (other.tag == "rohrKlein")
             {
                 Debug.Log("Kleines Rohr richtig angebracht");
             }
@@ -81,7 +81,7 @@ public class rohrClickedGroß : MonoBehaviour {
 
         if ((Rotation >= 30 && Rotation <= 31 || Rotation >= 299 && Rotation <= 300))
         {
-            if (other.tag == "rohrGroß" && gameObject.tag == "rohrGroß")
+            if (other.tag == "rohrGroß")
             {
                 Debug.Log("Großes Rohr richtig angebracht");
             }
