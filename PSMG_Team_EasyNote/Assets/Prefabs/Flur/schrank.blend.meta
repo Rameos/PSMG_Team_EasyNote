@@ -20,6 +20,7 @@ ModelImporter:
     100028: T_rRechts_001
     100030: T_rRechts_002
     100032: Torus_001
+    100034: Cube_000
     400000: Cube_001
     400002: Cube_005
     400004: Cube_006
@@ -37,6 +38,7 @@ ModelImporter:
     400028: T_rRechts_001
     400030: T_rRechts_002
     400032: Torus_001
+    400034: Cube_000
     2300000: Cube_001
     2300002: Cube_005
     2300004: Cube_006
@@ -53,6 +55,7 @@ ModelImporter:
     2300026: T_rRechts_001
     2300028: T_rRechts_002
     2300030: Torus_001
+    2300032: Cube_000
     3300000: Cube_001
     3300002: Cube_005
     3300004: Cube_006
@@ -69,6 +72,8 @@ ModelImporter:
     3300026: T_rRechts_001
     3300028: T_rRechts_002
     3300030: Torus_001
+    3300032: Cube_000
+    4300000: Cube_000
     4300002: Cube_006
     4300004: Cube_007
     4300008: Hebel3_001
