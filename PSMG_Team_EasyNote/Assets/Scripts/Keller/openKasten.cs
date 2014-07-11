@@ -64,14 +64,13 @@ public class openKasten : MonoBehaviour
 
     void OnGUI()
     {
-        if (GUI.Button(new Rect(Screen.width - 50, Screen.height - 50, 50, 50), "Back"))
-        {
+       
             camera = GameObject.FindGameObjectWithTag("MainCamera");
             camera.animation["kamera"].speed = -1;
             camera.animation.Play("kamera");
             zoom = false;
             Debug.Log(zoom);
-        }
+        
         
       
     }

@@ -41,7 +41,7 @@ public class rohrClickedKlein : MonoBehaviour
     void OnMouseDrag()
     {
         //if (transform.position.z < 2.7 && transform.position.z > -2.8 && transform.position.y < 2.8 && transform.position.y > 0.0) { 
-        if (Input.mousePosition.x > 180 && Input.mousePosition.x < 725 && Input.mousePosition.y > 60 && Input.mousePosition.y < 325)
+        if (Input.mousePosition.x > 200 && Input.mousePosition.x < Screen.width-150 && Input.mousePosition.y > 120 && Input.mousePosition.y < Screen.height)
         {
             Vector3 posMouse = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3);
             posMouse = Camera.main.ScreenToWorldPoint(posMouse);
