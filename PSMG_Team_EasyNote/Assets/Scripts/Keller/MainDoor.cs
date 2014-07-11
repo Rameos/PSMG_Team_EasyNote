@@ -5,12 +5,11 @@ public class MainDoor : MonoBehaviour {
     GameObject RoomDoor;
 	// Use this for initialization
    
-    void OnMouseOver()
+    void OnMouseDown()
     {
-       
-            Debug.Log("OnMouseOver");
+
             RoomDoor = GameObject.FindGameObjectWithTag("MainDoor");
-            RoomDoor.animation.Play("MDAnim");
+            RoomDoor.animation.Play("door");
         
 
     }

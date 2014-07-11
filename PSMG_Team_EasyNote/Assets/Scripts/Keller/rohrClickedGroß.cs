@@ -68,7 +68,7 @@ public class rohrClickedGroß : MonoBehaviour {
        
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
       
         if ((Rotation >= 0 && Rotation <= 1))
