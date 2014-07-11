@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class kalibrieren : GazeController {
+public class kalibrieren : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +14,6 @@ public class kalibrieren : GazeController {
 	}
     void OnClicked()
     {
-        startCalibration();
+        //startCalibration();
     }
 }
