@@ -40,7 +40,7 @@ public class Taschenlampe : MonoBehaviourWithGazeComponent
         //raygaze = Camera.main.ScreenPointToRay(gazePos);
 
 
-        Debug.Log("Koordinaten" + gazePos);
+       // Debug.Log("Koordinaten" + gazePos);
 
        // Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
        // vector3 pos  = ray.GetPoint(5);

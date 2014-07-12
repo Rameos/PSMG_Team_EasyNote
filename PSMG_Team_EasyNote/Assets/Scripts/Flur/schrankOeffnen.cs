@@ -13,6 +13,7 @@ public class schrankOeffnen : MonoBehaviour
             Debug.Log("OnMouseDown");
             schrank = GameObject.FindGameObjectWithTag("Schrank");
             Debug.Log("Play");
+            Debug.Log(schrank.animation.Play("openDoors"));
             schrank.animation.Play("openDoors");
             schrankOffen = true;
             Destroy(schrank.collider);

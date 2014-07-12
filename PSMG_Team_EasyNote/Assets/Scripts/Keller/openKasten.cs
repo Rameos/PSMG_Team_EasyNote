@@ -11,11 +11,26 @@ public class openKasten : MonoBehaviour
     bool usedBefore = false;
     bool zoom = false;
     int count = 0;
+    public int test;
 
+    void Start()
+    {
+        light = GameObject.FindGameObjectWithTag("licht");
+        light.light.intensity = 0;
+
+    }
+
+
+
+    /*public bool setTest(bool toSet) {
+        test = toSet;
+        Debug.Log("test in setTest: " + test);
+        return test;
+    }*/
     // Use this for initialization
     void OnMouseDown()
     {
-        if (zoom == true)
+        if (count == 0)
         {
           
 
@@ -24,12 +39,13 @@ public class openKasten : MonoBehaviour
                 open = true;
                 Debug.Log(zoom);
                 count++;
-                //light = GameObject.FindGameObjectWithTag("licht");
-                
-               
+                //guiText = GameObject.Find("text").guiText;
+                guiText.text = "hallo";
+                light.light.intensity = 1;
+                Debug.Log("test: " + test);
          }
         
-        if(zoom == false)
+        if(count == 0)
         {
             camera = GameObject.FindGameObjectWithTag("MainCamera");
             camera.animation.Play("kamera");
@@ -48,14 +64,13 @@ public class openKasten : MonoBehaviour
 
     void OnGUI()
     {
-        if (GUI.Button(new Rect(Screen.width - 50, Screen.height - 50, 50, 50), "Back"))
-        {
+       
             camera = GameObject.FindGameObjectWithTag("MainCamera");
             camera.animation["kamera"].speed = -1;
             camera.animation.Play("kamera");
             zoom = false;
             Debug.Log(zoom);
-        }
+        
         
       
     }

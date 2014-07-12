@@ -40,7 +40,7 @@ public class rohrClickedGroß : MonoBehaviour {
     void OnMouseDrag()
     {
         //if (transform.position.z < 2.7 && transform.position.z > -2.8 && transform.position.y < 2.8 && transform.position.y > 0.0) { 
-        if (Input.mousePosition.x > 225 && Input.mousePosition.x < 670 && Input.mousePosition.y > 60 && Input.mousePosition.y < 325)
+        if (Input.mousePosition.x > 300 && Input.mousePosition.x <Screen.width -250 && Input.mousePosition.y > 100 && Input.mousePosition.y < Screen.height)
         {
         Vector3 posMouse = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3);
         posMouse = Camera.main.ScreenToWorldPoint(posMouse);
@@ -68,7 +68,7 @@ public class rohrClickedGroß : MonoBehaviour {
        
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
       
         if ((Rotation >= 0 && Rotation <= 1))
