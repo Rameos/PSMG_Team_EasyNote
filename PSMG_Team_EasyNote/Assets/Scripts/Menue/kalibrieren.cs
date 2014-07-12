@@ -12,4 +12,8 @@ public class kalibrieren : MonoBehaviour {
 	void Update () {
 	
 	}
+    void OnClicked()
+    {
+        //startCalibration();
+    }
 }
