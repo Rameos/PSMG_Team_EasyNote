@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+
 using System.Collections;
 
 public class hebelRaetsel : MonoBehaviour {
     GameObject HLinks, HRechts, HMitte, RAussen, RMitte, RInnen, Schrank, gameObjLinks;
 private int count1 = 0, count2 = 0, count3 = 0;
+private bool hasWon = false;
 
 
    
@@ -26,7 +28,7 @@ private int count1 = 0, count2 = 0, count3 = 0;
 	// Update is called once per frame
 	void Update () {
 
-        //checkWin();
+        checkWin();
 
 if( Input.GetMouseButtonDown(0) )
     {
@@ -35,12 +37,12 @@ if( Input.GetMouseButtonDown(0) )
 
        if (Physics.Raycast(ray, out hit, 50))
        {
-          
-           //Debug.Log(hit.transform.gameObject.tag);
+           //checkWin();
+      
           
            if (hit.transform.gameObject.tag == "hebelLinks")
            {
-               //Debug.Log("Linker Hebel wurde geklickt");
+              
                if (count1== 4)
                {
                    count1 = 1;
@@ -51,13 +53,12 @@ if( Input.GetMouseButtonDown(0) )
                    count1++;
                }
 
-               Debug.Log(count1);
                moveLever(gameObjLinks, count1);
            }
 
            if (hit.transform.gameObject.tag == "hebelRechts")
            {
-               //Debug.Log(" Hebel rechts wurde geklickt");
+         
 
                if (count3 == 4)
                {
@@ -74,7 +75,6 @@ if( Input.GetMouseButtonDown(0) )
 
            if (hit.transform.gameObject.tag == "hebelMitte")
            {
-               //Debug.Log(" Hebel Mitte wurde geklickt");
                if (count2 == 4)
                {
                    count2 = 1;
@@ -99,12 +99,14 @@ if( Input.GetMouseButtonDown(0) )
             {
                 moveDown(lever);
             }
-            //Debug.Log(lever+ "Bewegung");
+      
 
             if (counter == 3 || counter == 4)
             {
                 moveUp(lever);
             }
+
+            
         }
 
         void moveDown(GameObject lever)
@@ -128,8 +130,7 @@ if( Input.GetMouseButtonDown(0) )
             if (lever == gameObjLinks)
             {
                 RMitte.transform.Rotate(0, 0, -90);
-               // Debug.Log("Euler" +RMitte.transform.eulerAngles.x);
-              //  RInnen.transform.Rotate(0, 0, 90);
+              
                 //mitte viertel guz, innen viertel uz
             }
 
@@ -145,7 +146,7 @@ if( Input.GetMouseButtonDown(0) )
                 //innen halb guz
                 RInnen.transform.Rotate(0, 0, -180);
             }
-            checkWin();
+            //checkWin();
 
         }
 
@@ -157,7 +158,7 @@ if( Input.GetMouseButtonDown(0) )
                 //außen dreviertel uz, mitte halb uz
                 RAussen.transform.Rotate(0, 0, 270);
                 RMitte.transform.Rotate(0, 0, 180);
-                //Debug.Log("Euler" + RMitte.transform.eulerAngles.x + "y" + RMitte.transform.eulerAngles.y + "z" + RMitte.transform.eulerAngles.z);
+             
             }
 
             if (lever == HMitte)
@@ -173,43 +174,29 @@ if( Input.GetMouseButtonDown(0) )
                 RInnen.transform.Rotate(0, 0, 90);
                 RMitte.transform.Rotate(0, 0, -180);
             }
-            checkWin();
+           // checkWin();
 
         }
 
         void checkWin()
         {
-            double RAx= 0;
-            double RAz = -1.001791E-05f;
-            double RMx = 1.707546E-06f;
-            double RMz = 5.122643E-06f;
-            double RIx = 0f;
-            double RIz = 0f;
 
-            double getRAx = RAussen.transform.eulerAngles.x;
-            double getRAz = RAussen.transform.eulerAngles.z;
-            double getRMx = RMitte.transform.eulerAngles.x;
-            double getRMz = RMitte.transform.eulerAngles.z;
-            double getRIx = RInnen.transform.eulerAngles.x;
-            double getRIz = RInnen.transform.eulerAngles.x;
+            TriggerAussen triggerAussen = RAussen.GetComponent<TriggerAussen>();
+            TriggerInnen triggerInnen = RInnen.GetComponent<TriggerInnen>();
+            TriggerMitte triggerMitte = RMitte.GetComponent<TriggerMitte>();
+       
 
-            Debug.Log("EulerA" + RAussen.transform.eulerAngles.x + "z" + RAussen.transform.eulerAngles.z);
-            Debug.Log("setA" + getRAx + "z" + getRAz);
-            Debug.Log("EulerM" + RMitte.transform.eulerAngles.x +  "z" + RMitte.transform.eulerAngles.z);
-            Debug.Log("setM" + getRMx + "z" + getRMz);
-            Debug.Log("EulerI" + RInnen.transform.eulerAngles.x + "z" + RInnen.transform.eulerAngles.z);
-
-            
-          
-            Debug.Log("setI" + getRIx + "z" + getRIz);
-
-            if (RAx == getRAx && RAz == getRAz && RMx == getRMx && RMz == getRMz && RIx == getRIx && RIz == getRIz)
+            if (triggerAussen.RAinRightPos == true && triggerMitte.RMinRightPos == true && triggerInnen.RIinRightPos == true)
             {
-                Debug.Log("gewonnen!");
+                hasWon = true;
             }
-            else
-                Debug.Log("lose!");
-        }
 
+            else
+            {
+                hasWon = false;
+            }
+
+      
+        }   
 
 }
