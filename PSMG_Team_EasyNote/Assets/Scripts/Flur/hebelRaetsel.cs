@@ -2,18 +2,23 @@
 
 using System.Collections;
 
-public class hebelRaetsel : MonoBehaviour {
+public class hebelRaetsel : MonoBehaviour
+{
     GameObject HLinks, HRechts, HMitte, RAussen, RMitte, RInnen, Schrank, gameObjLinks;
-private int count1 = 0, count2 = 0, count3 = 0;
-private bool hasWon = false;
+    private int count1 = 0, count2 = 0, count3 = 0;
+    private bool hasWon = false;
 
 
-   
+    float rotation = 0;
+    float targetRotation = -90;
+    float rotateSpeed = 5;
 
 
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start()
+    {
 
         gameObjLinks = GameObject.FindGameObjectWithTag("gameObj");
         HLinks = GameObject.FindGameObjectWithTag("hebelLinks");
@@ -23,180 +28,185 @@ private bool hasWon = false;
         RInnen = GameObject.FindGameObjectWithTag("ringInnen");
         RMitte = GameObject.FindGameObjectWithTag("ringMitte");
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
 
         checkWin();
 
-if( Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 50))
+            {
+                //checkWin();
+
+
+                if (hit.transform.gameObject.tag == "hebelLinks")
+                {
+
+                    if (count1 == 4)
+                    {
+                        count1 = 1;
+
+                    }
+                    else
+                    {
+                        count1++;
+                    }
+
+                    moveLever(gameObjLinks, count1);
+                }
+
+                if (hit.transform.gameObject.tag == "hebelRechts")
+                {
+
+
+                    if (count3 == 4)
+                    {
+                        count3 = 1;
+                    }
+                    else
+                    {
+                        count3++;
+                    }
+
+
+                    moveLever(HRechts, count3);
+                }
+
+                if (hit.transform.gameObject.tag == "hebelMitte")
+                {
+                    if (count2 == 4)
+                    {
+                        count2 = 1;
+                    }
+                    else
+                    {
+                        count2++;
+                    }
+
+
+                    moveLever(HMitte, count2);
+                }
+            }
+
+
+        }
+    }
+
+    void moveLever(GameObject lever, int counter)
     {
-       Ray ray = camera.ScreenPointToRay( Input.mousePosition );
-       RaycastHit hit;
 
-       if (Physics.Raycast(ray, out hit, 50))
-       {
-           //checkWin();
-      
-          
-           if (hit.transform.gameObject.tag == "hebelLinks")
-           {
-              
-               if (count1== 4)
-               {
-                   count1 = 1;
-                 
-               }
-               else
-               {
-                   count1++;
-               }
 
-               moveLever(gameObjLinks, count1);
-           }
+        if (counter == 1 || counter == 2)
+        {
+            moveDown(lever);
+        }
 
-           if (hit.transform.gameObject.tag == "hebelRechts")
-           {
-         
 
-               if (count3 == 4)
-               {
-                   count3 = 1;
-               }
-               else
-               {
-                   count3++;
-               }
-               
-          
-               moveLever(HRechts, count3);
-           }
+        if (counter == 3 || counter == 4)
+        {
+            moveUp(lever);
+        }
 
-           if (hit.transform.gameObject.tag == "hebelMitte")
-           {
-               if (count2 == 4)
-               {
-                   count2 = 1;
-               }
-               else {
-                   count2++;
-               }
-               
-               
-              moveLever(HMitte, count2);
-           }
-       }
 
-      
-    }
     }
 
-        void moveLever(GameObject lever, int counter){
+    void moveDown(GameObject lever)
+    {
+        lever.transform.Rotate(0, -40, 0);
+        rotateRingsWhenDown(lever);
 
 
-            if (counter == 1 || counter == 2)
-            {
-                moveDown(lever);
-            }
-      
+    }
 
-            if (counter == 3 || counter == 4)
-            {
-                moveUp(lever);
-            }
+    void moveUp(GameObject lever)
+    {
+        lever.transform.Rotate(0, 40, 0);
+        rotateRingsWhenUp(lever);
 
-            
+    }
+
+
+    void rotateRingsWhenUp(GameObject lever)
+    {
+        if (lever == gameObjLinks)
+
+        {
+
+           RMitte.transform.Rotate(0, 0, -90);
+
+           // mitte viertel guz, innen viertel uz
         }
 
-        void moveDown(GameObject lever)
+        if (lever == HMitte)
         {
-           lever.transform.Rotate(0, -40, 0);
-           rotateRingsWhenDown(lever);
-            
-
-        }
-
-        void moveUp(GameObject lever)
-        {
-            lever.transform.Rotate(0, 40, 0);
-            rotateRingsWhenUp(lever);
-
-        }
-
-
-        void rotateRingsWhenUp(GameObject lever)
-        {
-            if (lever == gameObjLinks)
-            {
-                RMitte.transform.Rotate(0, 0, -90);
-              
-                //mitte viertel guz, innen viertel uz
-            }
-
-            if (lever == HMitte)
-            {
-                //außen viertel guz
-                RAussen.transform.Rotate(0, 0, -90);
-                
-            }
-
-            if (lever == HRechts)
-            {
-                //innen halb guz
-                RInnen.transform.Rotate(0, 0, -180);
-            }
-            //checkWin();
+            //außen viertel guz
+            RAussen.transform.Rotate(0, 0, -90);
 
         }
 
-        void rotateRingsWhenDown(GameObject lever)
+        if (lever == HRechts)
         {
-            if (lever == gameObjLinks)
-            {
-                
-                //außen dreviertel uz, mitte halb uz
-                RAussen.transform.Rotate(0, 0, 270);
-                RMitte.transform.Rotate(0, 0, 180);
-             
-            }
+            //innen halb guz
+            RInnen.transform.Rotate(0, 0, -180);
+        }
+        //checkWin();
 
-            if (lever == HMitte)
-            {
-                //mitte viertel guz, innen halb guz
-                RMitte.transform.Rotate(0, 0, -90);
-                RAussen.transform.Rotate(0, 0, -180);
-            }
+    }
 
-            if (lever == HRechts)
-            {
-                //innen viertel uz, mitte halb guz
-                RInnen.transform.Rotate(0, 0, 90);
-                RMitte.transform.Rotate(0, 0, -180);
-            }
-           // checkWin();
+    void rotateRingsWhenDown(GameObject lever)
+    {
+        if (lever == gameObjLinks)
+        {
+
+            //außen dreviertel uz, mitte halb uz
+            RAussen.transform.Rotate(0, 0, 270);
+            RMitte.transform.Rotate(0, 0, 180);
 
         }
 
-        void checkWin()
+        if (lever == HMitte)
         {
+            //mitte viertel guz, innen halb guz
+            RMitte.transform.Rotate(0, 0, -90);
+            RAussen.transform.Rotate(0, 0, -180);
+        }
 
-            TriggerAussen triggerAussen = RAussen.GetComponent<TriggerAussen>();
-            TriggerInnen triggerInnen = RInnen.GetComponent<TriggerInnen>();
-            TriggerMitte triggerMitte = RMitte.GetComponent<TriggerMitte>();
-       
+        if (lever == HRechts)
+        {
+            //innen viertel uz, mitte halb guz
+            RInnen.transform.Rotate(0, 0, 90);
+            RMitte.transform.Rotate(0, 0, -180);
+        }
+        // checkWin();
 
-            if (triggerAussen.RAinRightPos == true && triggerMitte.RMinRightPos == true && triggerInnen.RIinRightPos == true)
-            {
-                hasWon = true;
-            }
+    }
 
-            else
-            {
-                hasWon = false;
-            }
+    void checkWin()
+    {
 
-      
-        }   
+        TriggerAussen triggerAussen = RAussen.GetComponent<TriggerAussen>();
+        TriggerInnen triggerInnen = RInnen.GetComponent<TriggerInnen>();
+        TriggerMitte triggerMitte = RMitte.GetComponent<TriggerMitte>();
+
+
+        if (triggerAussen.RAinRightPos == true && triggerMitte.RMinRightPos == true && triggerInnen.RIinRightPos == true)
+        {
+            hasWon = true;
+        }
+
+        else
+        {
+            hasWon = false;
+        }
+
+
+    }
 
 }
