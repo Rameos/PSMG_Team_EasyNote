@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: 9353ab43b8fcebd45b062fac1f649441
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bett
+    100002: bild
+    100004: Cube
+    100006: Cube_001
+    100008: Cube_002
+    100010: Kissen
+    100012: Matratze
+    100014: nachtschrank
+    100016: nachtschrank_001
+    100018: nachtschrank_tuer
+    100020: nachtschrank_tuer_001
+    100022: nachttisch_lampe
+    100024: nachttisch_lampe_001
+    100026: regal
+    100028: //RootNode
+    100030: schrank
+    100032: tuer_links
+    100034: tuer_rechts
+    100036: wecker
+    400000: Bett
+    400002: bild
+    400004: Cube
+    400006: Cube_001
+    400008: Cube_002
+    400010: Kissen
+    400012: Matratze
+    400014: nachtschrank
+    400016: nachtschrank_001
+    400018: nachtschrank_tuer
+    400020: nachtschrank_tuer_001
+    400022: nachttisch_lampe
+    400024: nachttisch_lampe_001
+    400026: regal
+    400028: //RootNode
+    400030: schrank
+    400032: tuer_links
+    400034: tuer_rechts
+    400036: wecker
+    2300000: Bett
+    2300002: bild
+    2300004: Cube
+    2300006: Cube_001
+    2300008: Cube_002
+    2300010: Kissen
+    2300012: Matratze
+    2300014: nachtschrank
+    2300016: nachtschrank_001
+    2300018: nachtschrank_tuer
+    2300020: nachtschrank_tuer_001
+    2300022: nachttisch_lampe
+    2300024: nachttisch_lampe_001
+    2300026: regal
+    2300028: schrank
+    2300030: tuer_links
+    2300032: tuer_rechts
+    2300034: wecker
+    3300000: Bett
+    3300002: bild
+    3300004: Cube
+    3300006: Cube_001
+    3300008: Cube_002
+    3300010: Kissen
+    3300012: Matratze
+    3300014: nachtschrank
+    3300016: nachtschrank_001
+    3300018: nachtschrank_tuer
+    3300020: nachtschrank_tuer_001
+    3300022: nachttisch_lampe
+    3300024: nachttisch_lampe_001
+    3300026: regal
+    3300028: schrank
+    3300030: tuer_links
+    3300032: tuer_rechts
+    3300034: wecker
+    4300000: Cube_001
+    4300002: nachttisch_lampe_001
+    4300004: nachtschrank_001
+    4300006: nachtschrank_tuer_001
+    4300008: Cube_002
+    4300010: regal
+    4300012: nachtschrank_tuer
+    4300014: nachtschrank
+    4300016: Cube
+    4300018: Matratze
+    4300020: Kissen
+    4300022: Bett
+    4300024: bild
+    4300026: schrank
+    4300028: tuer_links
+    4300030: tuer_rechts
+    4300032: wecker
+    4300034: nachttisch_lampe
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
