@@ -14,10 +14,8 @@ public class kalibrieren : MonoBehaviour {
 	}
     void OnClicked()
     {
-<<<<<<< HEAD
-       // startCalibration();
-=======
+
         //startCalibration();
->>>>>>> origin/master
+
     }
 }
