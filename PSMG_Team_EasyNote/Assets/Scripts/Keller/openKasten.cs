@@ -13,6 +13,8 @@ public class openKasten : MonoBehaviour
     int count = 0;
     public int test;
 
+    public bool lightOn = false;
+
     void Start()
     {
         light = GameObject.FindGameObjectWithTag("licht");
@@ -37,12 +39,11 @@ public class openKasten : MonoBehaviour
                 door = GameObject.FindGameObjectWithTag("kastenDoor");
                 door.animation.Play("kasten");
                 open = true;
-                Debug.Log(zoom);
                 count++;
-                //guiText = GameObject.Find("text").guiText;
-                guiText.text = "hallo";
                 light.light.intensity = 1;
-                Debug.Log("test: " + test);
+               
+                lightOn = true;
+                Debug.Log("lightOn " + lightOn);
          }
         
         if(count == 0)

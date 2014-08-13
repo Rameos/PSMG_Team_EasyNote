@@ -28,6 +28,7 @@ ModelImporter:
     100044: //RootNode
     100046: smallRohr
     100048: Plane
+    100050: kartonZu_000
     400000: Circle
     400002: Cube
     400004: Cube_001
@@ -53,6 +54,7 @@ ModelImporter:
     400044: //RootNode
     400046: smallRohr
     400048: Plane
+    400050: kartonZu_000
     2300000: Circle
     2300002: Cube
     2300004: Cube_001
@@ -77,6 +79,7 @@ ModelImporter:
     2300042: kastent_re
     2300044: smallRohr
     2300046: Plane
+    2300048: kartonZu_000
     3300000: Circle
     3300002: Cube
     3300004: Cube_001
@@ -101,6 +104,7 @@ ModelImporter:
     3300042: kastent_re
     3300044: smallRohr
     3300046: Plane
+    3300048: kartonZu_000
     4300000: Cylinder_000
     4300002: kartonZu_002
     4300004: kastent_re
@@ -124,6 +128,7 @@ ModelImporter:
     4300040: Plane
     4300042: smallRohr
     4300044: Cube
+    4300046: kartonZu_000
     7400000: Default Take
     9500000: //RootNode
   materials:

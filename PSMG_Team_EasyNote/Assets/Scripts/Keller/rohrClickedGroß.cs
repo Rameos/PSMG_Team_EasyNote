@@ -12,6 +12,8 @@ public class rohrClickedGroß : MonoBehaviour {
     private float speed = 30;
     private float moveSpeed = 5;
 
+    public bool rohrGr = false;
+
     void Start()
     {
         startPos = transform.position;
@@ -68,7 +70,7 @@ public class rohrClickedGroß : MonoBehaviour {
        
     }
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
       
         if ((Rotation >= 0 && Rotation <= 1))
@@ -83,7 +85,9 @@ public class rohrClickedGroß : MonoBehaviour {
         {
             if (other.tag == "rohrGroß" && gameObject.tag == "rohrGroß")
             {
-                Debug.Log("Großes Rohr richtig angebracht");
+                
+                rohrGr = true;
+                Debug.Log("rohrGr " + rohrGr);
             }
         }
 

@@ -13,6 +13,8 @@ public class rohrClickedKlein : MonoBehaviour
     private float speed = 30;
     private float moveSpeed = 5;
 
+    public bool rohrKl = false;
+
     void Start()
     {
         startPos = transform.position;
@@ -68,7 +70,7 @@ public class rohrClickedKlein : MonoBehaviour
 
     }
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         
         if ((Rotation >= 0 && Rotation <= 1))
@@ -76,6 +78,8 @@ public class rohrClickedKlein : MonoBehaviour
             if (other.tag == "rohrKlein")
             {
                 Debug.Log("Kleines Rohr richtig angebracht");
+                rohrKl = true;
+                Debug.Log("rohrKl " + rohrKl);
             }
         }
 

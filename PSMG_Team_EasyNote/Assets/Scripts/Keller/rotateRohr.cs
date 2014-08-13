@@ -4,6 +4,7 @@ using System.Collections;
 public class rotateRohr : MonoBehaviour {
 
     GameObject sRohr;
+    public bool rohrKl2 = false;
 
 
 	// Use this for initialization
@@ -25,8 +26,8 @@ public class rotateRohr : MonoBehaviour {
     {
        
        sRohr.animation.Play("smallRohrAnim");
-       Debug.Log("ROhr clicked");
-        
+       rohrKl2 = true;
+       Debug.Log("rohrKl2 " + rohrKl2);
     }
 
 }

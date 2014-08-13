@@ -22,6 +22,13 @@ ModelImporter:
     100032: tuer_links
     100034: tuer_rechts
     100036: wecker
+    100038: Cube_003
+    100040: Cube_004
+    100042: Kissen_001
+    100044: Kissen_002
+    100046: Decke
+    100048: Hammer
+    100050: truhe
     400000: Bett
     400002: bild
     400004: Cube
@@ -41,6 +48,13 @@ ModelImporter:
     400032: tuer_links
     400034: tuer_rechts
     400036: wecker
+    400038: Cube_003
+    400040: Cube_004
+    400042: Kissen_001
+    400044: Kissen_002
+    400046: Decke
+    400048: Hammer
+    400050: truhe
     2300000: Bett
     2300002: bild
     2300004: Cube
@@ -59,6 +73,13 @@ ModelImporter:
     2300030: tuer_links
     2300032: tuer_rechts
     2300034: wecker
+    2300036: Cube_003
+    2300038: Cube_004
+    2300040: Kissen_001
+    2300042: Kissen_002
+    2300044: Decke
+    2300046: Hammer
+    2300048: truhe
     3300000: Bett
     3300002: bild
     3300004: Cube
@@ -77,6 +98,13 @@ ModelImporter:
     3300030: tuer_links
     3300032: tuer_rechts
     3300034: wecker
+    3300036: Cube_003
+    3300038: Cube_004
+    3300040: Kissen_001
+    3300042: Kissen_002
+    3300044: Decke
+    3300046: Hammer
+    3300048: truhe
     4300000: Cube_001
     4300002: nachttisch_lampe_001
     4300004: nachtschrank_001
@@ -95,6 +123,13 @@ ModelImporter:
     4300030: tuer_rechts
     4300032: wecker
     4300034: nachttisch_lampe
+    4300036: Cube_003
+    4300038: Kissen_002
+    4300040: Kissen_001
+    4300042: Cube_004
+    4300044: Decke
+    4300046: Hammer
+    4300048: truhe
     7400000: Default Take
     9500000: //RootNode
   materials:

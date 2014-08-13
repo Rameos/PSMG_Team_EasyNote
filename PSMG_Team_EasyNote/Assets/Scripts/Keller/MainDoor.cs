@@ -3,14 +3,69 @@ using System.Collections;
 
 public class MainDoor : MonoBehaviour {
     GameObject RoomDoor;
+    GameObject rK;
+    GameObject rG;
+    GameObject rK2;
+    GameObject kD;
+
+    rohrClickedKlein rcK;
+    rohrClickedGroß rcG;
+    rotateRohr rR;
+    openKasten oK;
+    bool open = false;
+
+
 	// Use this for initialization
-   
-    void OnMouseDown()
+    void Update()
     {
+        rK = GameObject.FindGameObjectWithTag("rohrKlein");
+        rcK = rK.GetComponent<rohrClickedKlein>();
 
-            RoomDoor = GameObject.FindGameObjectWithTag("MainDoor");
-            RoomDoor.animation.Play("door");
-        
+       // rG = GameObject.FindGameObjectWithTag("rohrGroß");
+        //rcG = rG.GetComponent<rohrClickedGroß>();
 
+        rK2 = GameObject.FindGameObjectWithTag("smallRohr");
+        rR = rK2.GetComponent<rotateRohr>();
+
+        kD = GameObject.FindGameObjectWithTag("kastenDoor");
+        oK = kD.GetComponent<openKasten>();
+
+       // Debug.Log("............................................." + rcG.rohrGr);
+
+        OpenDoor();
+      
     }
+
+    void OpenDoor()
+    {
+        
+        if (rcK.rohrKl == true &&  rR.rohrKl2 == true && oK.lightOn == true && open == false) { 
+
+        
+        RoomDoor = GameObject.FindGameObjectWithTag("MainDoor");
+        RoomDoor.animation.Play("doorAnim");
+        open = true;
+        }
+    }
+
+   /* void Update(){
+
+        rK = GameObject.FindGameObjectWithTag("rohrKlein");
+        rohrClickedKlein rcK = rK.GetComponent<rohrClickedKlein>();
+        rG = GameObject.FindGameObjectWithTag("rohrGroß");
+        rohrClickedGroß rcG = rG.GetComponent<rohrClickedGroß>();
+        rK2 = GameObject.FindGameObjectWithTag("smallRohr");
+        rotateRohr rR = rK2.GetComponent<rotateRohr>();
+        kD = GameObject.FindGameObjectWithTag("kastenDoor");
+        openKasten oK = kD.GetComponent<openKasten>();
+
+        Debug.Log("............................................." +rcG.rohrGr);
+       //if (rcK.rohrKl == true &&  rR.rohrKl2 == true && oK.lightOn == true)
+        
+        //{
+            
+        //}
+    }*/
+   
+    
 }
