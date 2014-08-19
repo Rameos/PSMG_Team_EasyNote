@@ -33,6 +33,9 @@ ModelImporter:
     100054: Vase
     100056: Waende
     100058: //RootNode
+    100060: Cube
+    100062: t_r
+    100064: W_nde
     400000: Bild
     400002: BirneGro_
     400004: BirneKlein
@@ -63,6 +66,9 @@ ModelImporter:
     400054: Vase
     400056: Waende
     400058: //RootNode
+    400060: Cube
+    400062: t_r
+    400064: W_nde
     2300000: Bild
     2300002: BirneGro_
     2300004: BirneKlein
@@ -92,6 +98,9 @@ ModelImporter:
     2300052: Unterteller
     2300054: Vase
     2300056: Waende
+    2300058: Cube
+    2300060: t_r
+    2300062: W_nde
     3300000: Bild
     3300002: BirneGro_
     3300004: BirneKlein
@@ -121,6 +130,9 @@ ModelImporter:
     3300052: Unterteller
     3300054: Vase
     3300056: Waende
+    3300058: Cube
+    3300060: t_r
+    3300062: W_nde
     4300000: Tisch
     4300002: Schub1
     4300004: Boden
@@ -149,6 +161,9 @@ ModelImporter:
     4300050: Buch
     4300052: Circle
     4300054: Cylinder_001
+    4300056: W_nde
+    4300060: Cube
+    4300062: t_r
     7400000: Default Take
     9500000: //RootNode
   materials:

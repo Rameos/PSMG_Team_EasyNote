@@ -58,6 +58,10 @@ ModelImporter:
     100104: Spielzeug_MeshPart2
     100106: Stock
     100108: Stock_001
+    100110: Pantoffel
+    100112: Pantoffel_001
+    100114: Schl_ssel_001
+    100116: Schuhgestell
     400000: //RootNode
     400002: Hundekorb
     400004: Plane
@@ -113,6 +117,10 @@ ModelImporter:
     400104: Spielzeug_MeshPart2
     400106: Stock
     400108: Stock_001
+    400110: Pantoffel
+    400112: Pantoffel_001
+    400114: Schl_ssel_001
+    400116: Schuhgestell
     2300000: Hundekorb
     2300002: Plane
     2300004: Plane_001
@@ -166,6 +174,10 @@ ModelImporter:
     2300100: Spielzeug_MeshPart2
     2300102: Stock
     2300104: Stock_001
+    2300106: Pantoffel
+    2300108: Pantoffel_001
+    2300110: Schl_ssel_001
+    2300112: Schuhgestell
     3300000: Hundekorb
     3300002: Plane
     3300004: Plane_001
@@ -219,6 +231,10 @@ ModelImporter:
     3300100: Spielzeug_MeshPart2
     3300102: Stock
     3300104: Stock_001
+    3300106: Pantoffel
+    3300108: Pantoffel_001
+    3300110: Schl_ssel_001
+    3300112: Schuhgestell
     4300000: Hundekorb
     4300002: Plane_003
     4300004: Schrank_001
@@ -250,6 +266,7 @@ ModelImporter:
     4300056: Stock
     4300058: Cube_006
     4300060: Cube_007
+    4300062: Schl_ssel_001
     4300064: Hebel3_001
     4300066: ringAussen
     4300068: ringInnen
@@ -270,6 +287,9 @@ ModelImporter:
     4300100: Spielzeug_MeshPart0
     4300102: Spielzeug_MeshPart1
     4300104: Spielzeug_MeshPart2
+    4300108: Schuhgestell
+    4300110: Pantoffel_001
+    4300112: Pantoffel
     7400000: Default Take
     9500000: //RootNode
   materials:
