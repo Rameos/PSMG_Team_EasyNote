@@ -14,10 +14,15 @@ public class rohrClickedKlein : MonoBehaviour
     private float moveSpeed = 5;
 
     public bool rohrKl = false;
+    GameObject rohrKlein;
+    guiTextKeller guiKeller;
 
     void Start()
     {
         startPos = transform.position;
+
+        rohrKlein = GameObject.FindGameObjectWithTag("rohrKlein");
+        guiKeller = rohrKlein.GetComponent<guiTextKeller>();
     }
 
 
@@ -80,6 +85,7 @@ public class rohrClickedKlein : MonoBehaviour
                 Debug.Log("Kleines Rohr richtig angebracht");
                 rohrKl = true;
                 Debug.Log("rohrKl " + rohrKl);
+                guiKeller.printHelpText("Du hast das kleine Rohr richtig angebracht!");
             }
         }
 

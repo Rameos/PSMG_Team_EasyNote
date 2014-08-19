@@ -6,19 +6,24 @@ public class openKasten : MonoBehaviour
     GameObject door;
     GameObject camera;
     GameObject light;
+    guiTextKeller guiKeller;
 
     bool open = false;
     bool usedBefore = false;
     bool zoom = false;
     int count = 0;
-    public int test;
-
+    public  int test;
     public bool lightOn = false;
+    
+    
 
     void Start()
     {
         light = GameObject.FindGameObjectWithTag("licht");
         light.light.intensity = 0;
+
+        door = GameObject.FindGameObjectWithTag("kastenDoor");
+        guiKeller = door.GetComponent<guiTextKeller>();
 
     }
 
@@ -36,14 +41,13 @@ public class openKasten : MonoBehaviour
         {
           
 
-                door = GameObject.FindGameObjectWithTag("kastenDoor");
+               
                 door.animation.Play("kasten");
                 open = true;
                 count++;
                 light.light.intensity = 1;
-               
                 lightOn = true;
-                Debug.Log("lightOn " + lightOn);
+                guiKeller.printHelpText("Du hast den Lichtschalter gefunden!");
          }
         
         if(count == 0)
