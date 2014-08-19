@@ -13,7 +13,7 @@ public class MainDoor : MonoBehaviour {
     rotateRohr rR;
     openKasten oK;
     bool open = false;
-
+    guiTextKeller guiKeller;
 
 	// Use this for initialization
     void Update()
@@ -30,6 +30,9 @@ public class MainDoor : MonoBehaviour {
         kD = GameObject.FindGameObjectWithTag("kastenDoor");
         oK = kD.GetComponent<openKasten>();
 
+        RoomDoor = GameObject.FindGameObjectWithTag("MainDoor");
+
+        guiKeller = RoomDoor.GetComponent<guiTextKeller>();
        // Debug.Log("............................................." + rcG.rohrGr);
 
         OpenDoor();
@@ -39,10 +42,10 @@ public class MainDoor : MonoBehaviour {
     void OpenDoor()
     {
         
-        if (rcK.rohrKl == true &&  rR.rohrKl2 == true && oK.lightOn == true && open == false) { 
+        if (rcK.rohrKl == true &&  rR.rohrKl2 == true && oK.lightOn == true && open == false) {
 
-        
-        RoomDoor = GameObject.FindGameObjectWithTag("MainDoor");
+
+        guiKeller.printHelpText("Glückwunsch! Du hast das Rätsel gelöst und kannst somit den nächsten Raum betreten!");
         RoomDoor.animation.Play("doorAnim");
         open = true;
         }

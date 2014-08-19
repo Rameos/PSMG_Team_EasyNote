@@ -6,10 +6,13 @@ public class rotateRohr : MonoBehaviour {
     GameObject sRohr;
     public bool rohrKl2 = false;
 
+    guiTextKeller guiKeller;
+
 
 	// Use this for initialization
 	void Start () {
-        sRohr = GameObject.FindGameObjectWithTag("smallRohr");
+        sRohr = GameObject.FindGameObjectWithTag("smallRohr");       
+        guiKeller = sRohr.GetComponent<guiTextKeller>();
 	}
 	
 	// Update is called once per frame
@@ -26,8 +29,9 @@ public class rotateRohr : MonoBehaviour {
     {
        
        sRohr.animation.Play("smallRohrAnim");
+       sRohr.audio.Play();
        rohrKl2 = true;
-       Debug.Log("rohrKl2 " + rohrKl2);
+       guiKeller.printHelpText("Du hast das Rohr wieder in die richtige Richtung gedreht!");
     }
 
 }

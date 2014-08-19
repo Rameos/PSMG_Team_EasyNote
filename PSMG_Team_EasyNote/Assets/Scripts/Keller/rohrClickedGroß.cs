@@ -11,12 +11,16 @@ public class rohrClickedGroß : MonoBehaviour {
 
     private float speed = 30;
     private float moveSpeed = 5;
+    GameObject rohrGroß;
+    guiTextKeller guiKeller;
 
     public bool rohrGr = false;
 
     void Start()
     {
         startPos = transform.position;
+        rohrGroß = GameObject.FindGameObjectWithTag("rohrGroß");
+        guiKeller = rohrGroß.GetComponent<guiTextKeller>();
     }
 
 
@@ -87,11 +91,14 @@ public class rohrClickedGroß : MonoBehaviour {
             {
                 
                 rohrGr = true;
-                Debug.Log("rohrGr " + rohrGr);
+                //guiKeller.print("Du hast das große Rohr richtig angebracht!");
+                
             }
         }
 
     }
+
+
 
 
 }
