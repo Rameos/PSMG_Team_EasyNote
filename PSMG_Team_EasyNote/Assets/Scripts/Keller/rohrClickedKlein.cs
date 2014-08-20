@@ -15,7 +15,9 @@ public class rohrClickedKlein : MonoBehaviour
 
     public bool rohrKl = false;
     GameObject rohrKlein;
+    GameObject kasten;
     guiTextKeller guiKeller;
+    openKasten openKasten;
 
     void Start()
     {
@@ -23,6 +25,9 @@ public class rohrClickedKlein : MonoBehaviour
 
         rohrKlein = GameObject.FindGameObjectWithTag("rohrKlein");
         guiKeller = rohrKlein.GetComponent<guiTextKeller>();
+
+        kasten = GameObject.FindGameObjectWithTag("kastenDoor");
+        openKasten = kasten.GetComponent<openKasten>();
     }
 
 
@@ -41,38 +46,41 @@ public class rohrClickedKlein : MonoBehaviour
 
     void OnMouseDown()
     {
-        screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
-        offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+       
+            screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+            offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+        
     }
 
     void OnMouseDrag()
     {
-        //if (transform.position.z < 2.7 && transform.position.z > -2.8 && transform.position.y < 2.8 && transform.position.y > 0.0) { 
-        if (Input.mousePosition.x > 200 && Input.mousePosition.x < Screen.width-150 && Input.mousePosition.y > 120 && Input.mousePosition.y < Screen.height)
+        if (openKasten.lightOn == true)
         {
-            Vector3 posMouse = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3);
-            posMouse = Camera.main.ScreenToWorldPoint(posMouse);
-            transform.position = posMouse;
-            transform.position = new Vector3(startPos.x, transform.position.y, transform.position.z);
-
-
-            if (Input.GetAxis("Mouse ScrollWheel") >= 0)
+            if (Input.mousePosition.x > 200 && Input.mousePosition.x < Screen.width - 150 && Input.mousePosition.y > 120 && Input.mousePosition.y < Screen.height)
             {
-                gameObject.transform.Rotate(30, 0, 0);
+                Vector3 posMouse = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3);
+                posMouse = Camera.main.ScreenToWorldPoint(posMouse);
+                transform.position = posMouse;
+                transform.position = new Vector3(startPos.x, transform.position.y, transform.position.z);
+
+
+                if (Input.GetAxis("Mouse ScrollWheel") >= 0)
+                {
+                    gameObject.transform.Rotate(30, 0, 0);
+                }
+                if (Input.GetAxis("Mouse ScrollWheel") <= 0)
+                {
+                    gameObject.transform.Rotate(-30, 0, 0);
+                }
+
+
+                Rotation = transform.rotation.eulerAngles.x;
             }
-            if (Input.GetAxis("Mouse ScrollWheel") <= 0)
+            else
             {
-                gameObject.transform.Rotate(-30, 0, 0);
+
             }
-
-
-            Rotation = transform.rotation.eulerAngles.x;
         }
-        else
-        {
-
-        }
-
     }
 
     void OnTriggerEnter(Collider other)
