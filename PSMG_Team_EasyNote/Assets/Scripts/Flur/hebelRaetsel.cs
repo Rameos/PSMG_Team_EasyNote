@@ -7,7 +7,7 @@ public class hebelRaetsel : MonoBehaviour
     GameObject HLinks, HRechts, HMitte, RAussen, RMitte, RInnen, Schrank, gameObjLinks;
     private int count1 = 0, count2 = 0, count3 = 0;
     private bool hasWon = false;
-
+ 
 
     float rotation = 0;
     float targetRotation = -90;
@@ -138,8 +138,12 @@ public class hebelRaetsel : MonoBehaviour
         if (lever == gameObjLinks)
 
         {
+            
+            //variable übergeben, in script wird erst getestet ob variable true oder false und dann erst ausgeführt
 
-           RMitte.transform.Rotate(0, 0, -90);
+            ScheibenDrehen drehen = RMitte.GetComponent<ScheibenDrehen>();
+            //drehen.Update();
+         //  RMitte.transform.Rotate(0, 0, -90);
 
            // mitte viertel guz, innen viertel uz
         }
