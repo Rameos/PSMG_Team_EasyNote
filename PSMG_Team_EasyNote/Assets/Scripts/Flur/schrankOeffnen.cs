@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class schrankOeffnen : MonoBehaviour
+public class SchrankOeffnen : MonoBehaviour
 {
     GameObject schrank;
     bool schrankOffen = false;
@@ -16,7 +16,7 @@ public class schrankOeffnen : MonoBehaviour
             Debug.Log(schrank.animation.Play("openDoors"));
             schrank.animation.Play("openDoors");
             schrankOffen = true;
-            Destroy(schrank.collider);
+           // schrank.collider.enabled = false;
         }
 
     }
