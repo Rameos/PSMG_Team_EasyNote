@@ -28,6 +28,8 @@ public class hebelRaetsel : MonoBehaviour
         RInnen = GameObject.FindGameObjectWithTag("ringInnen");
         RMitte = GameObject.FindGameObjectWithTag("ringMitte");
 
+        HLinks.SetActive(false);
+
     }
 
     // Update is called once per frame

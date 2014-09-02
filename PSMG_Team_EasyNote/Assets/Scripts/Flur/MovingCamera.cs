@@ -5,7 +5,7 @@ public class MovingCamera: MonoBehaviour {
 
 	
     private bool backButtonShow = false;
-    GameObject schrank;
+    GameObject schrank, korb;
 
     public float q1 = 0;
     public float q2 = 0;
@@ -29,6 +29,7 @@ public class MovingCamera: MonoBehaviour {
         //Startposition
         setToStartPos();
         schrank = GameObject.FindGameObjectWithTag("Schrank");
+        korb = GameObject.FindGameObjectWithTag("hundekorb");
 
     }
 
@@ -53,7 +54,9 @@ public class MovingCamera: MonoBehaviour {
 
                     transform.position = new Vector3(0.4670035f, 0.4893888f, 1.138688f); // Richtet Kamera an gewünschter Position aus
                     transform.rotation = new Quaternion(4.3f, 10.43f, 0, 69.37f);
+                    schrank.collider.enabled = false;
                     backButtonShow = true;
+                    korb.collider.enabled = false;
                 }
 
 
@@ -125,6 +128,8 @@ public class MovingCamera: MonoBehaviour {
                 backButtonShow = false;
                 setToStartPos();
                schrank.collider.enabled = true;
+               korb.collider.enabled = true;
+
             }
 
         }

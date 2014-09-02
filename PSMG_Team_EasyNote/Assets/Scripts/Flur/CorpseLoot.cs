@@ -3,11 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-public class CorpseLoot : MonoBehaviour {
+public class CorpseLoot : MonoBehaviour
+{
 
 
     private Rect inventoryWindowRect = new Rect(300, 100, 400, 400);
     private bool inventoryWindowShow = false;
+
+    private GameObject item;
+
+    ItemClass itemObject = new ItemClass();
+
+    private Ray mouseRay;
+    private RaycastHit rayHit;
 
     private Dictionary<int, string> lootDictionary = new Dictionary<int, string>()
     {
@@ -19,87 +27,73 @@ public class CorpseLoot : MonoBehaviour {
          {5, string.Empty},
     };
 
-    ItemClass itemObject = new ItemClass();
 
-    private Ray mouseRay;
-    private RaycastHit rayHit;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
 
-	//display dictionary
+        //display dictionary
         lootDictionary[0] = itemObject.saege.name;
         lootDictionary[1] = itemObject.ball.name;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
 
         mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if(Input.GetButton ("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
-            Physics.Raycast(mouseRay, out rayHit);
-            if (rayHit.collider.transform.tag == "LootableCorpse")
-            {
-                inventoryWindowShow = true;
 
+            Physics.Raycast(mouseRay, out rayHit);
+
+            if (rayHit.collider.transform.tag == "ball")
+            {
+                makeItemInvisible("ball");
+                putItemInInventory(itemObject.ball.name);
+            }
+
+            if (rayHit.collider.transform.tag == "stock")
+            {
+                makeItemInvisible("stock");
+                putItemInInventory(itemObject.stock.name);
+            }
+
+            if (rayHit.collider.transform.tag == "saege")
+            {
+                makeItemInvisible("saege");
+                putItemInInventory(itemObject.saege.name);
             }
         }
-	
-        //Close window
 
-        if (Input.GetKeyDown ("l"))
-        {
-            inventoryWindowShow = false;
-        }
-	}
-
-    void OnGUI()
-    {
-        if (inventoryWindowShow)
-        {
-            inventoryWindowRect = GUI.Window(0, inventoryWindowRect, inventoryWindowMethod, "Corpse");
-        }
     }
 
-    
-    void inventoryWindowMethod(int windowId)
+
+
+
+
+    void putItemInInventory(string thing)
     {
-
-        GUILayout.BeginArea(new Rect(5, 50, 395, 400));
-
-        GUILayout.BeginHorizontal();
-
-        if(GUILayout.Button (lootDictionary[0], GUILayout.Height (50)))
+        int itemNumber = 0;
+        while (InventoryGUI.inventoryNameDictionary[itemNumber] != string.Empty)
         {
-            if (lootDictionary[0] != string.Empty)
-            {
-                InventoryGUI.inventoryNameDictionary[0] = lootDictionary[0];
-                lootDictionary[0] = string.Empty;
-            }
+            itemNumber++;
+
         }
 
-        if (GUILayout.Button(lootDictionary[1], GUILayout.Height(50)))
-        {
-            if (lootDictionary[1] != string.Empty)
-            {
-                InventoryGUI.inventoryNameDictionary[1] = lootDictionary[1];
-                lootDictionary[1] = string.Empty;
-            }
-        }
+        InventoryGUI.inventoryNameDictionary[itemNumber] = thing;
 
-        if (GUILayout.Button(lootDictionary[2], GUILayout.Height(50)))
-        {
-            if (lootDictionary[2] != string.Empty)
-            {
-                InventoryGUI.inventoryNameDictionary[2] = lootDictionary[2];
-                lootDictionary[2] = string.Empty;
-            }
-        }
+
+
+    }
+
    
 
-        GUILayout.EndArea();
-
+    void makeItemInvisible(string name)
+    {
+        item = GameObject.FindGameObjectWithTag(name);
+        item.SetActive(false);
     }
 }
