@@ -16,7 +16,7 @@ public class MovementCamera : MonoBehaviour
     public float v2 = 0;
     public float v3 = 0;
 
-    
+
 
 
 
@@ -25,7 +25,7 @@ public class MovementCamera : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-       
+
         setToStartPos();
         //schrank = GameObject.FindGameObjectWithTag("Schrank");
 
@@ -36,8 +36,8 @@ public class MovementCamera : MonoBehaviour
     {
 
 
-      //  transform.position = new Vector3(v1, v2, v3);
-      // transform.localEulerAngles = new Vector3(q1, q2, q3);
+        //  transform.position = new Vector3(v1, v2, v3);
+        // transform.localEulerAngles = new Vector3(q1, q2, q3);
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -47,7 +47,7 @@ public class MovementCamera : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 50))
             {
 
-                if (hit.transform.gameObject.tag == "regal")
+                if (hit.transform.gameObject.tag == "Regal")
                 {
                     transform.position = new Vector3(-0.73f, 1.57f, 9.4f);
                     transform.localEulerAngles = new Vector3(0f, 90f, 0f);
@@ -55,7 +55,7 @@ public class MovementCamera : MonoBehaviour
                 }
 
 
-                if (hit.transform.gameObject.tag == "kommode") //fernseher weiter weg
+                if (hit.transform.gameObject.tag == "TV") //fernseher weiter weg
                 {
                     transform.position = new Vector3(-0.19f, 0.55f, 10.38f);
                     transform.localEulerAngles = new Vector3(0, 0, 0);
@@ -64,7 +64,7 @@ public class MovementCamera : MonoBehaviour
 
 
 
-                if (hit.transform.gameObject.tag == "TV") //fernseher oben mit schubladen
+                if (hit.transform.gameObject.tag == "Kommode") //fernseher oben mit schubladen
                 {
 
                     transform.position = new Vector3(-0.19f, 2.46f, 11.43f);
@@ -80,28 +80,28 @@ public class MovementCamera : MonoBehaviour
                     transform.localEulerAngles = new Vector3(40.65f, -59.4f, 0f);
                     backButtonShow = true;
 
-
-
-
-                    if (hit.transform.gameObject.tag == "wand")//wand mit bild ??
-                    {
-                        transform.position = new Vector3(-0.26f, 1.72f, 10f);
-                        transform.localEulerAngles = new Vector3(6f, -181.8f, 0f);
-                        backButtonShow = true;
-
-
-                        if (hit.transform.gameObject.tag == "bild") //safe
-                        {
-                            transform.position = new Vector3(0.91f, 2.89f, 6.2f);
-                            transform.localEulerAngles = new Vector3(6f, -181.8f, 0f);
-                            backButtonShow = true;
-                        }
-
-
-                    }
                 }
+
+
+                if (hit.transform.gameObject.tag == "couch")//wand mit bild ??
+                {
+                    transform.position = new Vector3(-0.26f, 1.72f, 10f);
+                    transform.localEulerAngles = new Vector3(6f, -181.8f, 0f);
+                    backButtonShow = true;
+                }
+
+                //if (hit.transform.gameObject.tag == "Bild") //safe
+                //{
+
+                //    transform.position = new Vector3(0.91f, 2.89f, 6.2f);
+                //    transform.localEulerAngles = new Vector3(6f, -181.8f, 0f);
+                //    backButtonShow = true;
+                //}
+
+
             }
         }
+
     }
 
 

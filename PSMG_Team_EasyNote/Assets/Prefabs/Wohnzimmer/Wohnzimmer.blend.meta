@@ -59,6 +59,7 @@ ModelImporter:
     100106: t_r_002
     100108: t_r_003
     100110: t_r_000
+    100112: Griff
     400000: Bild
     400002: BirneGro_
     400004: BirneKlein
@@ -115,6 +116,7 @@ ModelImporter:
     400106: t_r_002
     400108: t_r_003
     400110: t_r_000
+    400112: Griff
     2300000: Bild
     2300002: BirneGro_
     2300004: BirneKlein
@@ -170,6 +172,7 @@ ModelImporter:
     2300104: t_r_002
     2300106: t_r_003
     2300108: t_r_000
+    2300110: Griff
     3300000: Bild
     3300002: BirneGro_
     3300004: BirneKlein
@@ -225,6 +228,7 @@ ModelImporter:
     3300104: t_r_002
     3300106: t_r_003
     3300108: t_r_000
+    3300110: Griff
     4300000: Tisch
     4300002: Schub1
     4300004: Boden
@@ -279,6 +283,7 @@ ModelImporter:
     4300102: t_r_003
     4300104: t_r_002
     4300106: t_r_000
+    4300108: Griff
     7400000: Default Take
     9500000: //RootNode
   materials:
