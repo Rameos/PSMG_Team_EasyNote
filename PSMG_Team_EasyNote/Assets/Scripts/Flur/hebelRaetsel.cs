@@ -31,6 +31,8 @@ public class HebelRaetsel : MonoBehaviour
         reset = GameObject.FindGameObjectWithTag("reset");
         Schrank = GameObject.FindGameObjectWithTag("korpus");
 
+        HLinks.SetActive(false);
+
     }
 
     // Update is called once per frame
