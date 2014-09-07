@@ -2,11 +2,12 @@
 
 using System.Collections;
 
-public class hebelRaetsel : MonoBehaviour
+public class HebelRaetsel : MonoBehaviour
 {
-    GameObject HLinks, HRechts, HMitte, RAussen, RMitte, RInnen, Schrank, gameObjLinks;
+    GameObject HLinks, HRechts, HMitte, RAussen, RMitte, RInnen, Schrank, gameObjLinks, reset;
     private int count1 = 0, count2 = 0, count3 = 0;
-    private bool hasWon = false;
+    public bool hasWon = false;
+    private bool closed = false;
  
 
     float rotation = 0;
@@ -27,6 +28,8 @@ public class hebelRaetsel : MonoBehaviour
         RAussen = GameObject.FindGameObjectWithTag("ringAussen");
         RInnen = GameObject.FindGameObjectWithTag("ringInnen");
         RMitte = GameObject.FindGameObjectWithTag("ringMitte");
+        reset = GameObject.FindGameObjectWithTag("reset");
+        Schrank = GameObject.FindGameObjectWithTag("korpus");
 
     }
 
@@ -93,6 +96,21 @@ public class hebelRaetsel : MonoBehaviour
 
                     moveLever(HMitte, count2);
                 }
+
+                if (hit.transform.gameObject.tag == "reset")
+                {
+                    Debug.Log("reset");
+                    gameObjLinks.transform.localEulerAngles = new Vector3(320, 180, 90);
+                    HMitte.transform.localEulerAngles = new Vector3(331, 270, 90);
+                    HRechts.transform.localEulerAngles = new Vector3(331, 270, 90);
+
+                    RAussen.transform.localEulerAngles = new Vector3(0, 270, 90);
+                    RMitte.transform.localEulerAngles = new Vector3(0, 270, 180);
+                    RInnen.transform.localEulerAngles = new Vector3(0, 270, 270);
+                    count1 = 0;
+                    count2 = 0;
+                    count3 = 0;
+                }
             }
 
 
@@ -141,9 +159,9 @@ public class hebelRaetsel : MonoBehaviour
             
             //variable übergeben, in script wird erst getestet ob variable true oder false und dann erst ausgeführt
 
-            ScheibenDrehen drehen = RMitte.GetComponent<ScheibenDrehen>();
+           // ScheibenDrehen drehen = RMitte.GetComponent<ScheibenDrehen>();
             //drehen.Update();
-         //  RMitte.transform.Rotate(0, 0, -90);
+          RMitte.transform.Rotate(0, 0, -90);
 
            // mitte viertel guz, innen viertel uz
         }
@@ -203,14 +221,25 @@ public class hebelRaetsel : MonoBehaviour
         if (triggerAussen.RAinRightPos == true && triggerMitte.RMinRightPos == true && triggerInnen.RIinRightPos == true)
         {
             hasWon = true;
+            Debug.Log("gewonnen");
+
+            if (closed == false)
+            {
+                Debug.Log(Schrank.animation.Play("shutDoors"));
+                Schrank.animation.Play("shutDoors");
+                closed = true;
+            }
+            
         }
 
         else
         {
             hasWon = false;
+            
         }
 
 
     }
+  
 
 }
