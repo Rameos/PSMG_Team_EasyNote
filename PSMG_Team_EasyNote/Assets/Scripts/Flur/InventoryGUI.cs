@@ -56,7 +56,13 @@ public class InventoryGUI : MonoBehaviour
         GUILayout.BeginArea(new Rect(5, 50, 395, 400));
 
         GUILayout.BeginHorizontal();
-        GUILayout.Button(inventoryNameDictionary[0], GUILayout.Height(50));
+
+
+        if (GUILayout.Button(inventoryNameDictionary[0], GUILayout.Height(50)))
+        {
+
+            //Debug.Log(inventoryNameDictionary[0]); gibt string aus
+        }
         GUILayout.Button(inventoryNameDictionary[1], GUILayout.Height(50));
         GUILayout.Button(inventoryNameDictionary[2], GUILayout.Height(50));
         GUILayout.EndHorizontal();
@@ -72,12 +78,6 @@ public class InventoryGUI : MonoBehaviour
         GUILayout.Button(inventoryNameDictionary[7], GUILayout.Height(50));
         GUILayout.Button(inventoryNameDictionary[8], GUILayout.Height(50));
         GUILayout.EndHorizontal();
-
-        //GUILayout.BeginHorizontal();
-        //GUILayout.Button("Item 10", GUILayout.Height(50));
-        //GUILayout.Button("Item 11", GUILayout.Height(50));
-        //GUILayout.Button("Item 12", GUILayout.Height(50));
-        //GUILayout.EndHorizontal();
 
         GUILayout.EndArea();
 

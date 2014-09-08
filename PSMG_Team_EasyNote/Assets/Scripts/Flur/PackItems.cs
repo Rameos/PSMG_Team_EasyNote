@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-public class CorpseLoot : MonoBehaviour
+public class PackItems : MonoBehaviour
 {
 
 
@@ -33,9 +33,7 @@ public class CorpseLoot : MonoBehaviour
     void Start()
     {
 
-        //display dictionary
-        lootDictionary[0] = itemObject.saege.name;
-        lootDictionary[1] = itemObject.ball.name;
+
     }
 
     // Update is called once per frame
@@ -44,10 +42,11 @@ public class CorpseLoot : MonoBehaviour
 
         mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetMouseButtonDown(0) && Physics.Raycast(mouseRay, out rayHit))
         {
 
-            Physics.Raycast(mouseRay, out rayHit);
+            // Physics.Raycast(mouseRay, out rayHit);
+            //Debug.Log(rayHit.collider.transform.tag);
 
             if (rayHit.collider.transform.tag == "ball")
             {
@@ -65,6 +64,12 @@ public class CorpseLoot : MonoBehaviour
             {
                 makeItemInvisible("saege");
                 putItemInInventory(itemObject.saege.name);
+            }
+
+            else
+            {
+                //Do nothing
+
             }
         }
 
@@ -90,7 +95,6 @@ public class CorpseLoot : MonoBehaviour
     }
 
    
-
     void makeItemInvisible(string name)
     {
         item = GameObject.FindGameObjectWithTag(name);

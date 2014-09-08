@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MovingCamera: MonoBehaviour {
+public class MovingCamera : MonoBehaviour
+{
 
-	
+
     private bool backButtonShow = false;
     GameObject schrank, korb;
 
@@ -36,7 +37,7 @@ public class MovingCamera: MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-       
+
         //  transform.position = new Vector3(v1, v2, v3); // Richtet Kamera an gewünschter Position aus
         //transform.rotation = new Quaternion(q1, q2, q3, q4);
 
@@ -73,7 +74,7 @@ public class MovingCamera: MonoBehaviour {
                 if (hit.transform.gameObject.tag == "schuhe")
                 {
 
-                    transform.position = new Vector3(0.7648869f, 1.211256f, 1.81809f); 
+                    transform.position = new Vector3(0.7648869f, 1.211256f, 1.81809f);
                     transform.rotation = new Quaternion(0, 20, -2.43f, 1.78f);
                     backButtonShow = true;
                 }
@@ -83,35 +84,11 @@ public class MovingCamera: MonoBehaviour {
                 if (hit.transform.gameObject.tag == "Schrank")
                 {
                     transform.position = new Vector3(2.179206f, 1.08f, 0.17f);
-                    transform.rotation = new Quaternion(14.25f,-4.13f, -0.3f, 292.22f);
+                    transform.rotation = new Quaternion(14.25f, -4.13f, -0.3f, 292.22f);
                     backButtonShow = true;
                     schrank.collider.enabled = false;
 
-                   // SchrankOeffnen schrankOeffnen = schrank.GetComponent<SchrankOeffnen>();
-                    //schrankOeffnen.canOpen = true;
-            
-
                 }
-                //            //if (Input.GetKey("1"))
-                //            //{ Wand
-                //            //    transform.position = new Vector3(0.7648869f, 1.211256f, 1.81809f); // Richtet Kamera an gewünschter Position aus
-                //            //    transform.rotation = new Quaternion(0, 20, -2.43f, 1.78f);
-                //            //}
-                //            //if (Input.GetKey("2"))
-                //            //{ Schlüsselbrett
-                //            //    transform.position = new Vector3(2.179206f ,1.19675f, 0.59f);
-                //            //    transform.rotation = new Quaternion(0, 60, 0, 0);
-                //            //}
-                //            //if (Input.GetKey("3"))
-                //            //{ Schrank
-                //            //    transform.position = new Vector3(2.179206f, 1.08f, 0.17f);
-                //            //    transform.rotation = new Quaternion(14.25f,-4.13f, -0.3f, 292.22f);
-                //            //}
-                //            //if (Input.GetKey("4"))
-                //            //{ Schrank nah
-                //            //    transform.position = new Vector3(2.179206f, 1.05f, 1.39f);
-                //            //    transform.rotation = new Quaternion(14.25f,-4.13f, 2f, 292.22f);
-                //            //}
 
             }
         }
@@ -127,8 +104,8 @@ public class MovingCamera: MonoBehaviour {
             {
                 backButtonShow = false;
                 setToStartPos();
-               schrank.collider.enabled = true;
-               korb.collider.enabled = true;
+                schrank.collider.enabled = true;
+                korb.collider.enabled = true;
 
             }
 
@@ -138,7 +115,7 @@ public class MovingCamera: MonoBehaviour {
 
     private void setToStartPos()
     {
-         transform.position = new Vector3(-1.28f,1.24f, 0.69f); 
+        transform.position = new Vector3(-1.28f, 1.24f, 0.69f);
         transform.rotation = new Quaternion(17.4f, 94.6f, -13.74f, 126f);
         //schrank.collider.enabled = true;
     }
