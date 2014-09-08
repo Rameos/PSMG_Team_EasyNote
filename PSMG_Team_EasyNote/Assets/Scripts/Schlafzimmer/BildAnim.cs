@@ -4,20 +4,36 @@ using System.Collections;
 public class BildAnim : MonoBehaviour {
 
     GameObject bild;
+    GameObject truhe;
     public bool PicOpen = false;
+    Wecker wecker;
 
 	// Use this for initialization
 	void Start () {
-	
+	    
 	}
-	
-	// Update is called once per frame
+
+    void Update()
+    {
+        GameObject zb = GameObject.FindGameObjectWithTag("ziffernblatt");
+        wecker = zb.GetComponent<Wecker>(); 
+
+    }
+
 	void OnMouseDown () {
         if (PicOpen == false)
         {
-            bild = GameObject.FindGameObjectWithTag("bild");
-            bild.animation.Play("BildAnim");
-            PicOpen = true;
+            if (wecker.ringing == true)
+            {
+                bild = GameObject.FindGameObjectWithTag("bild");
+                bild.animation.Play("BildAnim");
+                PicOpen = true;
+            }
+        }
+        if (gameObject.tag == "truhe")
+        {
+            truhe = GameObject.FindGameObjectWithTag("truhe");
+            truhe.animation.Play("truheAnim");
         }
 	}
 }

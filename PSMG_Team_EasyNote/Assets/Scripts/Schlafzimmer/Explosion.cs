@@ -8,9 +8,35 @@ public class Explosion : MonoBehaviour {
     GameObject rigid;
 	// Use this for initialization
 	void Start () {
-        rigidbody.isKinematic = false;
+
+     /* rigidbody.isKinematic = false;
         rigidbody.useGravity = true;
-        Debug.Log("+++++++++++++++++++++++++++++: " + rigidbody);
+        Vector3 explosionPos = transform.position;
+        Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
+        foreach (Collider hit in colliders)
+        {
+            if (hit && hit.rigidbody)
+                hit.rigidbody.AddExplosionForce(power, explosionPos, radius, 3.0F);
+
+        }*/
+       
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (gameObject.tag == "wecker" || gameObject.tag == "ziffernblatt" && other.tag == "hammer")
+        {
+            Debug.Log("-----------------------------------!!!!!");
+            rigidbody.isKinematic = false;
+            rigidbody.useGravity = true;
+            explosion();
+        }
+       
+        
+    }
+
+    void explosion()
+    {
         Vector3 explosionPos = transform.position;
         Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
         foreach (Collider hit in colliders)
@@ -20,15 +46,12 @@ public class Explosion : MonoBehaviour {
 
         }
     }
-
-    void OnMouseDown()
-    {
-
-        
-    }
 	
 	// Update is called once per frame
 	void Update () {
-	
+       
+        
 	}
+
+   
 }
