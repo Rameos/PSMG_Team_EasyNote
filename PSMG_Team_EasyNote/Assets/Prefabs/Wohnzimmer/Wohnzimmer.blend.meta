@@ -36,6 +36,30 @@ ModelImporter:
     100060: Cube
     100062: t_r
     100064: W_nde
+    100066: Couch_001
+    100068: Couch_002
+    100070: Couch_003
+    100072: Couch_004
+    100074: Tisch_001
+    100076: platteUnten
+    100078: Cube_001
+    100080: Batterie
+    100082: Cube_002
+    100084: Cylinder_002
+    100086: Leiste
+    100088: Schalter
+    100090: Schloss_001
+    100092: Schloss_002
+    100094: Stecker
+    100096: Stiel
+    100098: Hammer
+    100100: Schloss_000
+    100102: Schloss_003
+    100104: t_r_001
+    100106: t_r_002
+    100108: t_r_003
+    100110: t_r_000
+    100112: Griff
     400000: Bild
     400002: BirneGro_
     400004: BirneKlein
@@ -69,6 +93,30 @@ ModelImporter:
     400060: Cube
     400062: t_r
     400064: W_nde
+    400066: Couch_001
+    400068: Couch_002
+    400070: Couch_003
+    400072: Couch_004
+    400074: Tisch_001
+    400076: platteUnten
+    400078: Cube_001
+    400080: Batterie
+    400082: Cube_002
+    400084: Cylinder_002
+    400086: Leiste
+    400088: Schalter
+    400090: Schloss_001
+    400092: Schloss_002
+    400094: Stecker
+    400096: Stiel
+    400098: Hammer
+    400100: Schloss_000
+    400102: Schloss_003
+    400104: t_r_001
+    400106: t_r_002
+    400108: t_r_003
+    400110: t_r_000
+    400112: Griff
     2300000: Bild
     2300002: BirneGro_
     2300004: BirneKlein
@@ -101,6 +149,30 @@ ModelImporter:
     2300058: Cube
     2300060: t_r
     2300062: W_nde
+    2300064: Couch_001
+    2300066: Couch_002
+    2300068: Couch_003
+    2300070: Couch_004
+    2300072: Tisch_001
+    2300074: platteUnten
+    2300076: Cube_001
+    2300078: Batterie
+    2300080: Cube_002
+    2300082: Cylinder_002
+    2300084: Leiste
+    2300086: Schalter
+    2300088: Schloss_001
+    2300090: Schloss_002
+    2300092: Stecker
+    2300094: Stiel
+    2300096: Hammer
+    2300098: Schloss_000
+    2300100: Schloss_003
+    2300102: t_r_001
+    2300104: t_r_002
+    2300106: t_r_003
+    2300108: t_r_000
+    2300110: Griff
     3300000: Bild
     3300002: BirneGro_
     3300004: BirneKlein
@@ -133,6 +205,30 @@ ModelImporter:
     3300058: Cube
     3300060: t_r
     3300062: W_nde
+    3300064: Couch_001
+    3300066: Couch_002
+    3300068: Couch_003
+    3300070: Couch_004
+    3300072: Tisch_001
+    3300074: platteUnten
+    3300076: Cube_001
+    3300078: Batterie
+    3300080: Cube_002
+    3300082: Cylinder_002
+    3300084: Leiste
+    3300086: Schalter
+    3300088: Schloss_001
+    3300090: Schloss_002
+    3300092: Stecker
+    3300094: Stiel
+    3300096: Hammer
+    3300098: Schloss_000
+    3300100: Schloss_003
+    3300102: t_r_001
+    3300104: t_r_002
+    3300106: t_r_003
+    3300108: t_r_000
+    3300110: Griff
     4300000: Tisch
     4300002: Schub1
     4300004: Boden
@@ -162,8 +258,32 @@ ModelImporter:
     4300052: Circle
     4300054: Cylinder_001
     4300056: W_nde
+    4300058: Couch_004
     4300060: Cube
     4300062: t_r
+    4300064: Couch_003
+    4300066: Couch_002
+    4300068: Couch_001
+    4300070: Tisch_001
+    4300072: platteUnten
+    4300074: Cube_001
+    4300076: Cube_002
+    4300078: Cylinder_002
+    4300080: Schloss_002
+    4300082: Schloss_001
+    4300084: Schloss_003
+    4300086: Batterie
+    4300088: Stiel
+    4300090: Leiste
+    4300092: Schalter
+    4300094: Stecker
+    4300096: Hammer
+    4300098: Schloss_000
+    4300100: t_r_001
+    4300102: t_r_003
+    4300104: t_r_002
+    4300106: t_r_000
+    4300108: Griff
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -201,7 +321,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0
