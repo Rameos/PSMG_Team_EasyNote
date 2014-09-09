@@ -48,22 +48,22 @@ public class PackItems : MonoBehaviour
             // Physics.Raycast(mouseRay, out rayHit);
             //Debug.Log(rayHit.collider.transform.tag);
 
-            if (rayHit.collider.transform.tag == "ball")
+            if (rayHit.collider.transform.tag == "Ball")
             {
-                makeItemInvisible("ball");
-                putItemInInventory(itemObject.ball.name);
+                makeItemInvisible("Ball");
+                putItemInInventory(itemObject.Ball.name);
             }
 
-            if (rayHit.collider.transform.tag == "stock")
+            if (rayHit.collider.transform.tag == "Spazierstock")
             {
-                makeItemInvisible("stock");
-                putItemInInventory(itemObject.stock.name);
+                makeItemInvisible("Spazierstock");
+                putItemInInventory(itemObject.Spazierstock.name);
             }
 
-            if (rayHit.collider.transform.tag == "saege")
+            if (rayHit.collider.transform.tag == "Säge")
             {
-                makeItemInvisible("saege");
-                putItemInInventory(itemObject.saege.name);
+                makeItemInvisible("Säge");
+                putItemInInventory(itemObject.Säge.name);
             }
 
             else
@@ -98,6 +98,8 @@ public class PackItems : MonoBehaviour
     void makeItemInvisible(string name)
     {
         item = GameObject.FindGameObjectWithTag(name);
-        item.SetActive(false);
+        //item.SetActive(false);
+        item.renderer.enabled = false;
+
     }
 }

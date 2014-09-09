@@ -5,8 +5,9 @@ public class InventoryGUI : MonoBehaviour
 {
 
 
-    private bool inventoryWindowToggle = false;
-    private Rect inventoryWindowRect = new Rect(300, 100, 400, 400);
+    //private bool inventoryWindowToggle = false;
+    private Rect inventoryWindowRect = new Rect(Screen.width - 425,Screen.height -325, 400, 300); //Screen.width - 100,Screen.height - 50,100,50
+    GameObject item;
 
     static public Dictionary<int, string> inventoryNameDictionary = new Dictionary<int, string>(){
             {0, string.Empty},
@@ -39,12 +40,12 @@ public class InventoryGUI : MonoBehaviour
 
     void OnGUI()
     {
-        inventoryWindowToggle = GUI.Toggle(new Rect(800, 50, 100, 50), inventoryWindowToggle, "Inventory");
+        //inventoryWindowToggle = GUI.Toggle(new Rect(800, 50, 100, 50), inventoryWindowToggle, "Inventory");
 
-        if (inventoryWindowToggle)
-        {
+       // if (inventoryWindowToggle)
+        
             inventoryWindowRect = GUI.Window(0, inventoryWindowRect, inventoryWindowMethod, "Inventory");
-        }
+        
     }
 
 
@@ -61,7 +62,14 @@ public class InventoryGUI : MonoBehaviour
         if (GUILayout.Button(inventoryNameDictionary[0], GUILayout.Height(50)))
         {
 
-            //Debug.Log(inventoryNameDictionary[0]); gibt string aus
+           Debug.Log(inventoryNameDictionary[0]);
+           Vector3 mousePos = Input.mousePosition;
+           mousePos.z = 0.6f;
+           Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
+           item = GameObject.FindGameObjectWithTag(inventoryNameDictionary[0]);
+           item.renderer.enabled = true;
+           item.transform.position = objectPos;
+           //GameObject myObject = Instantiate(item, objectPos, Quaternion.identity);
         }
         GUILayout.Button(inventoryNameDictionary[1], GUILayout.Height(50));
         GUILayout.Button(inventoryNameDictionary[2], GUILayout.Height(50));
