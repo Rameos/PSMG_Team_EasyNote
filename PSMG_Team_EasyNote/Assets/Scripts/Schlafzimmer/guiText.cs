@@ -3,10 +3,14 @@ using System.Collections;
 
 public class guiText : MonoBehaviour {
     bool showLabel = false;
+    public GUIStyle style;
+    public GUISkin GUISkin;
+    private BildAnim bildAnim;
   
 	// Use this for initialization
 	void Start () {
-	
+        GameObject bild = GameObject.FindGameObjectWithTag("bild");
+        bildAnim = bild.GetComponent<BildAnim>(); 
 	}
 	
 	// Update is called once per frame
@@ -21,14 +25,22 @@ public class guiText : MonoBehaviour {
 
     void OnGUI()
     {
+        GUI.skin = GUISkin; 
+
         if (showLabel)
         {
-            GUI.contentColor = Color.black;
-            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 400, 100), "Hier ist leider nichts!", "color");
+            GUI.skin = GUISkin;
+
+           
+
+                GUI.Label(new Rect(Screen.width / 2 - 100, 0, 200, 50), "Hier ist leider nichts!");
+                //GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 400, 100), "Hier ist leider nichts!", style);
+                //GUILayout.Label("Hier ist leider nichts");
+            
         }
         else
         {
-            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 200, 20), "");
+            GUI.Label(new Rect(0,0, 0,0), "");
         }
 
     }
@@ -36,6 +48,6 @@ public class guiText : MonoBehaviour {
     void OnMouseDown()
     {
         Invoke("ToggleLabel", 1);
-        Invoke("ToggleLabel", 5);
+        Invoke("ToggleLabel", 3);
     }
 }

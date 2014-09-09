@@ -84,21 +84,16 @@ public class rohrClickedGroß : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
       
-        if ((Rotation >= 0 && Rotation <= 1))
-        {
-            if (other.tag == "rohrKlein" && gameObject.tag == "rohrKlein")
-            {
-                Debug.Log("Kleines Rohr richtig angebracht");
-            }
-        }
+        
 
         if ((Rotation >= 30 && Rotation <= 31 || Rotation >= 299 && Rotation <= 300))
         {
             if (other.tag == "rohrGroß" && gameObject.tag == "rohrGroß")
             {
-                
+                Debug.Log("Großes Rohr richtig angebracht");
                 rohrGr = true;
-                //guiKeller.print("Du hast das große Rohr richtig angebracht!");
+                Debug.Log("rohrGr " + rohrGr);
+                guiKeller.printHelpText("Du hast das große Rohr richtig angebracht!");
                 
             }
         }

@@ -5,6 +5,7 @@ public class guiTextKeller : MonoBehaviour {
 
     bool showLabel = false;
     string helpText;
+    public GUISkin GUISkin;
 	// Use this for initialization
 	void Start () {
 	
@@ -23,14 +24,15 @@ public class guiTextKeller : MonoBehaviour {
 
     void OnGUI()
     {
+        GUI.skin = GUISkin;
         if (showLabel)
         {
-            GUI.contentColor = Color.black;
-            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 400, 100), helpText, "color");
+           
+            GUI.Label(new Rect(Screen.width / 2 - 200, 0, 500, 100), helpText);
         }
         else
         {
-            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 200, 20), "");
+            GUI.Label(new Rect(0,0,0,0), "");
         }
 
     }
@@ -39,12 +41,8 @@ public class guiTextKeller : MonoBehaviour {
     {
         helpText = help;
         Invoke("ToggleLabel", 1);
-        Invoke("ToggleLabel", 5);
+        Invoke("ToggleLabel", 3);
     }
 
-    /*void OnMouseDown()
-    {
-        Invoke("ToggleLabel", 1);
-        Invoke("ToggleLabel", 5);
-    }*/
+    
 }

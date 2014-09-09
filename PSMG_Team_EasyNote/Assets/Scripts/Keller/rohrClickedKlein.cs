@@ -97,7 +97,7 @@ public class rohrClickedKlein : MonoBehaviour
             }
         }
 
-        if ((Rotation >= 30 && Rotation <= 31 || Rotation >= 299 && Rotation <= 300))
+        /*if ((Rotation >= 30 && Rotation <= 31 || Rotation >= 299 && Rotation <= 300))
         {
             if (other.tag == "rohrGroß")
             {
@@ -111,7 +111,7 @@ public class rohrClickedKlein : MonoBehaviour
             {
                 Debug.Log("Kabel richtig");
             }
-        }
+        }*/
 
     }
 

@@ -34,8 +34,9 @@ public class karton : MonoBehaviour
 
     void OnMouseDrag()
     {
-        if (Input.mousePosition.x > 180 && Input.mousePosition.x < 725 && Input.mousePosition.y > 60 && Input.mousePosition.y < 325)
+        if (Input.mousePosition.x > 290 && Input.mousePosition.x < 1200 && Input.mousePosition.y > 120 && Input.mousePosition.y < 550)
         {
+            Debug.Log("Gesucht: "+Input.mousePosition.y);
             Vector3 posMouse = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3);
             posMouse = Camera.main.ScreenToWorldPoint(posMouse);
 
@@ -54,8 +55,7 @@ public class karton : MonoBehaviour
 
 
             Rotation = transform.rotation.eulerAngles.x;
-            Debug.Log("Y: " + transform.position.y);
-            Debug.Log("Z: " + transform.position.z);
+            
         }
 
     }
