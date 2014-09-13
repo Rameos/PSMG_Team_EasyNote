@@ -21,6 +21,11 @@ ModelImporter:
     100030: T_rRechts_002
     100032: Torus_001
     100034: Cube_000
+    100036: Sphere_001
+    100038: Sphere_002
+    100040: abdeckung1
+    100042: abdeckung2
+    100044: abdeckung3
     400000: Cube_001
     400002: Cube_005
     400004: Cube_006
@@ -39,6 +44,11 @@ ModelImporter:
     400030: T_rRechts_002
     400032: Torus_001
     400034: Cube_000
+    400036: Sphere_001
+    400038: Sphere_002
+    400040: abdeckung1
+    400042: abdeckung2
+    400044: abdeckung3
     2300000: Cube_001
     2300002: Cube_005
     2300004: Cube_006
@@ -56,6 +66,11 @@ ModelImporter:
     2300028: T_rRechts_002
     2300030: Torus_001
     2300032: Cube_000
+    2300034: Sphere_001
+    2300036: Sphere_002
+    2300038: abdeckung1
+    2300040: abdeckung2
+    2300042: abdeckung3
     3300000: Cube_001
     3300002: Cube_005
     3300004: Cube_006
@@ -73,9 +88,15 @@ ModelImporter:
     3300028: T_rRechts_002
     3300030: Torus_001
     3300032: Cube_000
+    3300034: Sphere_001
+    3300036: Sphere_002
+    3300038: abdeckung1
+    3300040: abdeckung2
+    3300042: abdeckung3
     4300000: Cube_000
     4300002: Cube_006
     4300004: Cube_007
+    4300006: Sphere_002
     4300008: Hebel3_001
     4300010: ringAussen
     4300012: ringInnen
@@ -88,6 +109,10 @@ ModelImporter:
     4300026: Torus_001
     4300028: T_rRechts_001
     4300030: T_rRechts_002
+    4300032: Sphere_001
+    4300034: abdeckung3
+    4300036: abdeckung2
+    4300038: abdeckung1
     7400000: Default Take
     9500000: //RootNode
   materials:

@@ -8,14 +8,16 @@ public class MovingCamera : MonoBehaviour
     private bool backButtonShow = false;
     GameObject schrank, korb;
 
-    public float q1 = 0;
-    public float q2 = 0;
-    public float q3 = 0;
-    public float q4 = 0;
+    public string cameraPos = "";
 
-    public float v1 = -1.347125f;
-    public float v2 = 1.245951f;
-    public float v3 = 0.5974661f;
+    //public float q1 = 0;
+    //public float q2 = 0;
+    //public float q3 = 0;
+    //public float q4 = 0;
+
+    //public float v1 = -1.347125f;
+    //public float v2 = 1.245951f;
+    //public float v3 = 0.5974661f;
 
 
 
@@ -58,6 +60,7 @@ public class MovingCamera : MonoBehaviour
                     schrank.collider.enabled = false;
                     backButtonShow = true;
                     korb.collider.enabled = false;
+                    cameraPos = "Korb";
                 }
 
 
@@ -67,6 +70,7 @@ public class MovingCamera : MonoBehaviour
                     transform.position = new Vector3(2.179206f, 1.19675f, 0.59f);
                     transform.rotation = new Quaternion(0, 60, 0, 0);
                     backButtonShow = true;
+                    cameraPos = "Brett";
                 }
 
 
@@ -77,6 +81,7 @@ public class MovingCamera : MonoBehaviour
                     transform.position = new Vector3(0.7648869f, 1.211256f, 1.81809f);
                     transform.rotation = new Quaternion(0, 20, -2.43f, 1.78f);
                     backButtonShow = true;
+                    cameraPos = "Wand";
                 }
 
 
@@ -87,6 +92,7 @@ public class MovingCamera : MonoBehaviour
                     transform.rotation = new Quaternion(14.25f, -4.13f, -0.3f, 292.22f);
                     backButtonShow = true;
                     schrank.collider.enabled = false;
+                    cameraPos = "Schrank";
 
                 }
 
@@ -117,6 +123,7 @@ public class MovingCamera : MonoBehaviour
     {
         transform.position = new Vector3(-1.28f, 1.24f, 0.69f);
         transform.rotation = new Quaternion(17.4f, 94.6f, -13.74f, 126f);
+        cameraPos = "Start";
         //schrank.collider.enabled = true;
     }
 }

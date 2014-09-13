@@ -8,6 +8,8 @@ public class HebelRaetsel : MonoBehaviour
     private int count1 = 0, count2 = 0, count3 = 0;
     public bool hasWon = false;
     private bool closed = false;
+
+    public bool visible = false;
  
 
     float rotation = 0;
@@ -31,7 +33,13 @@ public class HebelRaetsel : MonoBehaviour
         reset = GameObject.FindGameObjectWithTag("reset");
         Schrank = GameObject.FindGameObjectWithTag("korpus");
 
-        HLinks.SetActive(false);
+        if (!visible) {
+            HLinks.SetActive(false);
+        }
+        else
+        {
+            HLinks.SetActive(true);
+        }
 
     }
 
@@ -121,7 +129,7 @@ public class HebelRaetsel : MonoBehaviour
 
     void moveLever(GameObject lever, int counter)
     {
-
+        Camera.main.audio.Play();
 
         if (counter == 1 || counter == 2)
         {
