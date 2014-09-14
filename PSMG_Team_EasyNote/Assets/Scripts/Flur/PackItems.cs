@@ -89,7 +89,7 @@ public class PackItems : MonoBehaviour
         }
 
         InventoryGUI.inventoryNameDictionary[itemNumber] = thing;
-
+        //item.collider.enabled = false;
 
 
     }
@@ -100,6 +100,7 @@ public class PackItems : MonoBehaviour
         item = GameObject.FindGameObjectWithTag(name);
         //item.SetActive(false);
         item.renderer.enabled = false;
+        
 
     }
 }

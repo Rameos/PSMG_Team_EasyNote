@@ -8,7 +8,7 @@ public class HebelZiehen : MonoBehaviour {
    Vector3 screenPoint;
    Vector3 offset;
 
-   GameObject invMan, HLinks, schrank;
+   GameObject invMan, hebel, schrank, ziel;
 
   float speed = 30;
     float moveSpeed = 5;
@@ -19,6 +19,8 @@ public class HebelZiehen : MonoBehaviour {
         startPos = transform.position;
         invMan = GameObject.FindGameObjectWithTag("inventory");
         schrank = GameObject.FindGameObjectWithTag("Schrank");
+        hebel = GameObject.FindGameObjectWithTag("hebelDub");
+        ziel = GameObject.FindGameObjectWithTag("abdeckung");
         
 
     }
@@ -33,6 +35,7 @@ public class HebelZiehen : MonoBehaviour {
 
     void OnMouseDown()
     {
+        Debug.Log("ziehen");
         InventoryGUI gui = invMan.GetComponent<InventoryGUI>();
         if (gui.dragHebel)
         {
@@ -73,10 +76,14 @@ public class HebelZiehen : MonoBehaviour {
 
     void OnTriggerStay(Collider other)
     {
-        HebelRaetsel hebRaet = schrank.GetComponent<HebelRaetsel>();
+        //schrank = GameObject.FindGameObjectWithTag("Schrank");
+        HebelRaetsel hebRaet = Camera.main.GetComponent<HebelRaetsel>();
         Debug.Log("stay");
-        renderer.enabled = false;
+        Debug.Log(hebRaet.visible);
+        hebel.SetActive(false);
+        //renderer.enabled = false;
         hebRaet.visible = true;
+        ziel.collider.enabled = false;
         
 
 

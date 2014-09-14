@@ -33,13 +33,7 @@ public class HebelRaetsel : MonoBehaviour
         reset = GameObject.FindGameObjectWithTag("reset");
         Schrank = GameObject.FindGameObjectWithTag("korpus");
 
-        if (!visible) {
-            HLinks.SetActive(false);
-        }
-        else
-        {
-            HLinks.SetActive(true);
-        }
+       
 
     }
 
@@ -47,21 +41,31 @@ public class HebelRaetsel : MonoBehaviour
     void Update()
     {
 
+        if (visible)
+        {
+            Debug.Log("sichtbar");
+            HLinks.SetActive(true);
+            HLinks.renderer.enabled = true;
+        }
+        //else
+        //{
+        //    HLinks.SetActive(true);
+        //}
+
         checkWin();
 
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-
+           // Debug.Log("mouse down");
             if (Physics.Raycast(ray, out hit, 50))
             {
-                //checkWin();
 
 
                 if (hit.transform.gameObject.tag == "hebelLinks")
                 {
-
+                    Debug.Log("hebel links");
                     if (count1 == 4)
                     {
                         count1 = 1;
@@ -75,10 +79,11 @@ public class HebelRaetsel : MonoBehaviour
                     moveLever(gameObjLinks, count1);
                 }
 
+
                 if (hit.transform.gameObject.tag == "hebelRechts")
                 {
 
-
+                    Debug.Log("hebel rechts");
                     if (count3 == 4)
                     {
                         count3 = 1;
@@ -106,6 +111,8 @@ public class HebelRaetsel : MonoBehaviour
 
                     moveLever(HMitte, count2);
                 }
+
+
 
                 if (hit.transform.gameObject.tag == "reset")
                 {

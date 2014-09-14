@@ -10,6 +10,7 @@ public class InventoryGUI : MonoBehaviour
     int windowX = Screen.width - 425;
     int windowY = Screen.height - 325;
     string match = "";
+    string nachricht = "Durch Klicken auf Dinge kannst du sie ins Inventar legen. \nNachdem du zwei ausgewählt hast, kannst du sie miteinander kombinieren.";
 
 
     GameObject item, hebel, hebelDublicate;
@@ -50,6 +51,7 @@ public class InventoryGUI : MonoBehaviour
 
     void OnGUI()
     {
+        GUI.Label(new Rect(Screen.width / 2 - 200, 0, 500, 100),nachricht);
         //inventoryWindowToggle = GUI.Toggle(new Rect(800, 50, 100, 50), inventoryWindowToggle, "Inventory");
 
         // if (inventoryWindowToggle)
@@ -133,13 +135,15 @@ public class InventoryGUI : MonoBehaviour
 
             getActiveToggle();
             testMatch();
+            trueAufheben();
             //Debug.Log();
         }
 
         if (GUILayout.Button("Benutzen", GUILayout.Height(50)))
         {
             getItem();
-           
+            trueAufheben();
+
         }
 
 
@@ -156,41 +160,48 @@ public class InventoryGUI : MonoBehaviour
         if (toggle0 && toggle1)
         {
             match = inventoryNameDictionary[0] + inventoryNameDictionary[1];
-            Debug.Log("" + inventoryNameDictionary[0] + inventoryNameDictionary[1]);
+         
+
         }
         if (toggle0 && toggle2)
         {
-            Debug.Log("" + inventoryNameDictionary[0] + inventoryNameDictionary[2]);
             match = inventoryNameDictionary[0] + inventoryNameDictionary[2];
+  
         }
         if (toggle0 && toggle3)
         {
-            Debug.Log("" + inventoryNameDictionary[0] + inventoryNameDictionary[3]);
             match = inventoryNameDictionary[0] + inventoryNameDictionary[3];
+
         }
         if (toggle1 && toggle2)
         {
-            Debug.Log("" + inventoryNameDictionary[1] + inventoryNameDictionary[2]);
-            match = inventoryNameDictionary[1] + inventoryNameDictionary[2];
+             match = inventoryNameDictionary[1] + inventoryNameDictionary[2];
+
         }
         if (toggle1 && toggle3)
         {
-            Debug.Log("" + inventoryNameDictionary[1] + inventoryNameDictionary[3]);
+
             match = inventoryNameDictionary[1] + inventoryNameDictionary[3];
+  
         }
         if (toggle2 && toggle3)
         {
-            Debug.Log("" + inventoryNameDictionary[2] + inventoryNameDictionary[3]);
+
             match = inventoryNameDictionary[2] + inventoryNameDictionary[3];
+      
         }
 
         if ((toggle0 && toggle1 && toggle2) || (toggle0 && toggle1 && toggle3) || (toggle0 && toggle3 && toggle2) || (toggle3 && toggle1 && toggle2) || (toggle0 && toggle1 && toggle2 && toggle3))
         {
             Debug.Log("Nur zwei gleichzeitig");
+            nachricht = "Du kannst nur zwei Dinge kombinieren";
+      
         }
         if (!toggle0 && !toggle1 && !toggle2 && !toggle3)
         {
             Debug.Log("Wähle zwei Objekte aus");
+            nachricht = "Wähle zwei Objekte aus";
+
         }
 
 
@@ -201,7 +212,7 @@ public class InventoryGUI : MonoBehaviour
         if (match.Equals("SägeSpazierstock") || match.Equals("SpazierstockSäge"))
         {
             //Kombinieren
-            Debug.Log("Richtige Kombi");
+
             audio.Play();
             if (inventoryNameDictionary[2] == string.Empty)
             {
@@ -211,11 +222,12 @@ public class InventoryGUI : MonoBehaviour
             {
                 inventoryNameDictionary[3] = "Kurzer Stock";
             }
-
+            nachricht = "Du hast ein neues Objekt entdeckt";
         }
 
         else
         {
+            nachricht = "Das funktioniert nicht";
             Debug.Log("Falsche Kombi");
             //fehlermeldung
         }
@@ -230,7 +242,7 @@ public class InventoryGUI : MonoBehaviour
             Debug.Log(movCam.cameraPos);
             if (movCam.cameraPos.Equals("Schrank"))
             {
-                Debug.Log(movCam.cameraPos);
+
                 dragHebel = true;
                 //Vector3 mousePos = Input.mousePosition;
                 //mousePos.z = 0.6f;
@@ -249,4 +261,12 @@ public class InventoryGUI : MonoBehaviour
         }
     }
 
+
+    void trueAufheben()
+    {
+        toggle0 = false;
+        toggle1 = false;
+        toggle2 = false;
+        toggle3 = false;
+    }
 }
