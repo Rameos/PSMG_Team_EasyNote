@@ -16,8 +16,9 @@ public class Taschenlampe : MonoBehaviourWithGazeComponent
     void Start()
     {
         lamp = GameObject.FindGameObjectWithTag("lampe");
-      gazeUI.Add(new GazeButton(new Rect(),
-    "Cube"));
+      gazeUI.Add(new GazeButton(new Rect(), "Cube"));
+
+    
     }
 
 
@@ -25,6 +26,7 @@ public class Taschenlampe : MonoBehaviourWithGazeComponent
 
     void Update()
     {
+        MovingCamera movCam = Camera.main.GetComponent<MovingCamera>();
         if (isDrawing)
         {
             foreach (GazeButton button in gazeUI)
@@ -55,17 +57,43 @@ public class Taschenlampe : MonoBehaviourWithGazeComponent
             //Checks if the boolean is true or false.
             if (flashlightOn == true)
             {
-
-               
                 lamp.light.intensity = 0;
-                light.intensity = 1;//If the boolean is true, then it sets the intensity to what ever you want.
-                //Vector3 posMouse = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3);
-                Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
-                posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
+                light.intensity = 1;
 
-                transform.position = posUserGaze;
-                transform.position = new Vector3( transform.position.x, transform.position.y, startPos.z);
+                if (movCam.cameraPos == "Schrank" || movCam.cameraPos == "Korb")
+                {
+                     //Vector3 posMouse = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3);
+                    Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
+                    posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
 
+                    transform.position = posUserGaze;
+                    transform.position = new Vector3(transform.position.x, transform.position.y, startPos.z);
+                }
+
+                if (movCam.cameraPos == "Wand")
+                {
+                    //lamp.transform.position = new Vector3(0.7648869f, 1.211256f, 1.81809f);
+                    //Vector3 posMouse = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3);
+                    Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
+                    posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
+
+                    transform.position = posUserGaze;
+                    transform.position = new Vector3(transform.position.x, transform.position.y, 1.81809f);
+                }
+            
+
+                if (movCam.cameraPos == "Start")
+                {
+
+                    lamp.light.intensity = 0;
+                    light.intensity = 1;//If the boolean is true, then it sets the intensity to what ever you want.
+                    //Vector3 posMouse = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3);
+                    Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
+                    posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
+
+                    transform.position = posUserGaze;
+                    transform.position = new Vector3(startPos.x, transform.position.y, transform.position.z);
+                }
        
             }
             else

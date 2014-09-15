@@ -15,6 +15,7 @@ public class SchrankOeffnen : MonoBehaviour
             //Debug.Log("Play");
             //Debug.Log(schrank.animation.Play("openDoors"));
             schrank.animation.Play("openDoors");
+            schrank.audio.Play();
             schrankOffen = true;
            
         }

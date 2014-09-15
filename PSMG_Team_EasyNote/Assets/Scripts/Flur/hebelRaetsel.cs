@@ -8,6 +8,8 @@ public class HebelRaetsel : MonoBehaviour
     private int count1 = 0, count2 = 0, count3 = 0;
     public bool hasWon = false;
     private bool closed = false;
+
+    public bool visible = false;
  
 
     float rotation = 0;
@@ -31,7 +33,7 @@ public class HebelRaetsel : MonoBehaviour
         reset = GameObject.FindGameObjectWithTag("reset");
         Schrank = GameObject.FindGameObjectWithTag("korpus");
 
-        HLinks.SetActive(false);
+       
 
     }
 
@@ -39,21 +41,31 @@ public class HebelRaetsel : MonoBehaviour
     void Update()
     {
 
+        if (visible)
+        {
+            Debug.Log("sichtbar");
+            HLinks.SetActive(true);
+            HLinks.renderer.enabled = true;
+        }
+        //else
+        //{
+        //    HLinks.SetActive(true);
+        //}
+
         checkWin();
 
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-
+           // Debug.Log("mouse down");
             if (Physics.Raycast(ray, out hit, 50))
             {
-                //checkWin();
 
 
                 if (hit.transform.gameObject.tag == "hebelLinks")
                 {
-
+                    Debug.Log("hebel links");
                     if (count1 == 4)
                     {
                         count1 = 1;
@@ -67,10 +79,11 @@ public class HebelRaetsel : MonoBehaviour
                     moveLever(gameObjLinks, count1);
                 }
 
+
                 if (hit.transform.gameObject.tag == "hebelRechts")
                 {
 
-
+                    Debug.Log("hebel rechts");
                     if (count3 == 4)
                     {
                         count3 = 1;
@@ -99,6 +112,8 @@ public class HebelRaetsel : MonoBehaviour
                     moveLever(HMitte, count2);
                 }
 
+
+
                 if (hit.transform.gameObject.tag == "reset")
                 {
                     Debug.Log("reset");
@@ -121,7 +136,7 @@ public class HebelRaetsel : MonoBehaviour
 
     void moveLever(GameObject lever, int counter)
     {
-
+        Camera.main.audio.Play();
 
         if (counter == 1 || counter == 2)
         {

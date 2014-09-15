@@ -7,18 +7,23 @@ ModelImporter:
     100002: Griff
     100004: Plane_001
     100006: //RootNode
+    100008: S_ge
     400000: Blatt
     400002: Griff
     400004: Plane_001
     400006: //RootNode
+    400008: S_ge
     2300000: Blatt
     2300002: Griff
     2300004: Plane_001
+    2300006: S_ge
     3300000: Blatt
     3300002: Griff
     3300004: Plane_001
+    3300006: S_ge
     4300000: Griff
     4300004: Blatt
+    4300006: S_ge
     7400000: Default Take
     9500000: //RootNode
   materials:

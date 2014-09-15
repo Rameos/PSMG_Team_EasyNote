@@ -13,10 +13,11 @@ public class ItemClass : MonoBehaviour
 
 
     //Items
-    public ItemCreatorClass stock = new ItemCreatorClass(0, "Spazierstock", swordIcon, "Ein Spazierstock");
-    public ItemCreatorClass saege = new ItemCreatorClass(1, "Säge", arrowIcon, "Eine Säge");
+    public ItemCreatorClass Spazierstock = new ItemCreatorClass(0, "Spazierstock", swordIcon, "Ein Spazierstock");
+    public ItemCreatorClass Säge = new ItemCreatorClass(1, "Säge", arrowIcon, "Eine Säge");
     public ItemCreatorClass stockKurz = new ItemCreatorClass(2, "Kurzer Stock", breadIcon, "Der abgesägte Spazierstock");
-    public ItemCreatorClass ball = new ItemCreatorClass(3, "Ball", breadIcon, "Ein kleiner Ball");
+    public ItemCreatorClass Ball = new ItemCreatorClass(3, "Ball", breadIcon, "Ein kleiner Ball");
+
 
     void Start()
     {
