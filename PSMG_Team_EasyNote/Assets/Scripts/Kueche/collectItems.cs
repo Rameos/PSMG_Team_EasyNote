@@ -3,13 +3,10 @@ using System.Collections;
 
 public class collectItems : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    void update()
+    {
+        if (Input.GetMouseButtonDown (0) 
+        {
+            Destroy(object);
+    }
 }
