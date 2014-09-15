@@ -21,8 +21,7 @@ using iViewX;
 		}
 
 
-	}
-<<<<<<< HEAD
+	
     void OnClicked()
     {
 
@@ -30,5 +29,4 @@ using iViewX;
 
     }
 }
-=======
->>>>>>> origin/alwine
+
