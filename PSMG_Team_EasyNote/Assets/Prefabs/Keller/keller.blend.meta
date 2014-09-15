@@ -55,6 +55,8 @@ ModelImporter:
     100098: kartonZu_003
     100100: kastent_re
     100102: Cube_011
+    100104: Cube_012
+    100106: Cube_013
     400000: Circle
     400002: Cube
     400004: Cube_001
@@ -107,6 +109,8 @@ ModelImporter:
     400098: kartonZu_003
     400100: kastent_re
     400102: Cube_011
+    400104: Cube_012
+    400106: Cube_013
     2300000: Circle
     2300002: Cube
     2300004: Cube_001
@@ -158,6 +162,8 @@ ModelImporter:
     2300096: kartonZu_003
     2300098: kastent_re
     2300100: Cube_011
+    2300102: Cube_012
+    2300104: Cube_013
     3300000: Circle
     3300002: Cube
     3300004: Cube_001
@@ -209,6 +215,8 @@ ModelImporter:
     3300096: kartonZu_003
     3300098: kastent_re
     3300100: Cube_011
+    3300102: Cube_012
+    3300104: Cube_013
     4300000: Cube_009
     4300002: Cube_008
     4300004: Cube_007
@@ -259,6 +267,8 @@ ModelImporter:
     4300094: kartonZu
     4300096: kartonOffen
     4300098: Cube_011
+    4300100: Cube_013
+    4300102: Cube_012
     7400000: Default Take
     9500000: //RootNode
   materials:

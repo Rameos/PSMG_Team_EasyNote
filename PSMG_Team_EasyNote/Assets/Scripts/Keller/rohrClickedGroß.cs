@@ -47,6 +47,7 @@ public class rohrClickedGroß : MonoBehaviour {
     {
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+        guiKeller.printHelpText("Du hast das große Rohr richtig angebracht!");
     }
 
     void OnMouseDrag()
@@ -84,13 +85,13 @@ public class rohrClickedGroß : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
       
-        
+       
 
         if ((Rotation >= 30 && Rotation <= 31 || Rotation >= 299 && Rotation <= 300))
         {
-            if (other.tag == "rohrGroß" && gameObject.tag == "rohrGroß")
+            if (other.tag == "rohrGroß")
             {
-                Debug.Log("Großes Rohr richtig angebracht");
+                Debug.Log("yolooooooooooooo");
                 rohrGr = true;
                 Debug.Log("rohrGr " + rohrGr);
                 guiKeller.printHelpText("Du hast das große Rohr richtig angebracht!");

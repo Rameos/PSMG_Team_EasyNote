@@ -56,8 +56,8 @@ public class TaschenlampeKeller : MonoBehaviourWithGazeComponent
         {
 
 
-            lamp.light.intensity = 0;
-            light.intensity = 1;//If the boolean is true, then it sets the intensity to what ever you want.
+            lamp.light.intensity = 1;
+            //light.intensity = 1;//If the boolean is true, then it sets the intensity to what ever you want.
             //Vector3 posMouse = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3);
             Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
             posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
@@ -72,8 +72,9 @@ public class TaschenlampeKeller : MonoBehaviourWithGazeComponent
         {
             if (flashlightOn == false)
             {
-                lamp.light.intensity = 1;
-                light.intensity = 0;//If the boolean is false, then it sets the intensity to zero.
+                lamp.light.intensity = 0;
+                //light.intensity = 0;
+                    //If the boolean is false, then it sets the intensity to zero.
             }
         }
 

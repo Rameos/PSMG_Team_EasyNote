@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class guiTextStart : MonoBehaviour {
+public class guiTextSchlaf : MonoBehaviour {
 
     bool showLabel = false;
     string helpText;
@@ -30,32 +30,23 @@ public class guiTextStart : MonoBehaviour {
     void OnGUI()
     {
         GUI.skin = GUISkin;
-        if (showLabel)
-        {
-
-            GUI.Label(new Rect(Screen.width / 2 - 200, 0, 500, 100), "In diesem Raum ist es ziemlich düster...\nDu solltest erst einmal für etwas Licht sorgen...");
-            //showText();
-        }
-        else
-        {
-            GUI.Label(new Rect(0, 0, 0, 0), "");
-        }
+        
 
         if (clicked == false)
         {
-            GUI.Label(new Rect(0, 0, 400, 150), "Mit den Tasten '1' und '2' kannst \ndu die Kameraperspektive verändern.\nDurch klick auf einzelne Gegenstände,\nkannst du diese bewegen.");
-            
+            GUI.Label(new Rect(0, 0, 400, 150), "Mit den Tasten '1','2','3','4' und '5' kannst \ndu die Kameraperspektive verändern.");
+
             if (GUI.Button(new Rect(175, 120, 50, 25), "OK"))
             {
                 clicked = true;
             }
-        
+
         }
-        
-        
+
+
     }
 
-   
+
 
 
 }
