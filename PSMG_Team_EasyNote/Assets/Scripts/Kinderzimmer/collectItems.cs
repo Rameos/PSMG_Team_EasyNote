@@ -3,11 +3,17 @@ using System.Collections;
 
 public class collectItems : MonoBehaviour {
 
-    void update()
+    void start()
     {
-        if (Input.GetMouseButtonDown (0)) 
+
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
         {
-            Destroy(object);
+            Destroy(gameObject);
+        }
     }
-    }
+    
 }

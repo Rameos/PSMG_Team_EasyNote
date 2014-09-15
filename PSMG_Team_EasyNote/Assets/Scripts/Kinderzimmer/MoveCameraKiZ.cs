@@ -21,8 +21,8 @@ public class MoveCameraKiZ : MonoBehaviour {
         }
         if (Input.GetKey("2"))
         {
-            transform.position = new Vector3(-1, 3, -3);
-            transform.rotation = new Quaternion(0, -20, 1, 40);
+            transform.position = new Vector3(-1, 2, -3);
+            transform.rotation = new Quaternion(0, -25, 4, 60);
         }
         if (Input.GetKey("3"))
         {
