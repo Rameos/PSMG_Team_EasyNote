@@ -15,6 +15,6 @@ public class vomSchlafzimmerZumWohnzimmer : MonoBehaviour {
 
     void OnMouseDown()
     {
-        Application.LoadLevel(5);
+        Application.LoadLevel(8);
     }
 }

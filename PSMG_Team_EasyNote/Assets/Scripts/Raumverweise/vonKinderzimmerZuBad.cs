@@ -14,6 +14,6 @@ public class vonKinderzimmerZuBad : MonoBehaviour {
 	//}
     void OnMouseDown()
     {
-        Application.LoadLevel(3);
+        Application.LoadLevel(6);
     }
 }

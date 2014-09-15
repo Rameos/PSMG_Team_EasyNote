@@ -15,6 +15,6 @@ public class vomFlurZumKinderzimmer : MonoBehaviour {
 
     void OnMouseDown()
     {
-        Application.LoadLevel(2);
+        Application.LoadLevel(10);
     }
 }

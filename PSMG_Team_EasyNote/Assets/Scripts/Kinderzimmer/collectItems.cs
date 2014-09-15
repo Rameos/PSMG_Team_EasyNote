@@ -5,7 +5,10 @@ public class collectItems : MonoBehaviour {
 
     void start()
     {
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     }
 
     void Update()
