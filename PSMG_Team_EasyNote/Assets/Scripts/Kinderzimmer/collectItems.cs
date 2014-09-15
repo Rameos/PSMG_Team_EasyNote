@@ -7,7 +7,7 @@ public class collectItems : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown (0)) 
         {
-            Destroy(object);
+            Destroy(gameObject);
     }
     }
 }
