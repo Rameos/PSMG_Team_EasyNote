@@ -21,12 +21,6 @@ using iViewX;
 		}
 
 
-	
-    void OnClicked()
-    {
 
-        //startCalibration();
-
-    }
 }
 

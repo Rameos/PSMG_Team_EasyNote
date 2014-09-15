@@ -10,7 +10,7 @@ public class collectItems : MonoBehaviour
         {
          //Destroy(object);
 
-            Object.destroy() = true;
+           // Object.destroy() = true;
     }
 }
 }
