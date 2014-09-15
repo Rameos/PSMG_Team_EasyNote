@@ -5,13 +5,6 @@ public class collectItems : MonoBehaviour {
 
     void start()
     {
-<<<<<<< HEAD
-        if (Input.GetMouseButtonDown (0)) 
-        {
-            Destroy(gameObject);
-=======
-
->>>>>>> origin/master
     }
 
     void Update()
