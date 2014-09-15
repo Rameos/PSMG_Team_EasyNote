@@ -18,6 +18,7 @@ public class Wecker : MonoBehaviour {
         if (destroyed == true)
         {
             zb.audio.Stop();
+            Invoke("Load", 3);
         }
 
     }
@@ -28,4 +29,11 @@ public class Wecker : MonoBehaviour {
         ringing = true;
         Debug.Log(gameObject.tag);
     }
+
+    void Load()
+    {
+        Application.LoadLevel(8);
+    }
 }
+
+

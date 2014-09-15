@@ -9,7 +9,7 @@ public class TaschenlampeKiZ : MonoBehaviourWithGazeComponent
 {
     private bool flashlightOn = false;
     private Vector3 startPos;
-    //GameObject lamp;
+    GameObject lamp;
 
     // Use this for initialization
     void Start()
