@@ -36,6 +36,7 @@ public class Schluss : MonoBehaviour {
                // schrank.animation.Play("shutDoors");
                 tür.animation.Play("door");
                 open = true;
+                Application.LoadLevel(10);
 
             }
         }
