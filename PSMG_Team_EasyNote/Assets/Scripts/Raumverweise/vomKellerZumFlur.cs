@@ -14,6 +14,6 @@ public class vomKellerZumFlur : MonoBehaviour {
     //}
     void OnMouseDown()
     {
-        Application.LoadLevel(8);
+        Application.LoadLevel(7);
     }
 }

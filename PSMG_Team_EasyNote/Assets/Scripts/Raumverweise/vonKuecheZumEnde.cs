@@ -15,6 +15,6 @@ public class vonKuecheZumEnde : MonoBehaviour {
 
     void OnMouseDown()
     {
-        Application.LoadLevel(9);
+        Application.LoadLevel(3);
     }
 }
