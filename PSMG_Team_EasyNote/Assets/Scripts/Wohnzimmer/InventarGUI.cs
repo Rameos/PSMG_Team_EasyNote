@@ -209,21 +209,23 @@ public class InventarGUI : MonoBehaviour
 
     void testKombi()
     {
-        if (kombi.Equals("SägeSpazierstock") || kombi.Equals("SpazierstockSäge"))
+        if (kombi.Equals("BatterieFernbedienung") || kombi.Equals("FernbedienungBatterie"))
         {
             //Kombinieren
 
-            audio.Play();
+            
             if (inventoryNameDictionaryW[2] == string.Empty)
             {
-                inventoryNameDictionaryW[2] = "Kurzer Stock";
+                inventoryNameDictionaryW[2] = "funktionierende Fernbedienung";
             }
             else
             {
-                inventoryNameDictionaryW[3] = "Kurzer Stock";
+                inventoryNameDictionaryW[3] = "funktionierende Fernbedienung";
             }
             message = "Du hast ein neues Objekt entdeckt";
         }
+
+
 
         else
         {
@@ -235,19 +237,19 @@ public class InventarGUI : MonoBehaviour
 
     void getItemW()
     {
-        MovingCamera movCam = Camera.main.GetComponent<MovingCamera>();
+        MovementCamera movCam = Camera.main.GetComponent<MovementCamera>();
 
-        if ((inventoryNameDictionaryW[2].Equals("Kurzer Stock") && button2) || (inventoryNameDictionaryW[3].Equals("Kurzer Stock") && button3))
+        if ((inventoryNameDictionaryW[2].Equals("Hammer") && button2) || (inventoryNameDictionaryW[3].Equals("Hammer") && button3))
         {
-            Debug.Log(movCam.cameraPos);
-            if (movCam.cameraPos.Equals("Schrank"))
+            Debug.Log(movCam.camPos);
+            if (movCam.camPos.Equals("Wand"))
             {
 
                 dragItem = true;
                 //Vector3 mousePos = Input.mousePosition;
                 //mousePos.z = 0.6f;
                 //Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
-                objekt = GameObject.FindGameObjectWithTag("hebelDub");
+                objekt = GameObject.FindGameObjectWithTag("hammerDub");
                 objekt.renderer.enabled = true;
                 //item.transform.position = objectPos;
 

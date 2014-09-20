@@ -18,6 +18,7 @@ public class MovementCamera : MonoBehaviour
 
 
 
+    public string camPos = "";
 
 
 
@@ -52,6 +53,7 @@ public class MovementCamera : MonoBehaviour
                     transform.position = new Vector3(-0.73f, 1.57f, 9.4f);
                     transform.localEulerAngles = new Vector3(0f, 90f, 0f);
                     backButtonShow = true;
+                    camPos = "Regal";
                 }
 
 
@@ -60,6 +62,7 @@ public class MovementCamera : MonoBehaviour
                     transform.position = new Vector3(-0.19f, 0.55f, 10.38f);
                     transform.localEulerAngles = new Vector3(0, 0, 0);
                     backButtonShow = true;
+                    camPos = "TV";
                 }
 
 
@@ -70,6 +73,7 @@ public class MovementCamera : MonoBehaviour
                     transform.position = new Vector3(-0.19f, 2.46f, 11.43f);
                     transform.localEulerAngles = new Vector3(40.65f, 0f, 0f);
                     backButtonShow = true;
+                    camPos = "Kommode";
                 }
 
 
@@ -79,6 +83,7 @@ public class MovementCamera : MonoBehaviour
                     transform.position = new Vector3(1.56f, 1.77f, 13.43f);
                     transform.localEulerAngles = new Vector3(40.65f, -59.4f, 0f);
                     backButtonShow = true;
+                    camPos = "Leiste";
 
                 }
 
@@ -88,6 +93,7 @@ public class MovementCamera : MonoBehaviour
                     transform.position = new Vector3(-0.26f, 1.72f, 10f);
                     transform.localEulerAngles = new Vector3(6f, -181.8f, 0f);
                     backButtonShow = true;
+                    camPos = "Wand";
                 }
 
                 //if (hit.transform.gameObject.tag == "Bild") //safe
@@ -130,6 +136,7 @@ public class MovementCamera : MonoBehaviour
 
         transform.position = new Vector3(-5.3f, 3.3f, 12.45f);
         transform.localEulerAngles = new Vector3(20.6f, 116.4f, -0.27f);
+        camPos = "Start";
     }
 
 }

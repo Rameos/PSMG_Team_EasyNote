@@ -12,7 +12,7 @@ public class PackItemsW : MonoBehaviour
 
     private GameObject objekt;
 
-    ItemClass itemObjectNew = new ItemClass();
+    ItemClassW itemObjectNew = new ItemClassW();
 
     private Ray mouseRay;
     private RaycastHit rayHit;
@@ -48,22 +48,28 @@ public class PackItemsW : MonoBehaviour
             // Physics.Raycast(mouseRay, out rayHit);
             //Debug.Log(rayHit.collider.transform.tag);
 
-            if (rayHit.collider.transform.tag == "Ball")
+            if (rayHit.collider.transform.tag == "hammer")
             {
-                makeItemInvisible("Ball");
-                putItemInInventory(itemObjectNew.Ball.name);
+                makeItemInvisible("hammer");
+                putItemInInventory(itemObjectNew.Hammer.name);
             }
 
-            if (rayHit.collider.transform.tag == "Spazierstock")
+            if (rayHit.collider.transform.tag == "batterie")
             {
-                makeItemInvisible("Spazierstock");
-                putItemInInventory(itemObjectNew.Spazierstock.name);
+                makeItemInvisible("batterie");
+                putItemInInventory(itemObjectNew.Batterie.name);
             }
 
-            if (rayHit.collider.transform.tag == "Säge")
+            if (rayHit.collider.transform.tag == "fernbedienung")
             {
-                makeItemInvisible("Säge");
-                putItemInInventory(itemObjectNew.Säge.name);
+                makeItemInvisible("fernbedienung");
+                putItemInInventory(itemObjectNew.Fernbedienung.name);
+            }
+
+            if (rayHit.collider.transform.tag == "schlüssel")
+            {
+                makeItemInvisible("schlüssel");
+                putItemInInventory(itemObjectNew.Schlüssel.name);
             }
 
             else
@@ -100,6 +106,8 @@ public class PackItemsW : MonoBehaviour
         objekt = GameObject.FindGameObjectWithTag(name);
         //item.SetActive(false);
         objekt.renderer.enabled = false;
+        //objekt.collider.active = false;
+
 
 
     }
