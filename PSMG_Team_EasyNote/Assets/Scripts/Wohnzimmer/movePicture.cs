@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class movePicture : MonoBehaviour {
-    GameObject pic;
+ 
     bool picMoved = false;
  
     void OnMouseDown()
@@ -10,9 +10,9 @@ public class movePicture : MonoBehaviour {
         if (picMoved == false)
         {
             Debug.Log("OnMouseDown");
-            pic = GameObject.FindGameObjectWithTag("Bild");
+            
             Debug.Log("Play");
-            pic.animation.Play("movePicture");
+            animation.Play("movePic");
             picMoved = true;
         }
        
