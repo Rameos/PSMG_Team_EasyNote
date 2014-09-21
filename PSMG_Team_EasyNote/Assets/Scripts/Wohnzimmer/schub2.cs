@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SchubHammer : MonoBehaviour {
+public class schub2 : MonoBehaviour {
+
 
     bool isClosed;
 	// Use this for initialization
@@ -19,16 +20,16 @@ public class SchubHammer : MonoBehaviour {
         if (isClosed)
         {
             Debug.Log("Öffnen");
-            animation["SchubHammer"].speed = 1;
-            animation.Play("SchubHammer");
+            animation["schub2"].speed = 1;
+            animation.Play("schub2");
             isClosed = false;
 
         }
         else
         {
-            animation["SchubHammer"].speed = -1;
-            animation["SchubHammer"].time = animation["SchubHammer"].length;
-            animation.Play("SchubHammer");
+            animation["schub2"].speed = -1;
+            animation["schub2"].time = animation["schub2"].length;
+            animation.Play("schub2");
             isClosed = true;
         }
 
