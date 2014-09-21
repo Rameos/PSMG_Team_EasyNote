@@ -16,7 +16,7 @@ public class InventarGUI : MonoBehaviour
     GameObject objekt, hebel, hebelDublicate;
 
     bool toggleVariable;
-    public bool dragItem = false;
+    public bool dragHammer = false;
     bool button0, button1, button2, button3 = false;
     public GUISkin MyButton;
 
@@ -239,13 +239,13 @@ public class InventarGUI : MonoBehaviour
     {
         MovementCamera movCam = Camera.main.GetComponent<MovementCamera>();
 
-        if ((inventoryNameDictionaryW[2].Equals("Hammer") && button2) || (inventoryNameDictionaryW[3].Equals("Hammer") && button3))
+        if ((inventoryNameDictionaryW[0].Equals("Hammer") && button0) || (inventoryNameDictionaryW[1].Equals("Hammer") && button1))
         {
             Debug.Log(movCam.camPos);
             if (movCam.camPos.Equals("Wand"))
             {
 
-                dragItem = true;
+                dragHammer = true;
                 //Vector3 mousePos = Input.mousePosition;
                 //mousePos.z = 0.6f;
                 //Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);

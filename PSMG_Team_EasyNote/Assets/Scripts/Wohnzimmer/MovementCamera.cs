@@ -90,7 +90,7 @@ public class MovementCamera : MonoBehaviour
 
                 if (hit.transform.gameObject.tag == "couch")//wand mit bild ??
                 {
-                    transform.position = new Vector3(-0.26f, 1.72f, 10f);
+                    transform.position = new Vector3(-1.479298f, 1.72f, 10f);
                     transform.localEulerAngles = new Vector3(6f, -181.8f, 0f);
                     backButtonShow = true;
                     camPos = "Wand";

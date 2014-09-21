@@ -68,6 +68,7 @@ public class PackItemsW : MonoBehaviour
 
             if (rayHit.collider.transform.tag == "schlüssel")
             {
+                Debug.Log("Schlüssel");
                 makeItemInvisible("schlüssel");
                 putItemInInventory(itemObjectNew.Schlüssel.name);
             }
