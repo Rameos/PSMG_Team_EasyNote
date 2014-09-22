@@ -56,7 +56,7 @@ public class PackItemsW : MonoBehaviour
 
             if (rayHit.collider.transform.tag == "batterie")
             {
-                makeItemInvisible("batterie");
+                makeItemInvisible("batt");
                 putItemInInventory(itemObjectNew.Batterie.name);
             }
 
@@ -104,10 +104,11 @@ public class PackItemsW : MonoBehaviour
 
     void makeItemInvisible(string name)
     {
+
         objekt = GameObject.FindGameObjectWithTag(name);
         //item.SetActive(false);
         objekt.renderer.enabled = false;
-        //objekt.collider.active = false;
+        objekt.collider.enabled = false;
 
 
 

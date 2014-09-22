@@ -14,11 +14,6 @@ public class Schub1 : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    void OnMouseDown()
-    {
         if (isKey)
         {
             Debug.Log("isKey");
@@ -43,6 +38,13 @@ public class Schub1 : MonoBehaviour {
         else
         {
             audio.Play();
-        }
+        } 
+        
+        isKey = false;
+    }
+
+    void OnMouseDown()
+    {
+       
     }
 }

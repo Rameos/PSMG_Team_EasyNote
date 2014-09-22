@@ -131,14 +131,14 @@ public class InventarGUI : MonoBehaviour
 
 
         GUILayout.BeginHorizontal();
-        if (GUILayout.Button("Kombinieren", GUILayout.Height(50)))
-        {
+        //if (GUILayout.Button("Kombinieren", GUILayout.Height(50)))
+        //{
 
-            getActiveToggleW();
-            testKombi();
-            trueAufhebenW();
-            //Debug.Log();
-        }
+        //    getActiveToggleW();
+        //    testKombi();
+        //    trueAufhebenW();
+        //    //Debug.Log();
+        //}
 
         if (GUILayout.Button("Benutzen", GUILayout.Height(50)))
         {

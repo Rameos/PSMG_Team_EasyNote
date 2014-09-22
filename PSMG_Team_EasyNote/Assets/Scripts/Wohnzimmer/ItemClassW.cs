@@ -13,7 +13,7 @@ public class ItemClassW : MonoBehaviour
 
 
     //Items
-    public ItemCreatorClassW Batterie = new ItemCreatorClassW(0, "Batterien", swordIcon1, "Mehrere Batterien");
+    //public ItemCreatorClassW Batterie = new ItemCreatorClassW(0, "Batterien", swordIcon1, "Mehrere Batterien");
     public ItemCreatorClassW Fernbedienung = new ItemCreatorClassW(0, "Fernbedienung", swordIcon1, "Eine Fernbedienung");
     public ItemCreatorClassW Hammer = new ItemCreatorClassW(0, "Hammer", swordIcon1, "Ein Hammer");
     public ItemCreatorClassW Schlüssel = new ItemCreatorClassW(0, "Schlüssel", swordIcon1, "Ein Schlüssel");

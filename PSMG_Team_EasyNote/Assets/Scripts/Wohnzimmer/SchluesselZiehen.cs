@@ -62,6 +62,7 @@ public class SchluesselZiehen : MonoBehaviour {
 
     }
 
+
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("collider enter");
