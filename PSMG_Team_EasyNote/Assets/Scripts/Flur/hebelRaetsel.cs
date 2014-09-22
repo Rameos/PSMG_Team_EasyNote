@@ -46,6 +46,7 @@ public class HebelRaetsel : MonoBehaviour
             Debug.Log("sichtbar");
             HLinks.SetActive(true);
             HLinks.renderer.enabled = true;
+            HLinks.collider.enabled = true;
         }
         //else
         //{

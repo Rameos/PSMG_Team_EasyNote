@@ -17,6 +17,7 @@ public class InventarGUI : MonoBehaviour
 
     bool toggleVariable;
     public bool dragHammer = false;
+    public bool dragSchlüssel = false;
     bool button0, button1, button2, button3 = false;
     public GUISkin MyButton;
 
@@ -250,6 +251,30 @@ public class InventarGUI : MonoBehaviour
                 //mousePos.z = 0.6f;
                 //Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
                 objekt = GameObject.FindGameObjectWithTag("hammerDub");
+                objekt.renderer.enabled = true;
+                //item.transform.position = objectPos;
+
+            }
+
+            else
+            {
+
+            }
+
+        }
+
+
+        if ((inventoryNameDictionaryW[1].Equals("Schlüssel") && button1) || (inventoryNameDictionaryW[2].Equals("Schlüssel") && button2))
+        {
+            Debug.Log(movCam.camPos);
+            if (movCam.camPos.Equals("Kommode") || movCam.camPos.Equals("TV"))
+            {
+
+                dragSchlüssel = true;
+                //Vector3 mousePos = Input.mousePosition;
+                //mousePos.z = 0.6f;
+                //Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
+                objekt = GameObject.FindGameObjectWithTag("schlüsselDub");
                 objekt.renderer.enabled = true;
                 //item.transform.position = objectPos;
 

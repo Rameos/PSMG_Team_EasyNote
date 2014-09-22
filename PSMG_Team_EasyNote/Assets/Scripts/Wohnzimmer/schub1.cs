@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class schub1 : MonoBehaviour {
+public class Schub1 : MonoBehaviour {
     bool isClosed;
 
     public bool isKey = false;
@@ -21,7 +21,7 @@ public class schub1 : MonoBehaviour {
     {
         if (isKey)
         {
-
+            Debug.Log("isKey");
             if (isClosed)
             {
                 Debug.Log("Öffnen");

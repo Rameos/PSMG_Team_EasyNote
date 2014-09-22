@@ -16,10 +16,9 @@ public class HammerZiehen : MonoBehaviour
 
     void Start()
     {
-        //renderer.enabled = true;
+       
         startPos = transform.position;
         invMan = GameObject.FindGameObjectWithTag("inventar");
-        //schrank = GameObject.FindGameObjectWithTag("Schrank");
         hammer = GameObject.FindGameObjectWithTag("hammerDub");
         ziel = GameObject.FindGameObjectWithTag("Vase");
         scherben = GameObject.FindGameObjectWithTag("scherben");
