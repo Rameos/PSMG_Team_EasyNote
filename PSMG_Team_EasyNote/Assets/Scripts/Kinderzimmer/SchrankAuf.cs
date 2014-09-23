@@ -3,17 +3,20 @@ using System.Collections;
 
 public class SchrankAuf : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-    void onMouseDown()
+
+    bool schrankMoved = false;
+
+    void OnMouseDown()
     {
-        animation.Play("Schrank");
+        if (schrankMoved == false)
+        {
+            Debug.Log("OnMouseDown");
+
+            Debug.Log("Play");
+            animation.Play("Schrank");
+            schrankMoved = true;
+        }
+
     }
+
 }
