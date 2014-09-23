@@ -12,7 +12,7 @@ public class activateRoentgen : MonoBehaviour {
 	void Update () {
 		if (Input.GetKey("r"))
 		{
-			Application.LoadLevel(9);
+			Application.LoadLevel(8);
 		}
 	}
 }
