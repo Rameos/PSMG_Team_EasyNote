@@ -54,11 +54,11 @@ public class PackItemsW : MonoBehaviour
                 putItemInInventory(itemObjectNew.Hammer.name);
             }
 
-            if (rayHit.collider.transform.tag == "batterie")
-            {
-                makeItemInvisible("batt");
-                putItemInInventory(itemObjectNew.Batterie.name);
-            }
+            //if (rayHit.collider.transform.tag == "batterie")
+            //{
+            //    makeItemInvisible("batt");
+            //    putItemInInventory(itemObjectNew.Batterie.name);
+            //}
 
             if (rayHit.collider.transform.tag == "fernbedienung")
             {
