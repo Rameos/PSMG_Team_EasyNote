@@ -48,6 +48,7 @@ public class openKasten : MonoBehaviour
                 light.light.intensity = 1;
                 lightOn = true;
                 guiKeller.printHelpText("Du hast den Lichtschalter gefunden!");
+                Debug.Log("jaaaaaaaaaaaaoodoijijiojoijo");
          }
         
         if(count == 0)

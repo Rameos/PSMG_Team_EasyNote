@@ -3,6 +3,7 @@ using System.Collections;
 
 public class MoveCameraKeller : MonoBehaviour {
 
+    GameObject cam = GameObject.FindGameObjectWithTag("MainCamera");
     
 	// Use this for initialization
     void start()
@@ -11,6 +12,8 @@ public class MoveCameraKeller : MonoBehaviour {
         GameObject kastenDoor = GameObject.FindGameObjectWithTag("kastenDoor");
         openKasten oK = kastenDoor.GetComponent<openKasten>();
         oK.test = 10;
+
+        
     }
 
     void Update()
