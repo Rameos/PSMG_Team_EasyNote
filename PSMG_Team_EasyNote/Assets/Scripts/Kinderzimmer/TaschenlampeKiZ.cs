@@ -79,7 +79,7 @@ public class TaschenlampeKiZ : MonoBehaviourWithGazeComponent
 
 
         //Checks if the F key is down and whether the boolean is on or off.
-        if (Input.GetKeyDown(KeyCode.F) && flashlightOn == false)
+        if (Input.GetKeyDown(KeyCode.T) && flashlightOn == false)
         {
             flashlightOn = true;
 
@@ -87,7 +87,7 @@ public class TaschenlampeKiZ : MonoBehaviourWithGazeComponent
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.F) && flashlightOn == true)
+            if (Input.GetKeyDown(KeyCode.T) && flashlightOn == true)
             {
                 flashlightOn = false;//If the f key is down and the boolean is true, it sets the boolean to false.
             }

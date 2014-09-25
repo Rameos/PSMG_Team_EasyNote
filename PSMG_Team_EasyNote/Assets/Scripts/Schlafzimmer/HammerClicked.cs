@@ -8,7 +8,7 @@ public class HammerClicked : MonoBehaviour {
     private Vector3 offset;
     //public float Rotation;
     GameObject hammer;
-    Wecker wecker;
+    //Wecker wecker;
 
     private float speed = 30;
     private float moveSpeed = 5;
@@ -23,8 +23,8 @@ public class HammerClicked : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         float translation = Input.GetAxis("Mouse ScrollWheel");
-        GameObject zb = GameObject.FindGameObjectWithTag("ziffernblatt");
-        wecker = zb.GetComponent<Wecker>(); 
+        GameObject zielgroß = GameObject.FindGameObjectWithTag("Paketgroß");
+        //wecker = zb.GetComponent<Wecker>(); 
         
 	}
 
@@ -60,20 +60,21 @@ public class HammerClicked : MonoBehaviour {
 
     }
 
-    void OnTriggerStay(Collider other)
-    {
+    //void OnTriggerStay(Collider other)
+    //{
 
         
-            if (other.tag == "wecker" && gameObject.tag == "hammer")
-            {
-                wecker.destroyed = true;
+            //if (other.tag == "wecker" && gameObject.tag == "Dynamitgroß")
+            //{
+               // wecker.destroyed = true;
                 
                 
-            }
+           // }
+    //}
         
 
        
 
-    }
+    
 }
 
