@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DestrLapp : MonoBehaviour {
+public class DestroyLappen : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

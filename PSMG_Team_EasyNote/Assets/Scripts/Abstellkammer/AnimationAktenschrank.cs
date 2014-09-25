@@ -4,14 +4,16 @@ using System.Collections;
 public class AnimationAktenschrank : MonoBehaviour {
 
     bool AktenschrankMoved = false;
+    GameObject aktenschrank;
 
     void OnMouseDown()
     {
+        aktenschrank.audio.Play();
+
         if (AktenschrankMoved == false)
         {
-            Debug.Log("OnMouseDown");
+            
 
-            Debug.Log("Play");
             animation.Play("AktenschrankAuf");
             AktenschrankMoved = true;
         }

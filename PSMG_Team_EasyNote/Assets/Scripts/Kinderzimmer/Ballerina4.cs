@@ -21,15 +21,12 @@ public class Ballerina4 : MonoBehaviour {
     void OnMouseDown()
     {
 
-        Debug.Log("clicked");
 
         ballerina.audio.Play();
 
         if (BallerinaMoved == false)
         {
-            Debug.Log("OnMouseDown");
-
-            Debug.Log("Play");
+            
             animation.Play("Ballerina4");
             BallerinaMoved = true;
         }

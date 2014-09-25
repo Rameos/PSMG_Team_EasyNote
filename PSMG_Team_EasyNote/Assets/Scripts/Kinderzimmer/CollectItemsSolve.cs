@@ -15,6 +15,9 @@ public class CollectItemsSolve : MonoBehaviour
     bool gefundenStifttuerkis = false;
     int anzahlGefObj = 0;
 
+    GameObject docs;
+    GameObject pling;
+
     void Start()
     {
 
@@ -44,13 +47,17 @@ public class CollectItemsSolve : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 50))
             {
+                
 
                 if (hit.transform.gameObject.tag == "Docs")
                 {
+                   
+
                     Destroy(GameObject.FindWithTag("Docs"));
                     gefundenDocs = true;
                     anzahlGefObj = anzahlGefObj + 1;
-                    Debug.Log(anzahlGefObj);
+                    //docs.Audio.Play();
+                    pling.audio.Play();
                 }
 
 
@@ -59,7 +66,8 @@ public class CollectItemsSolve : MonoBehaviour
                     Destroy(GameObject.FindWithTag("Stifttuerkis"));
                     gefundenStifttuerkis = true;
                     anzahlGefObj = anzahlGefObj + 1;
-                    Debug.Log(anzahlGefObj);
+                    pling.audio.Play();
+
                 }
 
                 if (hit.transform.gameObject.tag == "Autogelb")
@@ -67,7 +75,8 @@ public class CollectItemsSolve : MonoBehaviour
                     Destroy(GameObject.FindWithTag("Autogelb"));
                     gefundenAutogelb = true;
                     anzahlGefObj = anzahlGefObj + 1;
-                    Debug.Log(anzahlGefObj);
+                    pling.audio.Play();
+
                 }
 
                 if (hit.transform.gameObject.tag == "RubikCube")
@@ -75,7 +84,8 @@ public class CollectItemsSolve : MonoBehaviour
                     Destroy(GameObject.FindWithTag("RubikCube"));
                     gefundenRubikCube = true;
                     anzahlGefObj = anzahlGefObj + 1;
-                    Debug.Log(anzahlGefObj);
+                    pling.audio.Play();
+
                 }
 
                 
