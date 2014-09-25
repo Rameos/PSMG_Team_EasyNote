@@ -18,6 +18,7 @@ public class InventarGUI : MonoBehaviour
     bool toggleVariable;
     public bool dragHammer = false;
     public bool dragSchlüssel = false;
+    public bool dragRemote = false;
     bool button0, button1, button2, button3 = false;
     public GUISkin MyButton;
 
@@ -275,6 +276,30 @@ public class InventarGUI : MonoBehaviour
                 //mousePos.z = 0.6f;
                 //Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
                 objekt = GameObject.FindGameObjectWithTag("schlüsselDub");
+                objekt.renderer.enabled = true;
+                //item.transform.position = objectPos;
+
+            }
+
+            else
+            {
+
+            }
+
+        }
+
+
+        if ((inventoryNameDictionaryW[2].Equals("Fernbedienung") && button2) || (inventoryNameDictionaryW[3].Equals("Fernbedienung") && button3))
+        {
+            Debug.Log(movCam.camPos);
+            if (movCam.camPos.Equals("Kommode") || movCam.camPos.Equals("TV"))
+            {
+
+                dragRemote = true;
+                //Vector3 mousePos = Input.mousePosition;
+                //mousePos.z = 0.6f;
+                //Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
+                objekt = GameObject.FindGameObjectWithTag("fernDub");
                 objekt.renderer.enabled = true;
                 //item.transform.position = objectPos;
 
