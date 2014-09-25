@@ -42,8 +42,8 @@ public class MoveCameraAK : MonoBehaviour {
 
                 if (hit.transform.gameObject.tag == "RegalAK") 
                 {
-                    transform.position = new Vector3(0.0019f, 0.0014f, -0.015f);
-                    transform.localEulerAngles = new Vector3(90f, 90f, 0f);
+                    transform.position = new Vector3(0.55f, 2.14f, -0.63f);
+                    transform.localEulerAngles = new Vector3(21.01f, 65.203f, 0.23f);
                     backButtonAKShow = true;
                     camPos = "RegalAK";
                 }
