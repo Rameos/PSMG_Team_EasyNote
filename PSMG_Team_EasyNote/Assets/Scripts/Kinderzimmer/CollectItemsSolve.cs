@@ -15,7 +15,7 @@ public class CollectItemsSolve : MonoBehaviour
     bool gefundenStifttuerkis = false;
     int anzahlGefObj = 0;
 
-    GameObject docs;
+    //GameObject docs;
     GameObject pling;
 
     void Start()
