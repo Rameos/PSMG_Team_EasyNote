@@ -39,19 +39,7 @@ public class Taschenlampe : MonoBehaviourWithGazeComponent
 
         Vector2 gazePos = (gazeModel.posGazeLeft + gazeModel.posGazeRight) * 0.5f;
         gazePos.y = Screen.height - gazePos.y;
-        //raygaze = Camera.main.ScreenPointToRay(gazePos);
-
-
-       // Debug.Log("Koordinaten" + gazePos);
-
-       // Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-       // vector3 pos  = ray.GetPoint(5);
-
-        //Vector3 posMouse = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3);
-        //posMouse = Camera.main.ScreenToWorldPoint(posMouse);
-
-        //transform.position = posMouse;
-        //transform.position = new Vector3(startPos.x, transform.position.y, transform.position.z);
+   
        
 
             //Checks if the boolean is true or false.
@@ -62,7 +50,7 @@ public class Taschenlampe : MonoBehaviourWithGazeComponent
 
                 if (movCam.cameraPos == "Schrank" || movCam.cameraPos == "Korb")
                 {
-                     //Vector3 posMouse = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3);
+                    
                     Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
                     posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
 
@@ -72,8 +60,7 @@ public class Taschenlampe : MonoBehaviourWithGazeComponent
 
                 if (movCam.cameraPos == "Wand")
                 {
-                    //lamp.transform.position = new Vector3(0.7648869f, 1.211256f, 1.81809f);
-                    //Vector3 posMouse = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3);
+                 
                     Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
                     posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
 
@@ -86,8 +73,8 @@ public class Taschenlampe : MonoBehaviourWithGazeComponent
                 {
 
                     lamp.light.intensity = 0;
-                    light.intensity = 1;//If the boolean is true, then it sets the intensity to what ever you want.
-                    //Vector3 posMouse = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3);
+                    light.intensity = 1;
+                   
                     Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
                     posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
 
