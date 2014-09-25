@@ -13,6 +13,6 @@ public class vonAbstellkammerZuKueche : MonoBehaviour {
 	//}
     void OnMouseDown()
     {
-        Application.LoadLevel(7);
+        Application.LoadLevel(5);
     }
 }

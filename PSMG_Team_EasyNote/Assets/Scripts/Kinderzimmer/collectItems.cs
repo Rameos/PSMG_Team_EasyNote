@@ -1,68 +1,43 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 
 public class collectItems : MonoBehaviour
 {
-    private GameObject item;
+    //private GameObject item;
+    string nachricht = "Suche die angegebenen vier Gegenstände!";
+    string stifttuerkis = "Türkiser Stift";
+    string rubikCube = "Rubik's Cube";
+    string docs = "Dokumentenstapel";
+    string autogelb = "Gelbes Auto";
+    bool gefunden = false;
+    int anzahlGefObj = 0;
 
-    private Ray mouseRay;
-    private RaycastHit rayHit;
 
-
-    // Use this for initialization
     void Start()
     {
+
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnGUI()
     {
-
-        mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        if (Input.GetMouseButtonDown(0) && Physics.Raycast(mouseRay, out rayHit))
-        {
-
-            // Physics.Raycast(mouseRay, out rayHit);
-            //Debug.Log(rayHit.collider.transform.tag);
-
-            if (rayHit.collider.transform.tag == "AutoGelb")
-            {
-                makeItemInvisible("Autogelb");
-            }
-
-            if (rayHit.collider.transform.tag == "RubikCube")
-            {
-                makeItemInvisible("RubikCube");
-                
-            }
-
-            if (rayHit.collider.transform.tag == "Stifttuerkis")
-            {
-                makeItemInvisible("Stifttuerkis");
-            }
-
-            if (rayHit.collider.transform.tag == "Docs")
-            {
-                makeItemInvisible("Docs");
-            }
-
-            else
-            {
-                //Do nothing
-
-            }
-        }
-
+        GUI.Label(new Rect(Screen.width / 2 - 200, 0, 500, 100), nachricht);
+        GUI.Label(new Rect(Screen.width / 2 - 200, 0, 500, 100), stifttuerkis);
+        GUI.Label(new Rect(Screen.width / 2 - 200, 0, 500, 100), rubikCube);
+        GUI.Label(new Rect(Screen.width / 2 - 200, 0, 500, 100), docs);
+        GUI.Label(new Rect(Screen.width / 2 - 200, 0, 500, 100), autogelb);
     }
    
-    void makeItemInvisible(string name)
+    void Update()
     {
-        item = GameObject.FindGameObjectWithTag(name);
-        //item.SetActive(false);
-        item.renderer.enabled = false;
+       
+        
+    }
+   
+    void OnMouseDown()
+    {
+        Destroy(this.gameObject);
+
         
 
     }

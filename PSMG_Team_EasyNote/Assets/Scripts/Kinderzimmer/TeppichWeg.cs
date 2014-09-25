@@ -3,17 +3,20 @@ using System.Collections;
 
 public class TeppichWeg : MonoBehaviour {
 
-    void onMouseDown()
+    bool TeppichMoved = false;
+
+    void OnMouseDown()
     {
-        animation.Play("Teppich");
+        if (TeppichMoved == false)
+        {
+            Debug.Log("OnMouseDown");
+
+            Debug.Log("Play");
+            animation.Play("MoveTeppich");
+            TeppichMoved = true;
+        }
+
     }
 
-	void Start () {
 	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
