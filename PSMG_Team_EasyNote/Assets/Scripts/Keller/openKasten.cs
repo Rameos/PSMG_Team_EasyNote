@@ -48,7 +48,8 @@ public class openKasten : MonoBehaviour
                 light.light.intensity = 1;
                 lightOn = true;
                 guiKeller.printHelpText("Du hast den Lichtschalter gefunden!");
-                Debug.Log("jaaaaaaaaaaaaoodoijijiojoijo");
+                Debug.Log("lightOn: " + lightOn);
+               
          }
         
         if(count == 0)
@@ -57,7 +58,6 @@ public class openKasten : MonoBehaviour
             camera.animation.Play("kamera");
             count++;
             zoom = true;
-            Debug.Log(zoom);
             
         }
         /*if (open == true)
@@ -75,7 +75,6 @@ public class openKasten : MonoBehaviour
             camera.animation["kamera"].speed = -1;
             camera.animation.Play("kamera");
             zoom = false;
-            Debug.Log(zoom);
         
         
       

@@ -21,8 +21,8 @@ public class MainDoor : MonoBehaviour {
         rK = GameObject.FindGameObjectWithTag("rohrKlein");
         rcK = rK.GetComponent<rohrClickedKlein>();
 
-       // rG = GameObject.FindGameObjectWithTag("rohrGroß");
-        //rcG = rG.GetComponent<rohrClickedGroß>();
+        rG = GameObject.FindGameObjectWithTag("rohrGroß");
+        rcG = rG.GetComponent<rohrClickedGroß>();
 
         rK2 = GameObject.FindGameObjectWithTag("smallRohr");
         rR = rK2.GetComponent<rotateRohr>();
@@ -33,7 +33,7 @@ public class MainDoor : MonoBehaviour {
         RoomDoor = GameObject.FindGameObjectWithTag("MainDoor");
 
         guiKeller = RoomDoor.GetComponent<guiTextKeller>();
-       // Debug.Log("............................................." + rcG.rohrGr);
+       
 
         OpenDoor();
       
@@ -42,10 +42,10 @@ public class MainDoor : MonoBehaviour {
     void OpenDoor()
     {
         
-        if (rcK.rohrKl == true &&  rR.rohrKl2 == true && oK.lightOn == true && open == false) {
+        if (rcK.rohrKl == true &&  rR.rohrKl2 == true && rcG.rohrGr == true && oK.lightOn == true && open == false) {
 
 
-        guiKeller.printHelpText("Glückwunsch! Du hast das Rätsel gelöst und kannst somit den nächsten Raum betreten!");
+        guiKeller.printHelpText("Glückwunsch! Du hast das Rätsel gelöst und\n kannst somit den nächsten Raum betreten!");
         RoomDoor.animation.Play("doorAnim");
         open = true;
         }

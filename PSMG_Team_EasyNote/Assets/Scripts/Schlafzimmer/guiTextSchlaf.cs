@@ -34,7 +34,7 @@ public class guiTextSchlaf : MonoBehaviour {
 
         if (clicked == false)
         {
-            GUI.Label(new Rect(0, 0, 400, 150), "Mit den Tasten '1','2','3','4' und '5' kannst \ndu die Kameraperspektive verändern.");
+            GUI.Label(new Rect(0, 0, 400, 150), "Mit den Tasten '1','2','3','4' und '5' kannst \ndu die Kameraperspektive verändern.\nDrücke 'r' für Röntgen-Modus \noder 'u' für UV-Modus.");
 
             if (GUI.Button(new Rect(175, 120, 50, 25), "OK"))
             {

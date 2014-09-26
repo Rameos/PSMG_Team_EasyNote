@@ -38,6 +38,7 @@ public class rotateRohr : MonoBehaviour {
             sRohr.audio.Play();
             rohrKl2 = true;
             guiKeller.printHelpText("Du hast das Rohr wieder in die richtige Richtung gedreht!");
+            Debug.Log("rohrKl2: " + rohrKl2);
         }
     }
 

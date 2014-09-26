@@ -36,7 +36,7 @@ public class karton : MonoBehaviour
     {
         if (Input.mousePosition.x > 290 && Input.mousePosition.x < 1200 && Input.mousePosition.y > 120 && Input.mousePosition.y < 550)
         {
-            Debug.Log("Gesucht: "+Input.mousePosition.y);
+            
             Vector3 posMouse = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3);
             posMouse = Camera.main.ScreenToWorldPoint(posMouse);
 

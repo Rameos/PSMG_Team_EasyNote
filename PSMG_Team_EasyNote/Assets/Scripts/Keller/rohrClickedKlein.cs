@@ -90,7 +90,7 @@ public class rohrClickedKlein : MonoBehaviour
         {
             if (other.tag == "rohrKlein")
             {
-                Debug.Log("Kleines Rohr richtig angebracht");
+               
                 rohrKl = true;
                 Debug.Log("rohrKl " + rohrKl);
                 guiKeller.printHelpText("Du hast das kleine Rohr richtig angebracht!");
