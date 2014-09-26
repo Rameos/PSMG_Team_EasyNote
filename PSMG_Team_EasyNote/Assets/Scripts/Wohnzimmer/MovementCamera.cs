@@ -6,6 +6,8 @@ public class MovementCamera : MonoBehaviour
 
     private bool backButtonShow = false;
 
+    GameObject buch;
+
 
     //public float q4 = 0;
     public float q1 = 0;
@@ -28,7 +30,7 @@ public class MovementCamera : MonoBehaviour
     {
 
         setToStartPos();
-        //schrank = GameObject.FindGameObjectWithTag("Schrank");
+        buch = GameObject.FindGameObjectWithTag("BuchHinweis");
 
     }
 
@@ -122,6 +124,7 @@ public class MovementCamera : MonoBehaviour
             {
                 backButtonShow = false;
                 setToStartPos();
+
             }
 
         }
@@ -130,9 +133,10 @@ public class MovementCamera : MonoBehaviour
 
     private void setToStartPos()
     {
-        //transform.position = new Vector3(15.83f, 120.6f, 0.0f);
-
-        //transform.localEulerAngles = new Vector3(-5.36f, 2.91f, 0.0f);
+        //if (buch.renderer.enabled == true)
+        //{
+        //    buch.renderer.enabled = false;
+        //}
 
         transform.position = new Vector3(-5.3f, 3.3f, 12.45f);
         transform.localEulerAngles = new Vector3(20.6f, 116.4f, -0.27f);
