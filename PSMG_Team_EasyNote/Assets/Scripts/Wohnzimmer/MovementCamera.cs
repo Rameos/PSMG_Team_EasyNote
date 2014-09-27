@@ -28,9 +28,9 @@ public class MovementCamera : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
-        setToStartPos();
         buch = GameObject.FindGameObjectWithTag("BuchHinweis");
+        setToStartPos();
+        
 
     }
 
@@ -133,10 +133,10 @@ public class MovementCamera : MonoBehaviour
 
     private void setToStartPos()
     {
-        //if (buch.renderer.enabled == true)
-        //{
-        //    buch.renderer.enabled = false;
-        //}
+        if (buch.renderer.enabled == true)
+        {
+            buch.renderer.enabled = false;
+        }
 
         transform.position = new Vector3(-5.3f, 3.3f, 12.45f);
         transform.localEulerAngles = new Vector3(20.6f, 116.4f, -0.27f);
