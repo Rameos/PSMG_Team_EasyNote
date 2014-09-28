@@ -15,7 +15,7 @@ public class schiebepuzzle : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 		
 	}
 	
