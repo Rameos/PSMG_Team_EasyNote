@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class schiebepuzzle : MonoBehaviour {
-	
+	public AudioClip Fliesenschieben;
 	public GameObject slot;
 	float xtemp;
 	float ytemp;
@@ -22,7 +22,7 @@ public class schiebepuzzle : MonoBehaviour {
 	void OnMouseUp(){
 		//If theDistance==1 between tiles then swap tiles
 		if(Vector3.Distance(transform.localPosition,slot.transform.position)==1){
-			
+			audio.PlayOneShot(Fliesenschieben);
 			xtemp = transform.localPosition.x;
 			ytemp = transform.localPosition.y;
 			transform.localPosition = new Vector3(slot.transform.position.x, slot.transform.position.y, 0);

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GUIinfo_Roentgen : MonoBehaviour {
+public class GUIinfoBad : MonoBehaviour {
 	
 	bool showLabel = false;
 	string helpText;
@@ -32,7 +32,7 @@ public class GUIinfo_Roentgen : MonoBehaviour {
 		if (showLabel)
 		{
 			
-			GUI.Label(new Rect(Screen.width / 2 - 200, 0, 500, 100), "Was für eine Sauerei... Wer hat denn hier gewütet?!");
+			GUI.Label(new Rect(Screen.width / 2 - 200, 0, 500, 100), "Hier ist ein Puzzle versteckt, welches gelöst werden muss.");
 			//showText();
 		}
 		else
@@ -40,7 +40,7 @@ public class GUIinfo_Roentgen : MonoBehaviour {
 			GUI.Label(new Rect(0, 0, 0, 0), "");
 		}
 		
-		GUI.Label(new Rect(0, 0, 500, 100), "Mit den Tasten '1', '2', '3' und '4' kannst \ndu die Kameraperspektive verändern.\nIn diesem Modus ist keine Interaktion möglich.\nKehre dann mit 'r' zum Original-Modus zurück.");
+		GUI.Label(new Rect(0, 0, 500, 100), "Mit den Tasten '1', '2', '3' und '4' kannst \ndu die Kameraperspektive verändern.");
 	}
 	
 	
