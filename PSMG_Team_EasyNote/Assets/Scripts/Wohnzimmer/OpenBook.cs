@@ -23,6 +23,7 @@ public class OpenBook : MonoBehaviour {
         FernbedienungZiehen fernScript = remote.GetComponent<FernbedienungZiehen>();
         if (fernScript.showPyr == true)
         {
+            audio.Play();
             renderer.enabled = true;
         }
 

@@ -68,7 +68,7 @@ public class MovingCamera : MonoBehaviour
                 {
 
                     transform.position = new Vector3(2.179206f, 1.19675f, 0.783928f);
-                    transform.localEulerAngles = new Vector3(0f, 0f, 0f);
+                    transform.localEulerAngles = new Vector3(0f, 180f, 0f);
                     backButtonShow = true;
                     cameraPos = "Brett";
                 }

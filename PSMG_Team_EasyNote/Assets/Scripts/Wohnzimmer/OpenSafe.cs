@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 public class OpenSafe : MonoBehaviour
 {
-
+    GameObject bild;
     bool safeClicked = false;
     bool showWindow = true;
     string input = "";
@@ -14,7 +14,7 @@ public class OpenSafe : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        bild = GameObject.FindGameObjectWithTag("Bild"); 
     }
 
     // Update is called once per frame
@@ -25,8 +25,14 @@ public class OpenSafe : MonoBehaviour
 
     void OnMouseDown()
     {
-        safeClicked = true;
+       
+        movePicture pic = bild.GetComponent<movePicture>();
 
+        if (pic.picMoved == true)
+        {
+            safeClicked = true;
+
+        }
     }
 
     void OnGUI()
@@ -44,9 +50,13 @@ public class OpenSafe : MonoBehaviour
                 input = Regex.Replace(input, "[^0-9]", "");
 
 
-                if (GUI.Button(new Rect(60, 70, 80, 30), "Enter"))
+                if (GUI.Button(new Rect(10, 70, 80, 30), "Enter"))
                 {
                     vergleicheZahlen();
+                }
+                if (GUI.Button(new Rect(100, 70, 80, 30), "Abbrechen"))
+                {
+                    showWindow = false;
                 }
 
                 GUI.EndGroup();

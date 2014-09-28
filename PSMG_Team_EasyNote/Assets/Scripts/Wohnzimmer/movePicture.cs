@@ -3,7 +3,7 @@ using System.Collections;
 
 public class movePicture : MonoBehaviour {
  
-    bool picMoved = false;
+    public bool picMoved = false;
  
     void OnMouseDown()
     {
