@@ -177,13 +177,13 @@ public class InventarGUI : MonoBehaviour
 
         if ((button0 && button1 && button2) || (button0 && button1 && button3) || (button0 && button3 && button2) || (button3 && button1 && button2) || (button0 && button1 && button2 && button3))
         {
-            Debug.Log("Nur zwei gleichzeitig");
+
             message = "Du kannst nur zwei Dinge kombinieren";
 
         }
         if (!button0 && !button1 && !button2 && !button3)
         {
-            Debug.Log("Wähle zwei Objekte aus");
+
             message = "Wähle zwei Objekte aus";
 
         }
@@ -224,7 +224,7 @@ public class InventarGUI : MonoBehaviour
 
         if ((inventoryNameDictionaryW[0].Equals("Hammer") && button0) || (inventoryNameDictionaryW[1].Equals("Hammer") && button1))
         {
-            Debug.Log(movCam.camPos);
+
             if (movCam.camPos.Equals("Wand"))
             {
 
@@ -245,7 +245,7 @@ public class InventarGUI : MonoBehaviour
 
         if ((inventoryNameDictionaryW[1].Equals("Schlüssel") && button1) || (inventoryNameDictionaryW[2].Equals("Schlüssel") && button2))
         {
-            Debug.Log(movCam.camPos);
+
             if (movCam.camPos.Equals("Kommode") || movCam.camPos.Equals("TV"))
             {
 
@@ -264,7 +264,7 @@ public class InventarGUI : MonoBehaviour
 
         if ((inventoryNameDictionaryW[2].Equals("Fernbedienung") && button2) || (inventoryNameDictionaryW[3].Equals("Fernbedienung") && button3))
         {
-            Debug.Log(movCam.camPos);
+
             if (movCam.camPos.Equals("Kommode") || movCam.camPos.Equals("TV"))
             {
 

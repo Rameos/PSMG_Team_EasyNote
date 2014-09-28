@@ -5,7 +5,7 @@ public class ItemClass : MonoBehaviour
 {
 
 
-
+    //Diese Icons sollten ursprünglich mit echten Icons ersetzt werden. Leider fehlte dazu die Zeit.
     static public Texture2D swordIcon;
     static public Texture2D arrowIcon;
     static public Texture2D breadIcon;
@@ -13,6 +13,7 @@ public class ItemClass : MonoBehaviour
 
 
     //Items
+    //Die Description könnte gezeigt werden, wenn über das Objekt im Inventar gehovert wird. Nicht implementiert
     public ItemCreatorClass Spazierstock = new ItemCreatorClass(0, "Spazierstock", swordIcon, "Ein Spazierstock");
     public ItemCreatorClass Säge = new ItemCreatorClass(1, "Säge", arrowIcon, "Eine Säge");
     public ItemCreatorClass stockKurz = new ItemCreatorClass(2, "Kurzer Stock", breadIcon, "Der abgesägte Spazierstock");

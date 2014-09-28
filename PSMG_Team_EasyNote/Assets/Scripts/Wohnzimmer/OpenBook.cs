@@ -1,22 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OpenBook : MonoBehaviour {
+public class OpenBook : MonoBehaviour
+{
 
 
     GameObject remote, book;
-	// Use this for initialization
+    // Use this for initialization
     void Start()
     {
 
         remote = GameObject.FindGameObjectWithTag("fernDub");
-        
+
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     void OnMouseDown()
     {

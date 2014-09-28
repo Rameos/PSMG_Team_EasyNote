@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class activateUVModus : MonoBehaviour {
+public class activateUVModus : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
 
     void Update()
     {

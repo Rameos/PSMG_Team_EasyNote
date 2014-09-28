@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TriggerInnen : MonoBehaviour {
+public class TriggerInnen : MonoBehaviour
+{
 
 
     public bool RIinRightPos = false;
@@ -18,9 +19,9 @@ public class TriggerInnen : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-       // RIinRightPos = true;
+
         RIinRightPos = false;
-     
+
     }
 
     void OnTriggerStay(Collider other)
@@ -32,6 +33,6 @@ public class TriggerInnen : MonoBehaviour {
     void OnTriggerExit(Collider other)
     {
         RIinRightPos = false;
-    
+
     }
 }

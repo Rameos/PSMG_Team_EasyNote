@@ -10,21 +10,6 @@ public class MovingCamera : MonoBehaviour
 
     public string cameraPos = "";
 
-    //public float q1 = 0;
-    //public float q2 = 0;
-    //public float q3 = 0;
-    //public float q4 = 0;
-
-    //public float v1 = -1.347125f;
-    //public float v2 = 1.245951f;
-    //public float v3 = 0.5974661f;
-
-
-
-    //ursprünglich
-    //-1.347125  1.245951  0.5974661    8.598767   75.93419   0.1737647
-
-
 
     // Use this for initialization
     void Start()
@@ -40,10 +25,6 @@ public class MovingCamera : MonoBehaviour
     void Update()
     {
 
-        //  transform.position = new Vector3(v1, v2, v3); // Richtet Kamera an gewünschter Position aus
-        //transform.rotation = new Quaternion(q1, q2, q3, q4);
-
-
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
@@ -56,7 +37,7 @@ public class MovingCamera : MonoBehaviour
                 {
 
                     transform.position = new Vector3(0.1704606f, 0.4893888f, 0.2440029f);
-                    transform.localEulerAngles = new Vector3(0f,0f, 0f);
+                    transform.localEulerAngles = new Vector3(0f, 0f, 0f);
                     schrank.collider.enabled = false;
                     backButtonShow = true;
                     korb.collider.enabled = false;
@@ -124,6 +105,6 @@ public class MovingCamera : MonoBehaviour
         transform.position = new Vector3(-1.705902f, 1.355807f, 1.276451f);
         transform.localEulerAngles = new Vector3(15.21146f, 90f, 0f);
         cameraPos = "Start";
-        //schrank.collider.enabled = true;
+
     }
 }

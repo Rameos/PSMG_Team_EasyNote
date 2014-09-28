@@ -74,7 +74,7 @@ public class FernbedienungZiehen : MonoBehaviour
 
         else
         {
-            Debug.Log("Der TV scheint keinen Strom zu haben..");
+            
         }
 
     }

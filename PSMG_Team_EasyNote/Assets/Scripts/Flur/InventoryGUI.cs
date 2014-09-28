@@ -51,7 +51,7 @@ public class InventoryGUI : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.Label(new Rect(Screen.width / 2 - 200, 50, 500, 100),nachricht);
+        GUI.Label(new Rect(Screen.width / 2 - 200, 50, 500, 100), nachricht);
         GUI.Label(new Rect(Screen.width / 2 - 200, 0, 500, 100), "Mit der 'R'-Taste schaltest du den Röntgenblick ein. \nMit der 'U'-Taste kommst du in den UV-Modus. \nZurück geht's mit 'N'.");
 
         showInventory = GUI.Toggle(new Rect(Screen.width / 2 - 300, 25, 100, 50), showInventory, "Inventar");
@@ -125,7 +125,7 @@ public class InventoryGUI : MonoBehaviour
             getActiveToggle();
             testMatch();
             trueAufheben();
-           
+
         }
 
         if (GUILayout.Button("Benutzen", GUILayout.Height(50)))
@@ -183,13 +183,13 @@ public class InventoryGUI : MonoBehaviour
 
         if ((toggle0 && toggle1 && toggle2) || (toggle0 && toggle1 && toggle3) || (toggle0 && toggle3 && toggle2) || (toggle3 && toggle1 && toggle2) || (toggle0 && toggle1 && toggle2 && toggle3))
         {
-            Debug.Log("Nur zwei gleichzeitig");
+
             nachricht = "Du kannst nur zwei Dinge kombinieren";
 
         }
         if (!toggle0 && !toggle1 && !toggle2 && !toggle3)
         {
-            Debug.Log("Wähle zwei Objekte aus");
+
             nachricht = "Wähle zwei Objekte aus";
 
         }
@@ -218,8 +218,7 @@ public class InventoryGUI : MonoBehaviour
         else
         {
             nachricht = "Das funktioniert nicht";
-            Debug.Log("Falsche Kombi");
-            //fehlermeldung
+
         }
     }
 
@@ -229,7 +228,7 @@ public class InventoryGUI : MonoBehaviour
 
         if ((inventoryNameDictionary[2].Equals("Kurzer Stock") && toggle2) || (inventoryNameDictionary[3].Equals("Kurzer Stock") && toggle3))
         {
-            Debug.Log(movCam.cameraPos);
+
             if (movCam.cameraPos.Equals("Schrank"))
             {
 

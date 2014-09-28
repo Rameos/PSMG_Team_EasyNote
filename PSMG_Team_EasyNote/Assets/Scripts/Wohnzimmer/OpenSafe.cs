@@ -14,7 +14,7 @@ public class OpenSafe : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        bild = GameObject.FindGameObjectWithTag("Bild"); 
+        bild = GameObject.FindGameObjectWithTag("Bild");
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class OpenSafe : MonoBehaviour
 
     void OnMouseDown()
     {
-       
+
         movePicture pic = bild.GetComponent<movePicture>();
 
         if (pic.picMoved == true)
@@ -44,7 +44,7 @@ public class OpenSafe : MonoBehaviour
             {
 
                 GUI.BeginGroup(new Rect(Screen.width / 2 - 50, Screen.height / 2 - 50, 200, 120));
-             
+
                 GUI.Box(new Rect(0, 0, 200, 230), "Gib die Geheimzahl ein:");
                 input = GUI.TextField(new Rect(80, 30, 50, 30), input, 4);  //Screen.width / 2 - 15, Screen.height / 2 - 70, 50, 30
                 input = Regex.Replace(input, "[^0-9]", "");
@@ -71,15 +71,16 @@ public class OpenSafe : MonoBehaviour
     void vergleicheZahlen()
     {
 
-        if(input.Equals(solution)){
+        if (input.Equals(solution))
+        {
             //Öffne safe
             showWindow = false;
-            Debug.Log("Richtiger Code");
+
             animation.Play("safe");
         }
         else
         {
-            Debug.Log("Falsche Kombi");
+
         }
     }
 }

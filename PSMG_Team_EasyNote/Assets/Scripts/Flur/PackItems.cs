@@ -45,8 +45,6 @@ public class PackItems : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(mouseRay, out rayHit))
         {
 
-            // Physics.Raycast(mouseRay, out rayHit);
-            //Debug.Log(rayHit.collider.transform.tag);
 
             if (rayHit.collider.transform.tag == "Ball")
             {
@@ -89,18 +87,16 @@ public class PackItems : MonoBehaviour
         }
 
         InventoryGUI.inventoryNameDictionary[itemNumber] = thing;
-        //item.collider.enabled = false;
 
 
     }
 
-   
+
     void makeItemInvisible(string name)
     {
         item = GameObject.FindGameObjectWithTag(name);
-        //item.SetActive(false);
         item.renderer.enabled = false;
-        
+
 
     }
 }

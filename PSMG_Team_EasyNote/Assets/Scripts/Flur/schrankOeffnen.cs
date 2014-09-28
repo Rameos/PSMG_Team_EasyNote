@@ -10,18 +10,16 @@ public class SchrankOeffnen : MonoBehaviour
     {
         if (schrankOffen == false)
         {
-           // Debug.Log("OnMouseDown");
+
             schrank = GameObject.FindGameObjectWithTag("Schrank");
-            //Debug.Log("Play");
-            //Debug.Log(schrank.animation.Play("openDoors"));
             schrank.animation.Play("openDoors");
             schrank.audio.Play();
             schrankOffen = true;
-           
+
         }
 
     }
-    
+
 
 
 }

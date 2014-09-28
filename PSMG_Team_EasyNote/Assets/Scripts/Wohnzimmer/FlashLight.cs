@@ -5,20 +5,20 @@ using UnityEngine;
 using System.Collections;
 using iViewX;
 
-public class FlashLight: MonoBehaviourWithGazeComponent
+public class FlashLight : MonoBehaviourWithGazeComponent
 {
 
     private bool flashlightOn = false;
     private Vector3 startPos;
-    GameObject  lamp;
+    GameObject lamp;
 
     // Use this for initialization
     void Start()
     {
         lamp = GameObject.FindGameObjectWithTag("lampe");
-      gazeUI.Add(new GazeButton(new Rect(), "Cube"));
+        gazeUI.Add(new GazeButton(new Rect(), "Cube"));
 
-    
+
     }
 
 
@@ -39,62 +39,62 @@ public class FlashLight: MonoBehaviourWithGazeComponent
 
         Vector2 gazePos = (gazeModel.posGazeLeft + gazeModel.posGazeRight) * 0.5f;
         gazePos.y = Screen.height - gazePos.y;
-   
-       
 
-            //Checks if the boolean is true or false.
-            if (flashlightOn == true)
+
+
+        //Checks if the boolean is true or false.
+        if (flashlightOn == true)
+        {
+            lamp.light.intensity = 1;
+
+
+            if (movCam.camPos == "TV" || movCam.camPos == "Kommode" || movCam.camPos == "Couch")
+            {
+
+                Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
+                posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
+
+                transform.position = posUserGaze;
+                transform.position = new Vector3(transform.position.x, transform.position.y, startPos.z);
+            }
+
+
+
+            if (movCam.camPos == "Wand")
+            {
+
+                Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
+                posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
+
+                transform.position = posUserGaze;
+                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            }
+
+
+            if (movCam.camPos == "Regal" || movCam.camPos == "Start")
+            {
+
+                lamp.light.intensity = 0;
+                light.intensity = 1;
+
+                Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
+                posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
+
+                transform.position = posUserGaze;
+                transform.position = new Vector3(startPos.x, transform.position.y, transform.position.z);
+            }
+
+        }
+        else
+        {
+            if (flashlightOn == false)
             {
                 lamp.light.intensity = 1;
-             
-
-                if (movCam.camPos == "TV" || movCam.camPos == "Kommode" || movCam.camPos == "Couch")
-                {
-                    
-                    Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
-                    posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
-
-                    transform.position = posUserGaze;
-                    transform.position = new Vector3(transform.position.x, transform.position.y, startPos.z);
-                }
-
-
-
-                if (movCam.camPos == "Wand")
-                {
-                 
-                    Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
-                    posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
-
-                    transform.position = posUserGaze;
-                    transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-                }
-
-
-                if (movCam.camPos == "Regal" || movCam.camPos == "Start")
-                {
-
-                    lamp.light.intensity = 0;
-                    light.intensity = 1;
-                   
-                    Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
-                    posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
-
-                    transform.position = posUserGaze;
-                    transform.position = new Vector3(startPos.x, transform.position.y, transform.position.z);
-                }
-       
+                light.intensity = 0;//If the boolean is false, then it sets the intensity to zero.
             }
-            else
-            {
-                if (flashlightOn == false)
-                {
-                    lamp.light.intensity = 1;
-                    light.intensity = 0;//If the boolean is false, then it sets the intensity to zero.
-                }
-            }
+        }
 
-        
+
 
         //Checks if the F key is down and whether the boolean is on or off.
         if (Input.GetKeyDown(KeyCode.F) && flashlightOn == false)
@@ -134,14 +134,14 @@ public class FlashLight: MonoBehaviourWithGazeComponent
 
     public bool isDrawing { get; set; }
 
-  public override void OnGazeEnter(RaycastHit hit)
+    public override void OnGazeEnter(RaycastHit hit)
     {
 
     }
 
     public override void OnGazeExit()
     {
-    
+
     }
 
 }

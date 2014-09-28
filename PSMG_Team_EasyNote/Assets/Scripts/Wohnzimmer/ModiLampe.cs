@@ -41,9 +41,6 @@ public class ModiLampe : MonoBehaviourWithGazeComponent
         gazePos.y = Screen.height - gazePos.y;
 
 
-
-
-
         lamp.light.intensity = 0;
         light.intensity = 1;
 
@@ -82,8 +79,6 @@ public class ModiLampe : MonoBehaviourWithGazeComponent
         }
 
     }
-
-
 
 
 

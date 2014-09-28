@@ -5,21 +5,7 @@ public class MovementCamera : MonoBehaviour
 {
 
     private bool backButtonShow = false;
-
     GameObject buch;
-
-
-    //public float q4 = 0;
-    public float q1 = 0;
-    public float q2 = 0;
-    public float q3 = 0;
-
-    public float v1 = 0;
-    public float v2 = 0;
-    public float v3 = 0;
-
-
-
     public string camPos = "";
 
 
@@ -28,7 +14,7 @@ public class MovementCamera : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        
+
         setToStartPos();
 
 

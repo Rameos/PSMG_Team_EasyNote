@@ -45,9 +45,6 @@ public class PackItemsW : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(mouseRay, out rayHit))
         {
 
-            // Physics.Raycast(mouseRay, out rayHit);
-            //Debug.Log(rayHit.collider.transform.tag);
-
             if (rayHit.collider.transform.tag == "hammer")
             {
                 makeItemInvisible("hammer");
@@ -68,7 +65,7 @@ public class PackItemsW : MonoBehaviour
 
             if (rayHit.collider.transform.tag == "schlüssel")
             {
-                Debug.Log("Schlüssel");
+              
                 makeItemInvisible("schlüssel");
                 putItemInInventory(itemObjectNew.Schlüssel.name);
             }
@@ -96,9 +93,7 @@ public class PackItemsW : MonoBehaviour
         }
 
         InventarGUI.inventoryNameDictionaryW[itemNumber] = thing;
-        //item.collider.enabled = false;
-
-
+    
     }
 
 
@@ -106,7 +101,6 @@ public class PackItemsW : MonoBehaviour
     {
 
         objekt = GameObject.FindGameObjectWithTag(name);
-        //item.SetActive(false);
         objekt.renderer.enabled = false;
         objekt.collider.enabled = false;
 
