@@ -64,7 +64,7 @@ public class ModiLampe : MonoBehaviourWithGazeComponent
             posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
 
             transform.position = posUserGaze;
-            transform.position = new Vector3(transform.position.x, transform.position.y, 1.81809f);
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         }
 
 

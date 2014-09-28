@@ -45,8 +45,8 @@ public class FlashLight: MonoBehaviourWithGazeComponent
             //Checks if the boolean is true or false.
             if (flashlightOn == true)
             {
-                lamp.light.intensity = 0;
-                light.intensity = 1;
+                lamp.light.intensity = 1;
+             
 
                 if (movCam.camPos == "TV" || movCam.camPos == "Kommode" || movCam.camPos == "Couch")
                 {
@@ -58,6 +58,8 @@ public class FlashLight: MonoBehaviourWithGazeComponent
                     transform.position = new Vector3(transform.position.x, transform.position.y, startPos.z);
                 }
 
+
+
                 if (movCam.camPos == "Wand")
                 {
                  
@@ -65,7 +67,7 @@ public class FlashLight: MonoBehaviourWithGazeComponent
                     posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
 
                     transform.position = posUserGaze;
-                    transform.position = new Vector3(transform.position.x, transform.position.y, 1.81809f);
+                    transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                 }
 
 
