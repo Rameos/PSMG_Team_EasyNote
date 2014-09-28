@@ -5,12 +5,12 @@ public class InventoryGUI : MonoBehaviour
 {
 
     private Rect inventoryWindowRect = new Rect(Screen.width - 425, Screen.height - 325, 400, 250); //Screen.width - 100,Screen.height - 50,100,50
-    //private bool inventoryWindowToggle = false;
 
+    bool showInventory = false;
     int windowX = Screen.width - 425;
     int windowY = Screen.height - 325;
     string match = "";
-    string nachricht = "Durch Klicken auf Dinge kannst du sie ins Inventar legen. \nNachdem du zwei ausgewählt hast, kannst du sie miteinander kombinieren.";
+    string nachricht = "Durch Klicken auf Dinge kannst du sie ins Inventar legen. \nNachdem du zwei ausgewählt hast, kannst du sie vielleicht miteinander kombinieren.";
 
 
     GameObject item, hebel, hebelDublicate;
@@ -51,14 +51,14 @@ public class InventoryGUI : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.Label(new Rect(Screen.width / 2 - 200, 0, 500, 100),nachricht);
-        //inventoryWindowToggle = GUI.Toggle(new Rect(800, 50, 100, 50), inventoryWindowToggle, "Inventory");
+        GUI.Label(new Rect(Screen.width / 2 - 200, 50, 500, 100),nachricht);
+        GUI.Label(new Rect(Screen.width / 2 - 200, 0, 500, 100), "Mit der 'R'-Taste schaltest du den Röntgenblick ein. \nMit der 'U'-Taste kommst du in den UV-Modus. \nZurück geht's mit 'N'.");
 
-        // if (inventoryWindowToggle)
-
-        inventoryWindowRect = GUI.Window(0, inventoryWindowRect, inventoryWindowMethod, "Inventar");
-        //getActiveToggle();
-
+        showInventory = GUI.Toggle(new Rect(Screen.width / 2 - 300, 25, 100, 50), showInventory, "Inventar");
+        if (showInventory)
+        {
+            inventoryWindowRect = GUI.Window(0, inventoryWindowRect, inventoryWindowMethod, "Inventar");
+        }
     }
 
 
@@ -114,18 +114,7 @@ public class InventoryGUI : MonoBehaviour
         }
 
         GUILayout.EndHorizontal();
-        //if (GUILayout.Button(inventoryNameDictionary[0], GUILayout.Height(50)))
-        //{
 
-        //   Debug.Log(inventoryNameDictionary[0]);
-        //   Vector3 mousePos = Input.mousePosition;
-        //   mousePos.z = 0.6f;
-        //   Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
-        //   item = GameObject.FindGameObjectWithTag(inventoryNameDictionary[0]);
-        //   item.renderer.enabled = true;
-        //   item.transform.position = objectPos;
-        //   //GameObject myObject = Instantiate(item, objectPos, Quaternion.identity);
-        //}
 
 
 
@@ -136,13 +125,14 @@ public class InventoryGUI : MonoBehaviour
             getActiveToggle();
             testMatch();
             trueAufheben();
-            //Debug.Log();
+           
         }
 
         if (GUILayout.Button("Benutzen", GUILayout.Height(50)))
         {
             getItem();
             trueAufheben();
+            nachricht = "Benutzen geht nur mit dem richtigen Objekt an der richtigen Stelle";
 
         }
 
@@ -160,13 +150,13 @@ public class InventoryGUI : MonoBehaviour
         if (toggle0 && toggle1)
         {
             match = inventoryNameDictionary[0] + inventoryNameDictionary[1];
-         
+
 
         }
         if (toggle0 && toggle2)
         {
             match = inventoryNameDictionary[0] + inventoryNameDictionary[2];
-  
+
         }
         if (toggle0 && toggle3)
         {
@@ -175,27 +165,27 @@ public class InventoryGUI : MonoBehaviour
         }
         if (toggle1 && toggle2)
         {
-             match = inventoryNameDictionary[1] + inventoryNameDictionary[2];
+            match = inventoryNameDictionary[1] + inventoryNameDictionary[2];
 
         }
         if (toggle1 && toggle3)
         {
 
             match = inventoryNameDictionary[1] + inventoryNameDictionary[3];
-  
+
         }
         if (toggle2 && toggle3)
         {
 
             match = inventoryNameDictionary[2] + inventoryNameDictionary[3];
-      
+
         }
 
         if ((toggle0 && toggle1 && toggle2) || (toggle0 && toggle1 && toggle3) || (toggle0 && toggle3 && toggle2) || (toggle3 && toggle1 && toggle2) || (toggle0 && toggle1 && toggle2 && toggle3))
         {
             Debug.Log("Nur zwei gleichzeitig");
             nachricht = "Du kannst nur zwei Dinge kombinieren";
-      
+
         }
         if (!toggle0 && !toggle1 && !toggle2 && !toggle3)
         {
@@ -244,12 +234,9 @@ public class InventoryGUI : MonoBehaviour
             {
 
                 dragHebel = true;
-                //Vector3 mousePos = Input.mousePosition;
-                //mousePos.z = 0.6f;
-                //Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
                 item = GameObject.FindGameObjectWithTag("hebelDub");
                 item.renderer.enabled = true;
-                //item.transform.position = objectPos;
+
 
             }
 
