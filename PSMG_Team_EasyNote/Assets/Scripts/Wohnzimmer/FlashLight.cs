@@ -5,7 +5,7 @@ using UnityEngine;
 using System.Collections;
 using iViewX;
 
-public class Taschenlampe : MonoBehaviourWithGazeComponent
+public class FlashLight: MonoBehaviourWithGazeComponent
 {
 
     private bool flashlightOn = false;
@@ -26,7 +26,7 @@ public class Taschenlampe : MonoBehaviourWithGazeComponent
 
     void Update()
     {
-        MovingCamera movCam = Camera.main.GetComponent<MovingCamera>();
+        MovementCamera movCam = Camera.main.GetComponent<MovementCamera>();
         if (isDrawing)
         {
             foreach (GazeButton button in gazeUI)
@@ -45,10 +45,10 @@ public class Taschenlampe : MonoBehaviourWithGazeComponent
             //Checks if the boolean is true or false.
             if (flashlightOn == true)
             {
-                lamp.light.intensity = 1;
-                //light.intensity = 0;
+                lamp.light.intensity = 0;
+                light.intensity = 1;
 
-                if (movCam.cameraPos == "Schrank" || movCam.cameraPos == "Korb")
+                if (movCam.camPos == "TV" || movCam.camPos == "Kommode" || movCam.camPos == "Couch")
                 {
                     
                     Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
@@ -58,7 +58,7 @@ public class Taschenlampe : MonoBehaviourWithGazeComponent
                     transform.position = new Vector3(transform.position.x, transform.position.y, startPos.z);
                 }
 
-                if (movCam.cameraPos == "Wand")
+                if (movCam.camPos == "Wand")
                 {
                  
                     Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
@@ -67,9 +67,9 @@ public class Taschenlampe : MonoBehaviourWithGazeComponent
                     transform.position = posUserGaze;
                     transform.position = new Vector3(transform.position.x, transform.position.y, 1.81809f);
                 }
-            
 
-                if (movCam.cameraPos == "Start")
+
+                if (movCam.camPos == "Regal" || movCam.camPos == "Start")
                 {
 
                     lamp.light.intensity = 0;
@@ -87,8 +87,8 @@ public class Taschenlampe : MonoBehaviourWithGazeComponent
             {
                 if (flashlightOn == false)
                 {
-                    lamp.light.intensity = 0;
-                    //light.intensity = 1;//If the boolean is false, then it sets the intensity to zero.
+                    lamp.light.intensity = 1;
+                    light.intensity = 0;//If the boolean is false, then it sets the intensity to zero.
                 }
             }
 
@@ -99,13 +99,14 @@ public class Taschenlampe : MonoBehaviourWithGazeComponent
         {
             flashlightOn = true;
 
-            Debug.Log("an");//If the f key is down and the boolean is false, it sets the boolean to true.
+            Debug.Log("Taschenlampe an");//If the f key is down and the boolean is false, it sets the boolean to true.
         }
         else
         {
             if (Input.GetKeyDown(KeyCode.F) && flashlightOn == true)
             {
                 flashlightOn = false;//If the f key is down and the boolean is true, it sets the boolean to false.
+                Debug.Log("Taschenlampe aus");
             }
         }
 
