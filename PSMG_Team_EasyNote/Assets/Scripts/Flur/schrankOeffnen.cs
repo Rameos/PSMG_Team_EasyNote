@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SchrankOeffnen : MonoBehaviour
+public class schrankOeffnen : MonoBehaviour
 {
     GameObject schrank;
     bool schrankOffen = false;
