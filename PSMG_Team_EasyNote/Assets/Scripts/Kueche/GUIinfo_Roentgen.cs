@@ -40,7 +40,7 @@ public class GUIinfo_Roentgen : MonoBehaviour {
 			GUI.Label(new Rect(0, 0, 0, 0), "");
 		}
 		
-		GUI.Label(new Rect(0, 0, 500, 100), "Mit den Tasten '1', '2', '3' und '4' kannst \ndu die Kameraperspektive verändern.\nIn diesem Modus ist keine Interaktion möglich.\nKehre dann mit 'r' zum Original-Modus zurück.");
+		GUI.Label(new Rect(0, 0, 500, 100), "Mit den Tasten '1', '2' und '3' kannst \ndu die Kameraperspektive verändern.\nIn diesem Modus ist keine Interaktion möglich.\nKehre dann mit 'r' zum Original-Modus zurück.");
 	}
 	
 	

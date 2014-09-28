@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class activateRoentgen : MonoBehaviour {
+public class activeUVKueche : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -10,9 +10,9 @@ public class activateRoentgen : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey("r"))
+		if (Input.GetKey("u"))
 		{
-			Application.LoadLevel(8);
+			Application.LoadLevel(12);
 		}
 	}
 }
