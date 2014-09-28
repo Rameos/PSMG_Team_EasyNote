@@ -40,7 +40,7 @@ public class GUIinfo : MonoBehaviour {
 			GUI.Label(new Rect(0, 0, 0, 0), "");
 		}
 		
-		GUI.Label(new Rect(0, 0, 500, 100), "Mit den Tasten '1', '2' und '3' kannst \ndu die Kameraperspektive verändern.");
+		GUI.Label(new Rect(0, 0, 500, 100), "Mit den Tasten '1', '2', '3' und '4' kannst \ndu die Kameraperspektive verändern.");
 	}
 	
 	
