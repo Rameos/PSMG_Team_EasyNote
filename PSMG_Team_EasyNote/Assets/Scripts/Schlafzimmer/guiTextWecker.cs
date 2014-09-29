@@ -8,6 +8,7 @@ public class guiTextWecker : MonoBehaviour {
     public GUISkin GUISkin;
     private BildAnim bildAnim;
     private bool shown = false;
+    private string text = "Der Wecker hat angefangen zu klingeln...\nWie kann man wieder für Ruhe sorgen??";
 
     // Use this for initialization
     void Start()
@@ -36,7 +37,7 @@ public class guiTextWecker : MonoBehaviour {
             GUI.skin = GUISkin;
 
 
-            GUI.Label(new Rect(Screen.width/2 - 175, 0, 350, 100), "Der Wecker hat angefangen zu klingeln...\nWie kann man wieder für Ruhe sorgen??");
+            GUI.Label(new Rect(Screen.width/2 - 175, 0, 350, 100), text);
                 
         }
 
@@ -60,5 +61,10 @@ public class guiTextWecker : MonoBehaviour {
     void ToggleBool()
     {
         shown = true;
+    }
+
+    public void printNewText(string newText)
+    {
+        text = newText;
     }
 }

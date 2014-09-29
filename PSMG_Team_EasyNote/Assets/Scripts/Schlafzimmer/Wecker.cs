@@ -6,6 +6,7 @@ public class Wecker : MonoBehaviour {
     GameObject zb;
     public bool ringing = false;
     public bool destroyed = false;
+    guiTextWecker guiWecker;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,7 @@ public class Wecker : MonoBehaviour {
         if (destroyed == true)
         {
             zb.audio.Stop();
+            //guiWecker.printNewText("Der Wecker hat aufgehört zu läuten...\nDu kannst weitergehen...");
             Invoke("Load", 3);
         }
 
@@ -32,7 +34,7 @@ public class Wecker : MonoBehaviour {
 
     void Load()
     {
-        Application.LoadLevel(8);
+        Application.LoadLevel(5);
     }
 }
 

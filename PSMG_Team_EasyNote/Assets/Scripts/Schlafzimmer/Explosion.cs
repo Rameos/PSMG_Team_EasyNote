@@ -6,6 +6,8 @@ public class Explosion : MonoBehaviour {
     public float radius = 2.0F;
     public float power = 50.0F;
     GameObject rigid;
+    GameObject zb;
+    Wecker wecker;
 	// Use this for initialization
 	void Start () {
 
@@ -19,6 +21,9 @@ public class Explosion : MonoBehaviour {
                 hit.rigidbody.AddExplosionForce(power, explosionPos, radius, 3.0F);
 
         }*/
+
+        zb = GameObject.FindGameObjectWithTag("ziffernblatt");
+        wecker = zb.GetComponent<Wecker>(); 
        
     }
 
@@ -27,6 +32,7 @@ public class Explosion : MonoBehaviour {
         if (gameObject.tag == "wecker" || gameObject.tag == "ziffernblatt" && other.tag == "hammer")
         {
             Debug.Log("-----------------------------------!!!!!");
+            wecker.destroyed = true;
             rigidbody.isKinematic = false;
             rigidbody.useGravity = true;
             explosion();
