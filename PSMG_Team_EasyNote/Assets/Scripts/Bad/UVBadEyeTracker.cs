@@ -42,25 +42,16 @@ public class UVBadEyeTracker : MonoBehaviourWithGazeComponent
 
 
 
-        lamp.light.intensity = 0;
-        light.intensity = 1;
+        lamp.light.intensity = 1;
 
-
-
-/*
-        if (movCam.cameraPos == "Start")
-        {
-
-            lamp.light.intensity = 0;
-            light.intensity = 1;
 
             Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
             posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
 
             transform.position = posUserGaze;
-            transform.position = new Vector3(startPos.x, transform.position.y, transform.position.z);
-        }
-*/
+            transform.position = new Vector3(transform.position.x, transform.position.y);
+  
+
     }
 
 
