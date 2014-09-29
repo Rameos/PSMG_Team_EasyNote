@@ -10,7 +10,7 @@ public class HebelRaetsel : MonoBehaviour
     private bool closed = false;
 
     public bool visible = false;
- 
+
 
     float rotation = 0;
     float targetRotation = -90;
@@ -33,7 +33,7 @@ public class HebelRaetsel : MonoBehaviour
         reset = GameObject.FindGameObjectWithTag("reset");
         Schrank = GameObject.FindGameObjectWithTag("korpus");
 
-       
+
 
     }
 
@@ -48,10 +48,7 @@ public class HebelRaetsel : MonoBehaviour
             HLinks.renderer.enabled = true;
             HLinks.collider.enabled = true;
         }
-        //else
-        //{
-        //    HLinks.SetActive(true);
-        //}
+
 
         checkWin();
 
@@ -59,7 +56,7 @@ public class HebelRaetsel : MonoBehaviour
         {
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-           // Debug.Log("mouse down");
+
             if (Physics.Raycast(ray, out hit, 50))
             {
 
@@ -117,7 +114,7 @@ public class HebelRaetsel : MonoBehaviour
 
                 if (hit.transform.gameObject.tag == "reset")
                 {
-                    Debug.Log("reset");
+
                     gameObjLinks.transform.localEulerAngles = new Vector3(320, 180, 90);
                     HMitte.transform.localEulerAngles = new Vector3(331, 270, 90);
                     HRechts.transform.localEulerAngles = new Vector3(331, 270, 90);
@@ -172,16 +169,12 @@ public class HebelRaetsel : MonoBehaviour
     void rotateRingsWhenUp(GameObject lever)
     {
         if (lever == gameObjLinks)
-
         {
-            
-            //variable übergeben, in script wird erst getestet ob variable true oder false und dann erst ausgeführt
 
-           // ScheibenDrehen drehen = RMitte.GetComponent<ScheibenDrehen>();
-            //drehen.Update();
-          RMitte.transform.Rotate(0, 0, -90);
 
-           // mitte viertel guz, innen viertel uz
+            RMitte.transform.Rotate(0, 0, -90);
+
+            // mitte viertel gegen uhrzeigersinn, innen viertel uhrzeigersinn
         }
 
         if (lever == HMitte)
@@ -196,7 +189,7 @@ public class HebelRaetsel : MonoBehaviour
             //innen halb guz
             RInnen.transform.Rotate(0, 0, -180);
         }
-        //checkWin();
+
 
     }
 
@@ -224,7 +217,7 @@ public class HebelRaetsel : MonoBehaviour
             RInnen.transform.Rotate(0, 0, 90);
             RMitte.transform.Rotate(0, 0, -180);
         }
-        // checkWin();
+
 
     }
 
@@ -239,25 +232,25 @@ public class HebelRaetsel : MonoBehaviour
         if (triggerAussen.RAinRightPos == true && triggerMitte.RMinRightPos == true && triggerInnen.RIinRightPos == true)
         {
             hasWon = true;
-            Debug.Log("gewonnen");
+
 
             if (closed == false)
             {
-                Debug.Log(Schrank.animation.Play("shutDoors"));
+
                 Schrank.animation.Play("shutDoors");
                 closed = true;
             }
-            
+
         }
 
         else
         {
             hasWon = false;
-            
+
         }
 
 
     }
-  
+
 
 }

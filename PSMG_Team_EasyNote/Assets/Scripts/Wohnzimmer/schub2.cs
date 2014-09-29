@@ -1,25 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class schub2 : MonoBehaviour {
+public class schub2 : MonoBehaviour
+{
 
 
     bool isClosed;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         isClosed = true;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     void OnMouseDown()
     {
         if (isClosed)
         {
-            Debug.Log("Öffnen");
+
             animation["schub2"].speed = 1;
             animation.Play("schub2");
             isClosed = false;

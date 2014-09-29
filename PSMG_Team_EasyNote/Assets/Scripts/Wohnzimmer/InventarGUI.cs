@@ -4,9 +4,9 @@ using System.Collections.Generic;
 public class InventarGUI : MonoBehaviour
 {
 
-    private Rect inventoryWindow = new Rect(Screen.width - 425, Screen.height - 325, 400, 250); //Screen.width - 100,Screen.height - 50,100,50
-    //private bool inventoryWindowToggle = false;
+    private Rect inventoryWindow = new Rect(Screen.width - 425, Screen.height - 325, 400, 250);
 
+    bool showInventory = false;
     int windowX = Screen.width - 425;
     int windowY = Screen.height - 325;
     string kombi = "";
@@ -54,12 +54,14 @@ public class InventarGUI : MonoBehaviour
     void OnGUI()
     {
         GUI.Label(new Rect(Screen.width / 2 - 200, 0, 500, 100), message);
-        //inventoryWindowToggle = GUI.Toggle(new Rect(800, 50, 100, 50), inventoryWindowToggle, "Inventory");
 
-        // if (inventoryWindowToggle)
 
-        inventoryWindow = GUI.Window(0, inventoryWindow, inventoryWindowMethodW, "Inventar");
-        //getActiveToggle();
+        showInventory = GUI.Toggle(new Rect(Screen.width / 2 - 300, 25, 100, 50), showInventory, "Inventar");
+        if (showInventory)
+        {
+            inventoryWindow = GUI.Window(0, inventoryWindow, inventoryWindowMethodW, "Inventar");
+        }
+
 
     }
 
@@ -116,30 +118,10 @@ public class InventarGUI : MonoBehaviour
         }
 
         GUILayout.EndHorizontal();
-        //if (GUILayout.Button(inventoryNameDictionary[0], GUILayout.Height(50)))
-        //{
-
-        //   Debug.Log(inventoryNameDictionary[0]);
-        //   Vector3 mousePos = Input.mousePosition;
-        //   mousePos.z = 0.6f;
-        //   Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
-        //   item = GameObject.FindGameObjectWithTag(inventoryNameDictionary[0]);
-        //   item.renderer.enabled = true;
-        //   item.transform.position = objectPos;
-        //   //GameObject myObject = Instantiate(item, objectPos, Quaternion.identity);
-        //}
-
 
 
         GUILayout.BeginHorizontal();
-        //if (GUILayout.Button("Kombinieren", GUILayout.Height(50)))
-        //{
 
-        //    getActiveToggleW();
-        //    testKombi();
-        //    trueAufhebenW();
-        //    //Debug.Log();
-        //}
 
         if (GUILayout.Button("Benutzen", GUILayout.Height(50)))
         {
@@ -195,13 +177,13 @@ public class InventarGUI : MonoBehaviour
 
         if ((button0 && button1 && button2) || (button0 && button1 && button3) || (button0 && button3 && button2) || (button3 && button1 && button2) || (button0 && button1 && button2 && button3))
         {
-            Debug.Log("Nur zwei gleichzeitig");
+
             message = "Du kannst nur zwei Dinge kombinieren";
 
         }
         if (!button0 && !button1 && !button2 && !button3)
         {
-            Debug.Log("Wähle zwei Objekte aus");
+
             message = "Wähle zwei Objekte aus";
 
         }
@@ -215,7 +197,7 @@ public class InventarGUI : MonoBehaviour
         {
             //Kombinieren
 
-            
+
             if (inventoryNameDictionaryW[2] == string.Empty)
             {
                 inventoryNameDictionaryW[2] = "funktionierende Fernbedienung";
@@ -232,8 +214,7 @@ public class InventarGUI : MonoBehaviour
         else
         {
             message = "Das funktioniert nicht";
-            Debug.Log("Falsche Kombi");
-            //fehlermeldung
+
         }
     }
 
@@ -243,17 +224,14 @@ public class InventarGUI : MonoBehaviour
 
         if ((inventoryNameDictionaryW[0].Equals("Hammer") && button0) || (inventoryNameDictionaryW[1].Equals("Hammer") && button1))
         {
-            Debug.Log(movCam.camPos);
+
             if (movCam.camPos.Equals("Wand"))
             {
 
                 dragHammer = true;
-                //Vector3 mousePos = Input.mousePosition;
-                //mousePos.z = 0.6f;
-                //Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
                 objekt = GameObject.FindGameObjectWithTag("hammerDub");
                 objekt.renderer.enabled = true;
-                //item.transform.position = objectPos;
+
 
             }
 
@@ -267,18 +245,13 @@ public class InventarGUI : MonoBehaviour
 
         if ((inventoryNameDictionaryW[1].Equals("Schlüssel") && button1) || (inventoryNameDictionaryW[2].Equals("Schlüssel") && button2))
         {
-            Debug.Log(movCam.camPos);
+
             if (movCam.camPos.Equals("Kommode") || movCam.camPos.Equals("TV"))
             {
 
                 dragSchlüssel = true;
-                //Vector3 mousePos = Input.mousePosition;
-                //mousePos.z = 0.6f;
-                //Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
                 objekt = GameObject.FindGameObjectWithTag("schlüsselDub");
                 objekt.renderer.enabled = true;
-                //item.transform.position = objectPos;
-
             }
 
             else
@@ -291,17 +264,14 @@ public class InventarGUI : MonoBehaviour
 
         if ((inventoryNameDictionaryW[2].Equals("Fernbedienung") && button2) || (inventoryNameDictionaryW[3].Equals("Fernbedienung") && button3))
         {
-            Debug.Log(movCam.camPos);
+
             if (movCam.camPos.Equals("Kommode") || movCam.camPos.Equals("TV"))
             {
 
                 dragRemote = true;
-                //Vector3 mousePos = Input.mousePosition;
-                //mousePos.z = 0.6f;
-                //Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
                 objekt = GameObject.FindGameObjectWithTag("fernDub");
                 objekt.renderer.enabled = true;
-                //item.transform.position = objectPos;
+
 
             }
 

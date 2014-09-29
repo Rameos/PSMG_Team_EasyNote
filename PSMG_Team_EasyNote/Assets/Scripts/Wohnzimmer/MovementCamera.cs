@@ -5,19 +5,7 @@ public class MovementCamera : MonoBehaviour
 {
 
     private bool backButtonShow = false;
-
-
-    //public float q4 = 0;
-    public float q1 = 0;
-    public float q2 = 0;
-    public float q3 = 0;
-
-    public float v1 = 0;
-    public float v2 = 0;
-    public float v3 = 0;
-
-
-
+    GameObject buch;
     public string camPos = "";
 
 
@@ -28,7 +16,7 @@ public class MovementCamera : MonoBehaviour
     {
 
         setToStartPos();
-        //schrank = GameObject.FindGameObjectWithTag("Schrank");
+
 
     }
 
@@ -36,9 +24,6 @@ public class MovementCamera : MonoBehaviour
     void Update()
     {
 
-
-        //  transform.position = new Vector3(v1, v2, v3);
-        // transform.localEulerAngles = new Vector3(q1, q2, q3);
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -88,21 +73,13 @@ public class MovementCamera : MonoBehaviour
                 }
 
 
-                if (hit.transform.gameObject.tag == "couch")//wand mit bild ??
+                if (hit.transform.gameObject.tag == "couch")//wand mit bild
                 {
                     transform.position = new Vector3(-1.479298f, 1.72f, 10f);
                     transform.localEulerAngles = new Vector3(6f, -181.8f, 0f);
                     backButtonShow = true;
                     camPos = "Wand";
                 }
-
-                //if (hit.transform.gameObject.tag == "Bild") //safe
-                //{
-
-                //    transform.position = new Vector3(0.91f, 2.89f, 6.2f);
-                //    transform.localEulerAngles = new Vector3(6f, -181.8f, 0f);
-                //    backButtonShow = true;
-                //}
 
 
             }
@@ -122,6 +99,7 @@ public class MovementCamera : MonoBehaviour
             {
                 backButtonShow = false;
                 setToStartPos();
+
             }
 
         }
@@ -130,12 +108,16 @@ public class MovementCamera : MonoBehaviour
 
     private void setToStartPos()
     {
-        //transform.position = new Vector3(15.83f, 120.6f, 0.0f);
+        if (buch = GameObject.FindGameObjectWithTag("BuchHinweis"))
+        {
+            if (buch.renderer.enabled == true)
+            {
+                buch.renderer.enabled = false;
+            }
 
-        //transform.localEulerAngles = new Vector3(-5.36f, 2.91f, 0.0f);
-
-        transform.position = new Vector3(-5.3f, 3.3f, 12.45f);
-        transform.localEulerAngles = new Vector3(20.6f, 116.4f, -0.27f);
+        }
+        transform.position = new Vector3(-5.548296f, 2.065965f, 10.40726f);
+        transform.localEulerAngles = new Vector3(0f, 90f, 0f);
         camPos = "Start";
     }
 

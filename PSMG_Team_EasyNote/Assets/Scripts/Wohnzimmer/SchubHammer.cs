@@ -1,24 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SchubHammer : MonoBehaviour {
+public class SchubHammer : MonoBehaviour
+{
 
     bool isClosed;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         isClosed = true;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     void OnMouseDown()
     {
         if (isClosed)
         {
-            Debug.Log("Öffnen");
+
             animation["SchubHammer"].speed = 1;
             animation.Play("SchubHammer");
             isClosed = false;

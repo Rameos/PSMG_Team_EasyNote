@@ -32,7 +32,7 @@ public class GUIinfo_Roentgen : MonoBehaviour {
 		if (showLabel)
 		{
 			
-			GUI.Label(new Rect(Screen.width / 2 - 200, 0, 500, 100), "Was für eine Sauerei... Wer hat denn hier gewütet?!");
+			GUI.Label(new Rect(Screen.width / 2 - 200, 0, 500, 100), "Hier ist ein Puzzle versteckt, welches gelöst werden muss.");
 			//showText();
 		}
 		else

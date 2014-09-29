@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Schub1 : MonoBehaviour {
+public class Schub1 : MonoBehaviour
+{
     bool isClosed;
 
     public bool isKey = false;
@@ -16,10 +17,10 @@ public class Schub1 : MonoBehaviour {
     {
         if (isKey)
         {
-            Debug.Log("isKey");
+
             if (isClosed)
             {
-                Debug.Log("Öffnen");
+
                 animation["schub1"].speed = 1;
                 animation.Play("schub1");
                 isClosed = false;
@@ -38,13 +39,13 @@ public class Schub1 : MonoBehaviour {
         else
         {
             audio.Play();
-        } 
-        
+        }
+
         isKey = false;
     }
 
     void OnMouseDown()
     {
-       
+
     }
 }

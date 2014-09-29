@@ -39,53 +39,47 @@ public class LampeModi : MonoBehaviourWithGazeComponent
 
         Vector2 gazePos = (gazeModel.posGazeLeft + gazeModel.posGazeRight) * 0.5f;
         gazePos.y = Screen.height - gazePos.y;
-       
-     
-        
+
+
+
+        lamp.light.intensity = 0;
+        light.intensity = 1;
+
+        if (movCam.cameraPos == "Schrank" || movCam.cameraPos == "Korb")
+        {
+
+            Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
+            posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
+
+            transform.position = posUserGaze;
+            transform.position = new Vector3(transform.position.x, transform.position.y, startPos.z);
+        }
+
+        if (movCam.cameraPos == "Wand")
+        {
+
+            Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
+            posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
+
+            transform.position = posUserGaze;
+            transform.position = new Vector3(transform.position.x, transform.position.y, 1.81809f);
+        }
+
+
+        if (movCam.cameraPos == "Start")
+        {
+
             lamp.light.intensity = 0;
             light.intensity = 1;
 
-            if (movCam.cameraPos == "Schrank" || movCam.cameraPos == "Korb")
-            {
-               
-                Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
-                posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
+            Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
+            posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
 
-                transform.position = posUserGaze;
-                transform.position = new Vector3(transform.position.x, transform.position.y, startPos.z);
-            }
-
-            if (movCam.cameraPos == "Wand")
-            {
-                
-                Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
-                posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
-
-                transform.position = posUserGaze;
-                transform.position = new Vector3(transform.position.x, transform.position.y, 1.81809f);
-            }
-
-
-            if (movCam.cameraPos == "Start")
-            {
-
-                lamp.light.intensity = 0;
-                light.intensity = 1;
-              
-                Vector3 posUserGaze = new Vector3(gazePos.x, gazePos.y, 3);
-                posUserGaze = Camera.main.ScreenToWorldPoint(posUserGaze);
-
-                transform.position = posUserGaze;
-                transform.position = new Vector3(startPos.x, transform.position.y, transform.position.z);
-            }
-
+            transform.position = posUserGaze;
+            transform.position = new Vector3(startPos.x, transform.position.y, transform.position.z);
         }
-   
 
-
-
-  
-
+    }
 
 
     void OnGUI()
