@@ -17,6 +17,6 @@ public class LeaveRoom : MonoBehaviour {
     {
 
         renderer.enabled = true;
-        //Raum verlassen
+        Application.LoadLevel(2);
     }
 }

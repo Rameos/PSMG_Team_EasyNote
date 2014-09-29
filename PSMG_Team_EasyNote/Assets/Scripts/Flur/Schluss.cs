@@ -36,7 +36,7 @@ public class Schluss : MonoBehaviour
 
                 tür.animation.Play("door");
                 open = true;
-                Application.LoadLevel(10);
+                Application.LoadLevel(5);
 
             }
         }
