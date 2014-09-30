@@ -42,7 +42,7 @@ public class Wecker : MonoBehaviour {
 
     void Load()
     {
-        Application.LoadLevel(5);
+        Application.LoadLevel(7);
     }
 }
 

@@ -52,13 +52,10 @@ public class MainDoor : MonoBehaviour {
         guiKeller.printHelpText("Glückwunsch! Du hast das Rätsel gelöst und\n kannst somit den nächsten Raum betreten!");
         RoomDoor.animation.Play("doorAnim");
         open = true;
-<<<<<<< HEAD
         
         Invoke("LoadLevel", 5);
        
-=======
-        Application.LoadLevel(6);
->>>>>>> origin/master
+
         }
     }
 
