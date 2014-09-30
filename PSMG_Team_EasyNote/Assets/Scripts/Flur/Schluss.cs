@@ -23,10 +23,10 @@ public class Schluss : MonoBehaviour
 
     void gelöst()
     {
-        HebelRaetsel hebelRaetsel = Camera.main.GetComponent<HebelRaetsel>();
+        hebelRaetsel hebelRaet = Camera.main.GetComponent<hebelRaetsel>();
 
 
-        if (hebelRaetsel.hasWon == true)
+        if (hebelRaet.hasWon == true)
         {
             if (open == false)
             {

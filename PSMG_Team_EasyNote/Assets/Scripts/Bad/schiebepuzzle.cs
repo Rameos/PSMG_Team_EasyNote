@@ -108,7 +108,7 @@ public class schiebepuzzle : MonoBehaviour {
 		   positionTeil13x == 3 && positionTeil13y == 0 &&
 		   positionTeil14x == 2 && positionTeil14y == 0 &&
 		   positionTeil15x == 1 && positionTeil15y == 0 ){
-			Application.LoadLevel(3);
+			Application.LoadLevel(9);
 		}
 	}
 }﻿

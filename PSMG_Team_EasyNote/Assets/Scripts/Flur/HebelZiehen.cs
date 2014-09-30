@@ -65,7 +65,7 @@ public class HebelZiehen : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
 
-        HebelRaetsel hebRaet = Camera.main.GetComponent<HebelRaetsel>();
+        hebelRaetsel hebRaet = Camera.main.GetComponent<hebelRaetsel>();
         hebel.SetActive(false);
         hebRaet.visible = true;
         ziel.collider.enabled = false;
