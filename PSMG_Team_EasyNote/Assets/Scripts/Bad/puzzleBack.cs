@@ -16,5 +16,9 @@ public class puzzleBack : MonoBehaviour {
 		if(GUI.Button(new Rect(20,40,80,20), "Zurück")) {
 			Application.LoadLevel(2);
 		}
+        if (GUI.Button(new Rect(80, 40, 80, 20), "Aufgeben."))
+        {
+            Application.LoadLevel(9);
+        }
 	}
 }
