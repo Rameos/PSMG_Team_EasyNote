@@ -11,7 +11,7 @@ public class gewonnen : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 				if (gewinnAbfrage.katzeStatus == 1) {
-			Application.LoadLevel(7);
+			Application.LoadLevel(4);
 				}
 		}
 }
