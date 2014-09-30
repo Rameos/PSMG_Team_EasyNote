@@ -20,6 +20,7 @@ public class BildAnim : MonoBehaviour {
 
     }
 
+    //Durch Klick auf das jeweilige GameObject wird eine Animation abgespielt.
 	void OnMouseDown () {
         if (PicOpen == false)
         {

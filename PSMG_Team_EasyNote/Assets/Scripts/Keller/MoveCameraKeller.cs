@@ -11,23 +11,23 @@ public class MoveCameraKeller : MonoBehaviour {
         
         GameObject kastenDoor = GameObject.FindGameObjectWithTag("kastenDoor");
         openKasten oK = kastenDoor.GetComponent<openKasten>();
-        oK.test = 10;
+       
 
         
     }
 
+    //Durch Betätigen der Tasten wechselt die Kamera auf die gewünschte Position
     void Update()
     {
         if (Input.GetKey("1"))
         {
-            Debug.Log("input");
+            
             gameObject.transform.position = new Vector3(-2.718926f, 2.183627f, 0.1953902f);
         }
         if (Input.GetKey("2"))
         {
             gameObject.transform.position = new Vector3(-0.04106632f, 1.589996f, -1.078887f);
-            //oK.setTest(true);
-           // oK.test = true;
+           
         }
 
     

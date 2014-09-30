@@ -14,6 +14,7 @@ public class MainDoor : MonoBehaviour {
     openKasten oK;
     bool open = false;
     guiTextKeller guiKeller;
+    GameObject keller;
 
 	// Use this for initialization
     void Update()
@@ -33,12 +34,15 @@ public class MainDoor : MonoBehaviour {
         RoomDoor = GameObject.FindGameObjectWithTag("MainDoor");
 
         guiKeller = RoomDoor.GetComponent<guiTextKeller>();
+
+        keller = GameObject.FindGameObjectWithTag("keller");
        
 
         OpenDoor();
       
     }
 
+    //Jeder boolsche Wert entspricht einem kleinen Teil des Gesamträtsels. Sind alle Werte true, öffnet sich die Tür. 
     void OpenDoor()
     {
         
@@ -48,27 +52,19 @@ public class MainDoor : MonoBehaviour {
         guiKeller.printHelpText("Glückwunsch! Du hast das Rätsel gelöst und\n kannst somit den nächsten Raum betreten!");
         RoomDoor.animation.Play("doorAnim");
         open = true;
+        
+        Invoke("LoadLevel", 5);
+       
         }
     }
 
-   /* void Update(){
-
-        rK = GameObject.FindGameObjectWithTag("rohrKlein");
-        rohrClickedKlein rcK = rK.GetComponent<rohrClickedKlein>();
-        rG = GameObject.FindGameObjectWithTag("rohrGroß");
-        rohrClickedGroß rcG = rG.GetComponent<rohrClickedGroß>();
-        rK2 = GameObject.FindGameObjectWithTag("smallRohr");
-        rotateRohr rR = rK2.GetComponent<rotateRohr>();
-        kD = GameObject.FindGameObjectWithTag("kastenDoor");
-        openKasten oK = kD.GetComponent<openKasten>();
-
-        Debug.Log("............................................." +rcG.rohrGr);
-       //if (rcK.rohrKl == true &&  rR.rohrKl2 == true && oK.lightOn == true)
+    //hat der Spieler das Rätsel gelöst, kommt er in den nächsten Raum.
+    void LoadLevel()
+    {
+        Application.LoadLevel(6);
+        Destroy(keller);   
         
-        //{
-            
-        //}
-    }*/
-   
+    }
+
     
 }

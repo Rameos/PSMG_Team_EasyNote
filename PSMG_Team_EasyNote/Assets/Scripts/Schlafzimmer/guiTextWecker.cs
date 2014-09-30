@@ -32,7 +32,7 @@ public class guiTextWecker : MonoBehaviour {
     {
         GUI.skin = GUISkin;
 
-        if (showLabel && shown == false)
+        if (showLabel)
         {
             GUI.skin = GUISkin;
 
@@ -54,17 +54,19 @@ public class guiTextWecker : MonoBehaviour {
     {
         Invoke("ToggleLabel", 1);
         Invoke("ToggleLabel", 5);
-        Invoke("ToggleBool", 5);
+        
 
     }
 
     void ToggleBool()
     {
-        shown = true;
+        shown = !shown;
     }
 
     public void printNewText(string newText)
     {
+        Invoke("ToggleLabel", 1);
+        Invoke("ToggleLabel", 5);
         text = newText;
     }
 }

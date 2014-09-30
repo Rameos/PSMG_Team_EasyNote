@@ -33,14 +33,7 @@ public class rohrClickedKlein : MonoBehaviour
 
     void Update()
     {
-        /*if (Input.GetMouseButtonDown(0))
-            Debug.Log("Pressed left click.");
-        if (Input.GetMouseButtonDown(1))
-            Debug.Log("Pressed right click.");
-        if (Input.GetMouseButtonDown(2))
-            Debug.Log("Pressed middle click.");*/
-
-        float translation = Input.GetAxis("Mouse ScrollWheel");
+         float translation = Input.GetAxis("Mouse ScrollWheel");
 
     }
 
@@ -52,6 +45,7 @@ public class rohrClickedKlein : MonoBehaviour
         
     }
 
+    //Die Kastentüre muss bereits geöffnet sein (bzw. das Licht angeschaltet), um das Rohr draggen und rotieren zu können.
     void OnMouseDrag()
     {
         if (openKasten.lightOn == true)
@@ -83,6 +77,7 @@ public class rohrClickedKlein : MonoBehaviour
         }
     }
 
+    //Wird das Rohr an die richtige Stelle gesetzt, bekommt der Spieler eine Benachrichtigung und der boolesche Wert wird true.
     void OnTriggerEnter(Collider other)
     {
         
@@ -92,26 +87,11 @@ public class rohrClickedKlein : MonoBehaviour
             {
                
                 rohrKl = true;
-                Debug.Log("rohrKl " + rohrKl);
                 guiKeller.printHelpText("Du hast das kleine Rohr richtig angebracht!");
             }
         }
 
-        /*if ((Rotation >= 30 && Rotation <= 31 || Rotation >= 299 && Rotation <= 300))
-        {
-            if (other.tag == "rohrGroß")
-            {
-                Debug.Log("Großes Rohr richtig angebracht");
-            }
-        }
-
-        if ((Rotation == 90 || Rotation == 270))
-        {
-            if (other.tag == "kabel" && gameObject.tag == "kabel")
-            {
-                Debug.Log("Kabel richtig");
-            }
-        }*/
+        
 
     }
 

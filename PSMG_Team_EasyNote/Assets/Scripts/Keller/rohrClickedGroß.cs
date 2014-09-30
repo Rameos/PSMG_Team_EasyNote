@@ -32,12 +32,7 @@ public class rohrClickedGroß : MonoBehaviour {
 
     void Update()
     {
-        /*if (Input.GetMouseButtonDown(0))
-            Debug.Log("Pressed left click.");
-        if (Input.GetMouseButtonDown(1))
-            Debug.Log("Pressed right click.");
-        if (Input.GetMouseButtonDown(2))
-            Debug.Log("Pressed middle click.");*/
+        
 
         float translation = Input.GetAxis("Mouse ScrollWheel");
 
@@ -50,6 +45,7 @@ public class rohrClickedGroß : MonoBehaviour {
         
     }
 
+    //Die Kastentüre muss bereits geöffnet sein (bzw. das Licht angeschaltet), um das Rohr draggen und rotieren zu können.
     void OnMouseDrag()
     {
         if (openKasten.lightOn == true)
@@ -82,10 +78,9 @@ public class rohrClickedGroß : MonoBehaviour {
         }
     }
 
+    //Wird das Rohr an die richtige Stelle gesetzt, bekommt der Spieler eine Benachrichtigung und der boolesche Wert wird true.
     void OnTriggerEnter(Collider other)
-    {
-      
-       
+    {     
 
         if ((Rotation >= 30 && Rotation <= 31 || Rotation >= 299 && Rotation <= 300))
         {
@@ -93,7 +88,6 @@ public class rohrClickedGroß : MonoBehaviour {
             {
                
                 rohrGr = true;
-                Debug.Log("rohrGr " + rohrGr);
                 guiKeller.printHelpText("Du hast das große Rohr richtig angebracht!");
                 
             }

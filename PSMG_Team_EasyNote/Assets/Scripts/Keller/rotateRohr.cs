@@ -22,14 +22,11 @@ public class rotateRohr : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        // Slowly rotate the object around its X axis at 1 degree/second.
-        //gameObject.transform.Rotate(2*Time.deltaTime,0,0);
-        // ... at the same time as spinning relative to the global 
-        // Y axis at the same speed.
-        //gameObject.transform.Rotate(Vector3.up * Time.deltaTime, Space.World);
+        
         
 	}
 
+    //Bei Klick wird die Animation ausgeführt und der Wert auf true gesetzt.
     void OnMouseDown()
     {
         if (openKasten.lightOn == true)
@@ -38,7 +35,6 @@ public class rotateRohr : MonoBehaviour {
             sRohr.audio.Play();
             rohrKl2 = true;
             guiKeller.printHelpText("Du hast das Rohr wieder in die richtige Richtung gedreht!");
-            Debug.Log("rohrKl2: " + rohrKl2);
         }
     }
 

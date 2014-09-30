@@ -37,6 +37,7 @@ public class guiTextKeller : MonoBehaviour {
 
     }
 
+    //Erhält verschiedene Benachrichtigungen aus anderen Skripten, die in OnGUI verwendet und dann im Screen eingeblendet werden
     public void printHelpText(string help)
     {
         helpText = help;

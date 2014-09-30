@@ -14,6 +14,7 @@ public class MoveCameraSchlaf : MonoBehaviour
         oK.test = 10;
     }
 
+    //Mit den Zifferntasten kann die Kameraposition bestimmt werden.
     void Update()
     {
         GameObject bild = GameObject.FindGameObjectWithTag("bild");
@@ -48,8 +49,8 @@ public class MoveCameraSchlaf : MonoBehaviour
         if (Input.GetKey("5"))
         {
 
-            gameObject.transform.rotation = new Quaternion(0.08342661f, -0.7029205f, 0.08935602f, 0.7006842f);
-            gameObject.transform.position = new Vector3(-1.21845f, 2.351019f, -10.10403f);
+            gameObject.transform.rotation = new Quaternion(0.0089342661f, -0.75f, 0.008935602f, 0.7006842f);
+            gameObject.transform.position = new Vector3(-0.6205735f, 2.089902f, -11.82671f);
 
         }
          if (Input.GetKey("6"))
@@ -63,11 +64,3 @@ public class MoveCameraSchlaf : MonoBehaviour
 
     }
 }
-
-
-/* alte rot koord:
- -0.0001444171
--0.9994187
-0.03382654
--0.004266861
-*/

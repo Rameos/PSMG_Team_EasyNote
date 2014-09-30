@@ -27,6 +27,7 @@ public class guiTextStart : MonoBehaviour {
         showLabel = !showLabel;
     }
 
+    //Text, der zu Beginn dargestellt wird
     void OnGUI()
     {
         GUI.skin = GUISkin;
@@ -34,7 +35,7 @@ public class guiTextStart : MonoBehaviour {
         {
 
             GUI.Label(new Rect(Screen.width / 2 - 200, 0, 500, 100), "In diesem Raum ist es ziemlich düster...\nDu solltest erst einmal für etwas Licht sorgen...");
-            //showText();
+           
         }
         else
         {

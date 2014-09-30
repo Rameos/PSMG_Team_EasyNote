@@ -48,11 +48,6 @@ public class HammerClicked : MonoBehaviour {
             transform.position = posMouse;
             transform.position = new Vector3(transform.position.x, transform.position.y, startPos.z + 0.8f);
 
-
-
-            //Rotation = transform.rotation.eulerAngles.x;
-            //rigidbody.isKinematic = false;
-            //rigidbody.useGravity = true;
         }
         else
         {
@@ -61,6 +56,7 @@ public class HammerClicked : MonoBehaviour {
 
     }
 
+    //Boolean wird auf true gesetzt, sobald die beiden Collider von Hammer und Wecker aufeinander treffen.
     void OnTriggerEnter(Collider other)
     {
 
@@ -68,7 +64,6 @@ public class HammerClicked : MonoBehaviour {
             if (other.tag == "ziffernblatt" && gameObject.tag == "hammer")
             {
                 wecker.destroyed = true;
-                Debug.Log("wecker destroyed: " + wecker.destroyed);
                 
                 
             }

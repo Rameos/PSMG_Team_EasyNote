@@ -34,8 +34,7 @@ public class guiText : MonoBehaviour {
            
 
                 GUI.Label(new Rect(Screen.width / 2 - 100, 0, 200, 50), "Hier ist leider nichts!");
-                //GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 400, 100), "Hier ist leider nichts!", style);
-                //GUILayout.Label("Hier ist leider nichts");
+                
             
         }
         else

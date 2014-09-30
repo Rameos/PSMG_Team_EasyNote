@@ -27,6 +27,7 @@ public class guiTextSchlaf : MonoBehaviour {
         showLabel = !showLabel;
     }
 
+    //Anfangstext beim Betreten des Levels.
     void OnGUI()
     {
         GUI.skin = GUISkin;

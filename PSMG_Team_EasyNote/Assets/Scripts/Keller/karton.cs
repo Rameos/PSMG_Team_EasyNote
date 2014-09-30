@@ -32,6 +32,8 @@ public class karton : MonoBehaviour
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
     }
 
+    //Hier wird festgelegt, wie weit ein Objekt (Karton) gedragged werden kann, ohne dass es den Raum verlässt. Außerdem 
+    //wird die x-Achse gesperrt, so dass eine Bewegung nur zweidimensional möglich ist.
     void OnMouseDrag()
     {
         if (Input.mousePosition.x > 290 && Input.mousePosition.x < 1200 && Input.mousePosition.y > 120 && Input.mousePosition.y < 550)

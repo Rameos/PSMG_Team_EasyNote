@@ -11,6 +11,7 @@ public class activateRoentgenSchlaf : MonoBehaviour
     }
 
     // Update is called once per frame
+    //Durch Betätigen der jeweiligen Taste wechselt der Spieler in den Röntgen- bzw. UV-Modus
     void Update()
     {
         if (Input.GetKey("r"))

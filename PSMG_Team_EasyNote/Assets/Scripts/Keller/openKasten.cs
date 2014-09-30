@@ -28,27 +28,18 @@ public class openKasten : MonoBehaviour
     }
 
 
-
-    /*public bool setTest(bool toSet) {
-        test = toSet;
-        Debug.Log("test in setTest: " + test);
-        return test;
-    }*/
     // Use this for initialization
+    //Wird der Kasten geöffnet, geht das Licht an und eine Benachrichtigung wird an das GUI geschickt. 
     void OnMouseDown()
     {
         if (count == 0)
-        {
-          
-
-               
+        {             
                 door.animation.Play("kasten");
                 open = true;
                 count++;
                 light.light.intensity = 1;
                 lightOn = true;
                 guiKeller.printHelpText("Du hast den Lichtschalter gefunden!");
-                Debug.Log("lightOn: " + lightOn);
                
          }
         
@@ -60,13 +51,7 @@ public class openKasten : MonoBehaviour
             zoom = true;
             
         }
-        /*if (open == true)
-        {
-            door = GameObject.FindGameObjectWithTag("kasten");
-            door.animation.Play("KastenAnimClose");
-            open = false;
-        }*/
-    }
+      }
 
     void OnGUI()
     {
@@ -74,31 +59,9 @@ public class openKasten : MonoBehaviour
             camera = GameObject.FindGameObjectWithTag("MainCamera");
             camera.animation["kamera"].speed = -1;
             camera.animation.Play("kamera");
-            zoom = false;
-        
+            zoom = false;      
         
       
     }
-
-    /*void OnMouseOver()
-    {
-        if (usedBefore == false)
-        {
-
-            GameObject[] cameras = GameObject.FindGameObjectsWithTag("camera");
-
-            foreach (GameObject cams in cameras)
-            {
-                Camera theCam = cams.GetComponent<Camera>() as Camera;
-                theCam.enabled = false;
-            }
-
-            string oneToUse = "Camera" + 2;
-            Camera usedCam = GameObject.Find(oneToUse).GetComponent<Camera>() as Camera;
-            usedCam.enabled = true;
-
-            usedBefore = true;
-        }
-        }*/
-    }
+}
 
