@@ -2,7 +2,7 @@
 
 using System.Collections;
 
-public class HebelRaetsel : MonoBehaviour
+public class hebelRaetsel : MonoBehaviour
 {
     GameObject HLinks, HRechts, HMitte, RAussen, RMitte, RInnen, Schrank, gameObjLinks, reset;
     private int count1 = 0, count2 = 0, count3 = 0;
